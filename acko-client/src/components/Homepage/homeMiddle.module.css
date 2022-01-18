@@ -1,0 +1,37 @@
+.home_partner{
+    box-sizing: border-box;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.home_mid_head{
+    font-style: normal;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 800;
+    color: rgb(40, 46, 51);
+    margin: 60px 0px 10px;
+    text-align: center;
+}
+.home_mid_subhead{
+    margin: 0px 0px 42px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 18px;
+    -webkit-box-align: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(67, 79, 90);
+}
+.home_mid_logo{
+    display: flex;
+    flex-flow: row wrap;
+    box-sizing: border-box;
+    margin: 0px auto;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 100%;
+}
