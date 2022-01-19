@@ -1,12 +1,12 @@
 import "./App.css";
-import Header from "./components/Headers/Hearder";
-import Middle from "./components/Middle/Middle";
+import { CartypePage } from "./components/Cars/Cartype/CartypePage";
 
 function App() {
-  return <div>
-    <Header/>
-    <Middle/>
-  </div>;
+  return (
+    <div>
+      <CartypePage />
+    </div>
+  );
 }
 
 export default App;
