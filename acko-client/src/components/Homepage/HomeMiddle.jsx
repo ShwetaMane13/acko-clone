@@ -24,6 +24,7 @@ import zoomCar from './images/zoomCar.png'
 import Hassle from './images/Hasslefree.png'
 import superMobile from './images/superMobile.png'
 import wallet from './images/Wallet.png'
+import HomeFooter from './HomeFooter'
 function HomeMiddle() {
   return (
     <div>
@@ -127,6 +128,7 @@ function HomeMiddle() {
           </div>
         </div>
       </div>
+      <HomeFooter />
     </div>
   )
 }
