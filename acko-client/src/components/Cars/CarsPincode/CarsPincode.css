@@ -1,0 +1,75 @@
+.pincodeDiv{
+    
+    width:28rem;
+    margin-left: 18%;
+    margin-top: 5.5rem;
+}
+
+.pInput{
+margin-top: 25px;
+width: 240px;
+height: 32px;
+padding: 8px 96px;
+border: 1px solid #9364ED;
+box-sizing: border-box;
+border-radius: 4px;
+}
+
+.pininput:focus{
+    outline: none !important;
+    border-color: #9364ED;
+    box-shadow: 0 0 10px #9364ED;
+}
+
+.pinbtn{
+    padding: 8px 32px;
+    width: 176px;
+height: 32px;
+background: #522ED3;
+border-radius: 4px;
+border: none;
+cursor: pointer;
+color: white;
+margin-top: 10px;
+}
+
+.pindivflex{
+    max-width: 280px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+
+}
+
+.innerPincodeDiv{
+
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28px;
+     
+}
+.pDiv{
+    
+        font-size: 10px;
+        line-height: 20px;
+      
+        color: black;
+    
+}
+.pInnerDiv{
+    
+        
+        font-size:0.7rem;
+        align-items: center;
+      
+       
+        
+    
+}
+
+@media only screen and (max-width: 1100px){
+    .pincodeDiv{
+        min-width: 300px;
+    }
+}

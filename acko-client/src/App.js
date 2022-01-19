@@ -1,12 +1,15 @@
 import "./App.css";
-import { CartypePage } from "./components/Cars/Cartype/CartypePage";
 
+import Header from "./components/Headers/Hearder";
+import Middle from "./components/Middle/Middle";
+import CarsPincode from "./components/Cars/CarsPincode/CarsPincode";
 function App() {
-  return (
-    <div>
-      <CartypePage />
-    </div>
-  );
+  return <div>
+    <Header/>
+    <Middle/>
+    <CarsPincode/>
+  </div>;
+
 }
 
 export default App;
