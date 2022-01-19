@@ -5,7 +5,7 @@ const DB = process.env.DATABASE;
 mongoose
   .connect(DB)
   .then((res) => {
-    console.log("Database connected");
+    console.log("Acko Database connected");
   })
   .catch((err) => {
     console.log(err);
