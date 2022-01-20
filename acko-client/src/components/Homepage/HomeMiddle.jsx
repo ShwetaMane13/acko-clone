@@ -36,31 +36,31 @@ function HomeMiddle() {
         <div className={styles.home_mid_logo}>
           <div className={styles.home_main_child1}>
             <div className={styles.home_main_child2}>
-              <img src={amazon}></img>
-              <img src={abhiBus}></img>
-              <img src={aubank}></img>
-              <img src={driveU}></img>
-              <img src={dunzo}></img>
-              <img src={goibibo}></img>
-              <img src={happay}></img>
-              <img src={hdb}></img>
+              <img src={amazon} alt=""></img>
+              <img src={abhiBus} alt=""></img>
+              <img src={aubank} alt=""></img>
+              <img src={driveU} alt=""></img>
+              <img src={dunzo} alt=""></img>
+              <img src={goibibo} alt=""></img>
+              <img src={happay} alt=""></img>
+              <img src={hdb} alt=""></img>
             </div>
             <div className={styles.home_main_child2}>
-              <img src={lendingKart}></img>
-              <img src={moneytap}></img>
-              <img src={my}></img>
-              <img src={niyo}></img>
-              <img src={oyo}></img>
-              <img src={practo}></img>
-              <img src={rapido}></img>
-              <img src={redbus}></img>
+              <img src={lendingKart} alt=""></img>
+              <img src={moneytap} alt=""></img>
+              <img src={my} alt=""></img>
+              <img src={niyo} alt=""></img>
+              <img src={oyo} alt=""></img>
+              <img src={practo} alt=""></img>
+              <img src={rapido} alt=""></img>
+              <img src={redbus} alt=""></img>
             </div>
             <div className={styles.home_main_child3}>
-              <img src={urban}></img>
-              <img src={ola}></img>
-              <img src={zestMoney}></img>
-              <img src={zomato}></img>
-              <img src={zoomCar}></img>
+              <img src={urban} alt=""></img>
+              <img src={ola} alt=""></img>
+              <img src={zestMoney} alt=""></img>
+              <img src={zomato} alt=""></img>
+              <img src={zoomCar} alt=""></img>
             </div>
           </div>
         </div>
@@ -79,6 +79,7 @@ function HomeMiddle() {
                   width: '120px',
                   marginBottom: '28px',
                 }}
+                alt=""
               ></img>
             </div>
             <div className={styles.home_sub_head}>Incredibly low premiums</div>
@@ -99,6 +100,7 @@ function HomeMiddle() {
                   width: '120px',
                   marginBottom: '28px',
                 }}
+                alt=""
               ></img>
             </div>
             <div className={styles.home_sub_head}>Superquick and easy</div>
@@ -117,6 +119,7 @@ function HomeMiddle() {
                   width: '120px',
                   marginBottom: '28px',
                 }}
+                alt=""
               ></img>
             </div>
             <div className={styles.home_sub_head}>Hassle-free claims</div>

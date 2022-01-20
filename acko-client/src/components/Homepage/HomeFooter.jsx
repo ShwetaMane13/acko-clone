@@ -50,8 +50,9 @@ function HomeFooter() {
             }}
           >
             Company
+            <button className={styles.footer_head_btn}></button>
           </p>
-          <div>
+          <div className={styles.footer_cont_p_sub_complete}>
             <p className={styles.footer_cont_p_sub}>About us</p>
             <p className={styles.footer_cont_p_sub}>Board of directors</p>
             <p className={styles.footer_cont_p_sub}>Careers</p>
