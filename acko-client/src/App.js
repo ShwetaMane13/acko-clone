@@ -1,13 +1,13 @@
 import "./App.css";
-
-import Header from "./components/Headers/Hearder";
-import Middle from "./components/Middle/Middle";
-import CarsPincode from "./components/Cars/CarsPincode/CarsPincode";
+import { CarPincodePage } from "./components/Cars/CarsPincode/CarsPincodePage";
+import {NumberPlatePage} from "./components/Cars/NumberPlate/NumberPlatePage";
+import Cartype from "./components/Cars/CarType/CarType";
+import {CarDetailPage} from "./components/Cars/CarDetails/CarDetailPage";
 function App() {
   return <div>
-    <Header/>
-    <Middle/>
-    <CarsPincode/>
+   <NumberPlatePage/>
+   <CarPincodePage/>
+    <CarDetailPage/>
   </div>;
 
 }

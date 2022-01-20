@@ -1,80 +1,111 @@
+// import React, { useState } from 'react'
+// import style from "./cartype.module.css"
+// import car from "./Personel car.svg"
+// import petrol from "./petrol.svg"
+// import gear from "./gear.svg"
+// import downarrow from "./Down arrow.svg"
+// import Petrolpopup from '../Petrolpopup/Petrolpopup'
+// import Typecarpopup from '../Typecarpopup/Typecarpopup'
+// import Gearpopup from '../Gearpopup/Gearpopup'
+// import axios from "axios"
+// import {Link} from "react-router-dom"
+// function Cartype() {
 
-import { Link } from "react-router-dom";
-import React from "react";
-import "./Cartype.css";
-import personalcar from "../../ImageIcon/personelcar.svg";
-import commercialcar from "../../ImageIcon/commercialcar.svg";
-import carandhand from "../../ImageIcon/Car_and_hand.svg";
+//     const [carr, setCar] = useState("Swift");
 
-export const Cartype = () => {
-  return (
-    <div>
-      <div className="useofcarbody">
-        <div className="usefor">What do you use car for?</div>
-        <Link className="linkstyle" to="/cars/pincode">
-          <div
-            // onClick={async () => {
-            //   try {
-            //     const data = { useofcar: "Personal use" };
-            //     // const res = await axios.post("http://localhost:8080/cars", data);
-            //     const res = await axios.post(
-            //       "https://acko.herokuapp.com/cars",
-            //       data
-            //     );
-            //     // console.log(res.data._id);
-            //     const id = res.data._id;
-            //     localStorage.setItem("ackoid", id);
-            //   } catch (err) {
-            //     console.log(err.message);
-            //   }
-            // }}
-            className="personalcardiv"
-          >
-            <div>
-              <img src={personalcar} style={{ marginTop: "20px" }} alt=""></img>
-            </div>
-            <div>
-              <p className="peruse">Personal Use</p>
+//     const [fuel, setFuel] = useState("Petrol");
 
-              <p className="numplate">White Number Plate</p>
-            </div>
-          </div>
-        </Link>
-        <Link className="linkstyle" to="/cars/pincode">
-          <div
-            // onClick={async () => {
-            //   try {
-            //     const data = { useofcar: "Commercial use" };
-            //     const res = await axios.post(
-            //       "https://acko.herokuapp.com/cars",
-            //       data
-            //     );
-            //     // console.log(res.data._id);
-            //     const id = res.data._id;
-            //     localStorage.setItem("ackoid", id);
-            //   } catch (err) {
-            //     console.log(err.message);
-            //   }
-            // }}
-            className="personalcardiv"
-          >
-            <div>
-              <img style={{ marginTop: "20px" }} src={commercialcar} alt="" />
-            </div>
-            <div>
-              <p className="peruse">Commercial Use</p>
-              <p className="numplate">Yellow Number Plate</p>
-            </div>
-          </div>
-        </Link>
+//     const [gearr, setGear] = useState("Titanium AT")
+    
+//     const [petrolpopup, setPetrolpopup] = useState(false);
 
-        <div className="handcardiv">
-          <img src={carandhand} alt="" />
-          <p className="insured">
-            We've insured more than 5 Lakh cars in India till date
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-};
+//     const [carpopup, setCarpopup] = useState(false);
+
+//     const [gearpopup,setGearpopup]=useState(false)
+
+
+//     return (
+//       <div className={style.cartypebody}>
+//         <div className={style.cartypehead}>Which Car do you drive?</div>
+//         <div className={style.cartypeflex}>
+//           <img src={car} alt="" />
+//           <p>{carr}</p>
+//           <img
+//             onClick={() => {
+//               setCarpopup(!carpopup);
+//               setPetrolpopup(false);
+//               setGearpopup(false);
+//             }}
+//             className={style.imagearrow}
+//             src={downarrow}
+//             alt=""
+//           />
+//         </div>
+//         <hr />
+//         <Typecarpopup
+//           setCar={setCar}
+//           carpopup={carpopup}
+//           setCarpopup={setCarpopup}
+//         />
+//         <div className={style.cartypeflex}>
+//           <img src={petrol} alt="" />
+//           <p>{fuel}</p>
+//           <img
+//             onClick={() => {
+//               setPetrolpopup(!petrolpopup);
+//               setCarpopup(false);
+//               setGearpopup(false);
+//             }}
+//             className={style.imagearrow}
+//             src={downarrow}
+//             alt=""
+//           />
+//         </div>
+//         <hr />
+//         <Petrolpopup
+//           petrolpopup={petrolpopup}
+//           setFuel={setFuel}
+//           setPetrolpopup={setPetrolpopup}
+//         />
+//         <div className={style.cartypeflex}>
+//           <img src={gear} alt="" />
+//           <p>{gearr}</p>
+//           <img
+//             onClick={() => {
+//               setGearpopup(!gearpopup);
+//               setPetrolpopup(false);
+//               setCarpopup(false);
+//             }}
+//             className={style.imagearrow}
+//             src={downarrow}
+//             alt=""
+//           />
+//         </div>
+//         <hr />
+//         <Gearpopup
+//           gearpopup={gearpopup}
+//           setGearpopup={setGearpopup}
+//           setGear={setGear}
+//         />
+//         <Link to="/cars/cardetail">
+//           <button
+//             onClick={async () => {
+//               const id = localStorage.getItem("ackoid");
+//               const data = {
+//                 name: carr,
+//                 fuel: fuel,
+//                 gear: gearr,
+//               };
+//               // await axios.patch(`http://localhost:8080/cars/${id}`, data);
+//                await axios.patch(`https://acko.herokuapp.com/cars/${id}`, data);
+//             }}
+//             className={style.cartypebtn}
+//           >
+//             Continue
+//           </button>
+//         </Link>
+//       </div>
+//     );
+// }
+
+// export default Cartype

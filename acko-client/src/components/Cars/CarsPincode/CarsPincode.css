@@ -8,24 +8,24 @@
 .pInput{
 margin-top: 25px;
 width: 240px;
-height: 32px;
+height: 2.8rem;
 padding: 8px 96px;
-border: 1px solid #9364ED;
+border: 1.2px solid rgb(0, 0, 0,0.2);
 box-sizing: border-box;
 border-radius: 4px;
 }
 
-.pininput:focus{
+.pInput:focus{
     outline: none !important;
     border-color: #9364ED;
     box-shadow: 0 0 10px #9364ED;
 }
 
-.pinbtn{
-    padding: 8px 32px;
-    width: 176px;
-height: 32px;
-background: #522ED3;
+.btn1{
+padding: 8px 32px;
+width: 10rem;
+height: 3rem;
+background: #512dd1;
 border-radius: 4px;
 border: none;
 cursor: pointer;
@@ -55,6 +55,7 @@ margin-top: 10px;
         line-height: 20px;
       
         color: black;
+        
     
 }
 .pInnerDiv{

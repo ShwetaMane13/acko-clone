@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "./CarsPincode.css"
 import navigation from "./Navigation.svg"
-import axios from "axios"
+
 import { Link } from 'react-router-dom'
 
 function CarsPincode() {
@@ -29,13 +29,9 @@ const [pincode,setPincode]=useState("")
               onClick={async () => {
                 const id = localStorage.getItem("ackoid");
                 const data = { pincode: pincode };
-                // await axios.patch(`http://localhost:8080/cars/${id}`, data);
-                //  await axios.patch(
-                //    `https://acko.herokuapp.com/cars/${id}`,
-                //    data
-                //  );
+               
               }}
-              className="pinbtn"
+              className="btn1"
             >
               Continue
             </button>
