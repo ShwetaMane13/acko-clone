@@ -2,6 +2,7 @@ import "./homepage.css"
 import { Navbar } from "./Navbar"
 import { CarForm } from "./CarForm";
 import { UserReviews } from "./UserReviews";
+import HomeMiddle from "./HomeMiddle";
 
 export const Home = () => {
     return (
@@ -9,6 +10,7 @@ export const Home = () => {
             <Navbar />
             <CarForm />
             <UserReviews />
+            <HomeMiddle />
         </div>
     )
 }
