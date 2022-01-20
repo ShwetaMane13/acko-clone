@@ -1,0 +1,32 @@
+.insurance{
+    
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 156%;
+        text-align: center;
+        letter-spacing: 0.02em;
+        margin-top: 5rem;
+        
+         
+  
+     
+}
+
+.lowerText{
+    /* font-style: "normal";
+            font-weight: "400";
+            fontSize: "16px",
+            lineHeight: "26px",
+            color: "#8A909F",
+            marginTop: "10px",
+            textAlign:"center" */
+
+    margin: 0.5rem 0px 0px;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 156%;
+    color: rgb(137, 144, 161);
+    text-align: center;
+    
+}
+
