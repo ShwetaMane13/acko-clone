@@ -36,10 +36,10 @@ export default function PaymentTypes() {
           </div>
           <p>EMI</p>
         </div>
-        <div className="payment-option-poweredby">
-          <p className="light-text">Powered by</p>
-          <img src={juspay} alt="juspay logo" />
-        </div>
+      </div>
+      <div className="payment-option-poweredby">
+        <p className="light-text">Powered by</p>
+        <img src={juspay} alt="juspay logo" />
       </div>
     </div>
   );

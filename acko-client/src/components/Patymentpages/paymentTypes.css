@@ -6,18 +6,21 @@
 }
 
 .payment-wrapper {
-  /* width: 250px; */
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 25px 10px;
   width: 25%;
+  height: 505px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .payment-options {
-  border: 1px solid grey;
-  border-radius: 5px;
   display: flex;
   flex-direction: column;
   gap: 25px;
   width: 100%;
-  padding: 15px 10px;
 }
 
 .payment-option-box {

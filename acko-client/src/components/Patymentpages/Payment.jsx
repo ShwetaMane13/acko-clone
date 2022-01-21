@@ -3,8 +3,8 @@ import PaymentTypes from "./PaymentTypes";
 // import CardPayment from "./CardPayment";
 import BilingSummery from "./BilingSummery";
 // import UpiPayment from "./UpiPayment";
-import NetBankingPayment from "./NetBankingPayment";
-// import EmiPayment from "./EmiPayment";
+// import NetBankingPayment from "./NetBankingPayment";
+import EmiPayment from "./EmiPayment";
 
 import "./payment.css";
 
@@ -14,8 +14,8 @@ export default function Payment() {
       <PaymentTypes />
       {/* <CardPayment /> */}
       {/* <UpiPayment /> */}
-      <NetBankingPayment />
-      {/* <EmiPayment /> */}
+      {/* <NetBankingPayment /> */}
+      <EmiPayment />
       <BilingSummery />
     </div>
   );

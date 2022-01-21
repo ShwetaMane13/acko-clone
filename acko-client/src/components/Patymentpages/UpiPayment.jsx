@@ -4,26 +4,26 @@ import "./upiPayment.css";
 export default function UpiPayment() {
   return (
     <div className="upi-payment-container">
-      <div>
-        <h4>Scan QR and Pay</h4>
+      <div className="upi-payment-heading">
+        <h3>Scan QR and Pay</h3>
         <p>
           Scan the QR using any UPI app on your mobile phone like PhonePe,
           Paytm, GooglePay, BHIM, etc
         </p>
       </div>
-      <div>
-        <button>Generate QR COde</button>
+      <div className="upi-payment-qr-button-wrapper">
+        <button className="upi-payment-qr-button">Generate QR Code</button>
       </div>
-      <div>
-        <p>Enter VPA and Pay</p>
+      <div className="upi-payment-subheading">
+        <h3>Enter VPA and Pay</h3>
       </div>
-      <div>
+      <div className="upi-payment-vpa-wrapper">
         <label>Enter your UPI ID</label>
         <input type="text" placeholder="e.g vsrathod@upi" />
         <p>A collect request will be sent to this UPI ID</p>
       </div>
-      <div>
-        <button>Pay Now</button>
+      <div className="upi-payment-pay-now-button-wrapper">
+        <button className="upi-payment-pay-now-button">Pay Now</button>
       </div>
     </div>
   );

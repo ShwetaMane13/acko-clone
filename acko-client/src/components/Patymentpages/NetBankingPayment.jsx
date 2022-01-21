@@ -19,83 +19,103 @@ import uco from "./assets/images/uco_bank_607066.png";
 
 export default function NetBankingPayment() {
   return (
-    <div className="net-payment-container">
-      <div>
+    <div className="netbanking-payment-container">
+      <div className="netbanking-payment-heading">
         <h4>Pay using Netbanking</h4>
       </div>
-      <div>
-        <div>
+      <div className="netbanking-payment-options">
+        <div className="netbanking-payment-type">
           <img src={hdfc} alt="Hdfc logo" />
           <p>HDFC</p>
         </div>
-        <div>
+        <div className="netbanking-payment-type">
           <img src={axis} alt="Axis logo" />
           <p>Axis</p>
         </div>
-        <div>
+        <div className="netbanking-payment-type">
           <img src={canara} alt="Canara logo" />
           <p>Canara</p>
         </div>
-        <div>
+        <div className="netbanking-payment-type">
           <img src={kotak} alt="Kotak logo" />
           <p>Kotak</p>
         </div>
       </div>
-      <div>
-        <div>
-          <SearchOutlinedIcon style={{ fill: "grey", fontSize: "22px" }} />
+      <div className="netbanking-payment-search">
+        <div className="netbanking-payment-search-wrapper">
+          <SearchOutlinedIcon style={{ fill: "grey", fontSize: "25px" }} />
           <input type="text" placeholder="Search banks" />
         </div>
       </div>
-      <div>
-        <div>
-          <img src={airtel} alt="Airtel Payment Bank logo" />
-          <p>Airtel Payment Bank</p>
+      <div className="netbanking-payment-bank-list">
+        <div className="netbanking-payment-bank-list-wrapper">
+          <div>
+            <img src={airtel} alt="Airtel Payment Bank logo" />
+            <p>Airtel Payment Bank</p>
+          </div>
           <input type="radio" />
         </div>
-        <div>
-          <img src={boi} alt="Bank of India logo" />
-          <p>Bank of India</p>
+        <div className="netbanking-payment-bank-list-wrapper">
+          <div>
+            <img src={boi} alt="Bank of India logo" />
+            <p>Bank of India</p>
+          </div>
           <input type="radio" />
         </div>
-        <div>
-          <img src={bom} alt="Bank of Maharastra logo" />
-          <p>Bank of Maharastra</p>
+        <div className="netbanking-payment-bank-list-wrapper">
+          <div>
+            <img src={bom} alt="Bank of Maharastra logo" />
+            <p>Bank of Maharastra</p>
+          </div>
           <input type="radio" />
         </div>
-        <div>
-          <img src={cbi} alt="Central Bank of India logo" />
-          <p>Central Bank of India</p>
+        <div className="netbanking-payment-bank-list-wrapper">
+          <div>
+            <img src={cbi} alt="Central Bank of India logo" />
+            <p>Central Bank of India</p>
+          </div>
           <input type="radio" />
         </div>
-        <div>
-          <img src={dena} alt="DENA Bank logo" />
-          <p>DENA Bank</p>
+        <div className="netbanking-payment-bank-list-wrapper">
+          <div>
+            <img src={dena} alt="DENA Bank logo" />
+            <p>DENA Bank</p>
+          </div>
           <input type="radio" />
         </div>
-        <div>
-          <img src={icic} alt="ICICI Bank logo" />
-          <p>ICICI Bank</p>
+        <div className="netbanking-payment-bank-list-wrapper">
+          <div>
+            <img src={icic} alt="ICICI Bank logo" />
+            <p>ICICI Bank</p>
+          </div>
           <input type="radio" />
         </div>
-        <div>
-          <img src={indian} alt="Indian logo" />
-          <p>Indian Bank</p>
+        <div className="netbanking-payment-bank-list-wrapper">
+          <div>
+            <img src={indian} alt="Indian logo" />
+            <p>Indian Bank</p>
+          </div>
           <input type="radio" />
         </div>
-        <div>
-          <img src={pnb} alt="Punjab National Bank logo" />
-          <p>Punjab National Bank</p>
+        <div className="netbanking-payment-bank-list-wrapper">
+          <div>
+            <img src={pnb} alt="Punjab National Bank logo" />
+            <p>Punjab National Bank</p>
+          </div>
           <input type="radio" />
         </div>
-        <div>
-          <img src={sbi} alt="State Bank India logo" />
-          <p>State Bank India</p>
+        <div className="netbanking-payment-bank-list-wrapper">
+          <div>
+            <img src={sbi} alt="State Bank India logo" />
+            <p>State Bank India</p>
+          </div>
           <input type="radio" />
         </div>
-        <div>
-          <img src={uco} alt="UCO BAnk logo" />
-          <p>UCO Bank</p>
+        <div className="netbanking-payment-bank-list-wrapper">
+          <div>
+            <img src={uco} alt="UCO BAnk logo" />
+            <p>UCO Bank</p>
+          </div>
           <input type="radio" />
         </div>
       </div>

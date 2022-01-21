@@ -6,15 +6,19 @@ import "./emiPayment.css";
 export default function EmiPayment() {
   return (
     <div className="emi-payment-container">
-      <div>
-        <h4>Pay in EMI</h4>
+      <div className="emi-payment-heading">
+        <h3>Pay in EMI</h3>
       </div>
-      <div>
-        <button>
-          <CreditCardOutlinedIcon
-            style={{ fill: "#5A68E7", fontSize: "36px" }}
-          />
-          <p>Credit Card EMI</p>
+      <div className="emi-payment-button-wrapper">
+        <button className="emi-payment-button">
+          <div>
+            <CreditCardOutlinedIcon
+              style={{ fill: "#5A68E7", fontSize: "36px" }}
+            />
+            <p>
+              <b>Credit Card EMI</b>
+            </p>
+          </div>
           <ArrowForwardIosOutlinedIcon
             style={{ fill: "#5A68E7", fontSize: "14px" }}
           />
