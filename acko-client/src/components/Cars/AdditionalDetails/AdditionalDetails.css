@@ -1,0 +1,335 @@
+.main_div_additional{
+    display: flex;
+    width: 1200px;
+    height: 1500px;
+    position: absolute;
+    top: -1%;
+    left: 12%;
+ 
+    /* background-color: cadetblue; */
+}
+
+h2{
+    margin-top: 6%;
+}
+
+.left_div{
+    width: 50%;
+    margin: 13% 13%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    margin-top: 2.5%;
+}
+
+input{
+    height: 25px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid rgb(214, 217, 224);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 1.18em 3em 1.18em 1.18em;
+    margin: 3.5% 0%;
+}
+
+.info_message{
+    width: 51%;
+    font-size: 10px;
+    line-height: 141.1%;
+    background-color: rgb(228, 246, 254);
+    padding:  1% 2%;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #4f435a;
+}
+
+.email_info{
+    width: 80%;
+    margin-left: 2%;
+    margin-top: 1.3%;
+    font-size: 0.7rem;
+    color: rgb(85, 90, 104);
+}
+
+
+select{
+    width: 100%;
+    height: 60px;
+    border: 1px solid rgb(214, 217, 224);
+    border-radius: 8px;
+    outline: none;
+    margin-top: 3.5%;
+    padding: 1.18em 3em 1.18em 1.18em;
+}
+
+.when{
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 17px;
+    color: rgb(21, 22, 25);
+    text-align: left;
+    width: 100%;
+}
+
+.when_input{
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    /* justify-content: space-evenly; */
+}
+
+.button{
+    width: 120px;
+    height: 45px;
+    border: none;
+    margin-left: 3%;
+    border: 1px solid rgb(243, 247, 255);
+    background-color: rgb(243, 247, 255);
+    font-size: 0.75rem;
+    color: rgb(85, 90, 104);
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.choose_date{
+    margin-left: 5%;
+}
+
+.bottom_div{
+    width: 100%;
+    height: 280px;
+    border: 1px solid rgb(214, 217, 224);
+    margin-top: 2.25rem;
+    border-radius: 8px;
+}
+
+.div_one{
+    display: flex;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 3% 5%;
+}
+
+.div_one > p {
+    margin-left: 2%;
+    margin-top: 4.6%;
+}
+
+.div_two{
+    display: flex;
+    width: 80%;
+    font-size: 0.625rem;
+    font-weight: 400;
+    color: rgb(85, 90, 104);
+    margin: 8% 10%;
+}
+
+.calendar_svg{
+    width: 20%;
+    margin-left: 8%;
+}
+
+.div_three{
+    display: flex;
+    width: 80%;
+    font-size: 0.625rem;
+    font-weight: 400;
+    color: rgb(85, 90, 104);
+    margin: 10% 10%;
+}
+
+.previous_policy{
+    margin-right: 8%;
+}
+
+.bold{
+    font-weight: 800;
+}
+
+hr{
+    width: 80%;
+    border: 0.2px solid rgb(244, 245, 247);;
+    /* background-color: rgb(244, 245, 247); */
+}
+
+.terms_conditions{
+    width: 100%;
+    font-weight: 500;
+    font-size: 0.7rem;
+    line-height: 141.1%;
+    color: rgb(21, 22, 25);
+    margin: 2.25rem 0px 0px;
+    padding: 1.875rem 0px;
+    border-top: 1px solid rgb(244, 245, 247);
+    text-align: left;
+}
+
+a{
+    color: #0000ee;
+}
+
+.continue_button{
+    border-radius: 6px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 1em 3em;
+    font-size: 0.875rem;
+    background-color: rgb(88, 44, 219);
+    border: 1.5px solid rgb(88, 44, 219);
+    color: rgb(255, 255, 255);
+    width: 75%;
+    height: 4em;
+}
+
+
+/* right-div */
+
+.right_div{
+    width: 25%;
+    height: 400px;
+    position: absolute;
+    left: 57%;
+    top: 17.5%;
+    border: 1px solid rgb(213, 213, 213);
+    color: rgb(21, 22, 25);
+    border-radius: 0.5rem;
+}
+
+.comp_heading{
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 2em;
+    color: rgb(21, 22, 25);
+    margin: 8% 8%;
+}
+
+.premium_breakup{
+    font-weight: 500;
+    color: rgb(71, 175, 250);
+    margin: 0px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    margin: -7% 8%;
+}
+
+.breakdown{
+    margin: 15% 10%;
+}
+
+.item{
+    display: flex;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1em;
+    color: rgb(21, 22, 25);
+    justify-content: space-between;
+}
+
+.total_tag{
+    line-height: 1em;
+    color: rgb(21, 22, 25);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-top: 11%;
+}
+
+.total_value{
+    font-weight: 600;
+    line-height: 1em;
+    color: rgb(21, 22, 25);
+    font-size: 1.25rem;
+}
+
+.total_div{
+    border-top:  1px solid rgb(213, 213, 213) ;
+}
+
+.gst{
+    margin-bottom: 2%;
+}
+
+.tracker_div{
+    display: flex;
+    width: 600px;
+    justify-content: space-evenly;
+}
+
+.tracker{
+    width: 20px;
+    height: 16px;
+    background-color: #d6d9e0;
+    font-size: 9px;
+    text-align: center;
+    color: white;
+    padding-top: 0.9%;
+    border-radius: 20px;
+    z-index: 1;
+    position: relative;
+    left: -22%;
+
+}
+
+.tracker_hr{
+    position: absolute;
+    width: 320px;
+    margin-left: 1%;
+    margin-top: 0.8%;
+}
+
+.tracker_div > p {
+    font-size: 9px;
+}
+
+.green{
+    background-color: #3eb753;
+}
+
+.tracker_text{
+    display: flex;
+    width: 580px;
+    justify-content: space-evenly;
+    position: absolute;
+    left: 3%;
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 11px;
+    color: #8990A1;
+}
+
+.black{
+    color: black;
+}
+
+.car_model_div{
+    width: 25%;
+    height: 80px;
+    background-color: #f4f5f7;
+    border-radius: 8px;
+    position: absolute;
+    top: 10%;
+    left: 57%;
+}
+
+.car_model_text{
+    color: rgb(21, 22, 25);
+    margin: 0px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    width: 40%;
+    position: absolute;
+    top: 18%;
+    left: 6%;
+}
