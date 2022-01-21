@@ -1,14 +1,6 @@
-import "./App.css";
-import { CarPincodePage } from "./components/Cars/CarsPincode/CarsPincodePage";
-import { NumberPlatePage } from "./components/Cars/NumberPlate/NumberPlatePage";
-import { CarDetailPage } from "./components/Cars/CarDetails/CarDetailPage";
+import './App.css'
+
 function App() {
-  return (
-    <div>
-      <NumberPlatePage />
-      <CarPincodePage />
-      <CarDetailPage />
-    </div>
-  );
+  return <div></div>
 }
-export default App;
+export default App
