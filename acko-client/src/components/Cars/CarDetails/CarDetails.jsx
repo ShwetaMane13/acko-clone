@@ -1,8 +1,9 @@
 import React, { useState,useEffect } from "react";
 import "./CarDetails.css";
-import buttonpen from "./Button pen.svg";
+import buttonpen from "../../ImageIcon/Button pen.svg";
 // import ecosport from "./Eco sport.svg";
-import carwithstar from "./Car with star.svg";
+
+import carwithstar from "../../ImageIcon/Car with star.svg";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -19,10 +20,9 @@ function CarDetail() {
    getData();
  }, []);
  
- const getData = async () => {
-  //  const { data } = await axios.get(`http://localhost:8080/cars/${id}`);
-      const { data } = await axios.get(`https://acko.herokuapp.com/cars/${id}`);
-   setDat(data);
+ const getData =  () => {
+  
+//    setDat(data);
  };
 
   return (
@@ -103,14 +103,18 @@ function CarDetail() {
       <Link to="/cars/expiry">
         <div>
           <button
-            onClick={async () => {
-              const id = localStorage.getItem("ackoid");
+            onClick={() => {
+             
               const data = {
                 cngkit: cng,
                 mobile: mobile,
               };
-              // await axios.patch(`http://localhost:8080/cars/${id}`, data);
-               await axios.patch(`https://acko.herokuapp.com/cars/${id}`, data);
+              if((data.cngkit.length!=0)&&(data.mobile.length===10)){
+                localStorage.setItem("carDeatl",JSON.stringify(data));}
+                else{
+                    console.log(data.cngkit.length,data.mobile.length);
+                    alert("Please select correct details ,Mobile number should be 10 digits");
+                }
             }}
             className="continueBtn"
           >

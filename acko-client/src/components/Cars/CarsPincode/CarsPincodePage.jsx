@@ -12,7 +12,7 @@ export const CarPincodePage = () => {
         <div className="divflex1">
           <CarsPincode />
         </div>
-        <div className="divflex2"> <CarsPincode /></div>
+        <div className="divflex2"> </div>
       </div>
     </div>
   );
