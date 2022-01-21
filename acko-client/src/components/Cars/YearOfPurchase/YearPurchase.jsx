@@ -6,13 +6,14 @@ export const YearPurchase = () => {
   const handleClick = (e) => {
     console.log(e.target.value);
     if (flag === 1) {
-      console.log("here");
+      //console.log("here");
       e.target.parentElement.style.border = "none";
       flag = 0;
     } else {
       flag = 1;
       e.target.parentElement.style.border = "1px solid #8C76DF";
     }
+    localStorage.setItem("year", e.target.value);
   };
   return (
     <div className="yearbody">

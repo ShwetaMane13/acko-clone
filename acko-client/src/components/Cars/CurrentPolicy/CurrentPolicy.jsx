@@ -5,7 +5,7 @@ export const CurrentPolicy = () => {
   let flag = 0;
   const handleClick = (e) => {
     if (flag === 1) {
-      console.log("here");
+      //console.log("here");
       e.target.parentElement.style.border = "none";
       flag = 0;
     } else {
@@ -14,34 +14,25 @@ export const CurrentPolicy = () => {
       e.target.parentElement.style.border = "1px solid #8C76DF";
     }
   };
+
+  const setitem = (e) => {
+    localStorage.setItem("currentpolicy", e);
+    if (e === "expired") {
+      console.log("expired here");
+    } else {
+      console.log("not expired here");
+    }
+  };
+
   return (
     <div className="policybody">
       <div className="policyperiod">Has your current policy expired?</div>
       <div style={{ marginTop: "40px" }} className="policygrid">
-        <div>
-          <button
-            onClick={handleClick}
-            //   onClick={async () => {
-            //     const id = localStorage.getItem("ackoid");
-            //     const data = {
-            //       ncb: 0,
-            //     };
-            //     // await axios.patch(`http://localhost:8080/cars/${id}`, data);
-            //     await axios.patch(`https://acko.herokuapp.com/cars/${id}`, data);
-            //   }}
-          >
-            Policy not Expired
-          </button>
+        <div onClick={() => setitem("notexpired")}>
+          <button onClick={handleClick}>Policy not Expired</button>
         </div>
-        <div>
-          <button
-            onClick={handleClick}
-            // onClick={() => {
-            //   setpopupp(true);
-            // }}
-          >
-            Policy already Expired
-          </button>
+        <div onClick={() => setitem("expired")}>
+          <button onClick={handleClick}>Policy already Expired</button>
         </div>
       </div>
       <div className="policyflexdiv">

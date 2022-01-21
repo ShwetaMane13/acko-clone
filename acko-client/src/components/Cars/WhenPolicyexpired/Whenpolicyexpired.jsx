@@ -5,11 +5,11 @@ export const WhenPolicyexpired = () => {
   let flag = 0;
   const handleClick = (e) => {
     if (flag === 1) {
-      console.log("here");
+      //console.log("here");
       e.target.parentElement.style.border = "none";
       flag = 0;
     } else {
-      console.log(e.target.value);
+      console.log("add navigation whenpolicyexpired page");
       flag = 1;
       e.target.parentElement.style.border = "1px solid #8C76DF";
     }
@@ -19,29 +19,10 @@ export const WhenPolicyexpired = () => {
       <div className="policyperiod">When did your policy expire?</div>
       <div style={{ marginTop: "40px" }} className="policygrid">
         <div>
-          <button
-            onClick={handleClick}
-            //   onClick={async () => {
-            //     const id = localStorage.getItem("ackoid");
-            //     const data = {
-            //       ncb: 0,
-            //     };
-            //     // await axios.patch(`http://localhost:8080/cars/${id}`, data);
-            //     await axios.patch(`https://acko.herokuapp.com/cars/${id}`, data);
-            //   }}
-          >
-            Less than 10 days ago
-          </button>
+          <button onClick={handleClick}>Less than 10 days ago</button>
         </div>
         <div>
-          <button
-            onClick={handleClick}
-            // onClick={() => {
-            //   setpopupp(true);
-            // }}
-          >
-            Between 10 to 90 days
-          </button>
+          <button onClick={handleClick}>Between 10 to 90 days</button>
         </div>
         <div>
           <button onClick={handleClick}>More than 90 days ago</button>

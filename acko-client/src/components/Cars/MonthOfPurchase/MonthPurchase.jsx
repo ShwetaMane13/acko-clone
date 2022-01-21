@@ -5,15 +5,17 @@ export const MonthPurchase = () => {
   let flag = 0;
   const handleClick = (e) => {
     if (flag === 1) {
-      console.log("here");
-      e.target.element.style.border = "none";
+      //console.log("here");
+      e.target.parentElement.style.border = "none";
       flag = 0;
     } else {
       console.log(e.target.value);
       flag = 1;
-      e.target.element.style.border = "1px solid #8C76DF";
+      e.target.parentElement.style.border = "1px solid #8C76DF";
     }
+    localStorage.setItem("month", e.target.value);
   };
+
   return (
     <div className="yearbody">
       <p>Which month did you buy your car?</p>

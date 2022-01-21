@@ -5,43 +5,24 @@ export const Policyexpirirng = () => {
   let flag = 0;
   const handleClick = (e) => {
     if (flag === 1) {
-      console.log("here");
+      //console.log("here");
       e.target.parentElement.style.border = "none";
       flag = 0;
     } else {
-      console.log(e.target.value);
+      console.log("add navigation on policy expiring page");
       flag = 1;
       e.target.parentElement.style.border = "1px solid #8C76DF";
     }
   };
   return (
     <div className="policybody">
-      <div className="policyperiod">Has your current policy expired?</div>
+      <div className="policyperiod">When is your policy expiring?</div>
       <div style={{ marginTop: "40px" }} className="policygrid">
         <div>
-          <button
-            onClick={handleClick}
-            //   onClick={async () => {
-            //     const id = localStorage.getItem("ackoid");
-            //     const data = {
-            //       ncb: 0,
-            //     };
-            //     // await axios.patch(`http://localhost:8080/cars/${id}`, data);
-            //     await axios.patch(`https://acko.herokuapp.com/cars/${id}`, data);
-            //   }}
-          >
-            Today or tomorrow
-          </button>
+          <button onClick={handleClick}>Today or tomorrow</button>
         </div>
         <div>
-          <button
-            onClick={handleClick}
-            // onClick={() => {
-            //   setpopupp(true);
-            // }}
-          >
-            Within the next 7 days
-          </button>
+          <button onClick={handleClick}>Within the next 7 days</button>
         </div>
         <div>
           <button onClick={handleClick}>Within the next 30 days</button>
