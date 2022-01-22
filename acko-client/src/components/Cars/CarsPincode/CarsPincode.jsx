@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 
 
 import './CarsPincode.css'
-import navigation from './Navigation.svg'
-//import axios from "axios";
+import navigation from '../../ImageIcon/Navigation.svg'
+
 import { Link } from 'react-router-dom'
 
 function CarsPincode() {
@@ -24,7 +24,7 @@ function CarsPincode() {
         <p className='pDiv' >
           Please enter the pincode where your vehicle is currently located
         </p>
-        <Link to="/cars/carnumber" >
+        <Link to="/car/car-type" >
           <div>
             <button
               onClick={() => {

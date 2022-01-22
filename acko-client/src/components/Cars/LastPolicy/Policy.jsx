@@ -6,7 +6,7 @@ export const Policy = () => {
   let flag = 0;
   const handleClick = (e) => {
     if (flag === 1) {
-      //console.log("here");
+      
       e.target.parentElement.style.border = "none";
       flag = 0;
     } else {

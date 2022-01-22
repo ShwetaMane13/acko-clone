@@ -9,7 +9,7 @@ import TypeDropDown from './TypeDropDown'
 import GearDropDown from './GearDropDown'
 
 import {Link} from "react-router-dom"
-function Cartype() {
+export const Cartype=()=> {
 
     const [carr, setCar] = useState("Swift");
 
@@ -107,4 +107,4 @@ function Cartype() {
     );
 }
 
-export default Cartype;
+

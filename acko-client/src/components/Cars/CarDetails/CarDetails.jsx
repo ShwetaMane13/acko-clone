@@ -100,7 +100,7 @@ function CarDetail() {
         <p className="wePromisePara">We Promise!!</p>
       </div>
 
-      <Link to="/cars/expiry">
+      
         <div>
           <button
             onClick={() => {
@@ -109,10 +109,12 @@ function CarDetail() {
                 cngkit: cng,
                 mobile: mobile,
               };
-              if((data.cngkit.length!=0)&&(data.mobile.length===10)){
-                localStorage.setItem("carDeatl",JSON.stringify(data));}
+              if((data.cngkit.length!==0)&&(data.mobile.length===10)){
+                localStorage.setItem("carDeatl",JSON.stringify(data));
+            
+            }
                 else{
-                    console.log(data.cngkit.length,data.mobile.length);
+                   
                     alert("Please select correct details ,Mobile number should be 10 digits");
                 }
             }}
@@ -121,7 +123,7 @@ function CarDetail() {
             Continue
           </button>
         </div>
-      </Link>
+      
       <div className="lastflexdiv">
         <img src={carwithstar} alt="" />
         <p>Great car! Now let us offer you really great insurance for it</p>
