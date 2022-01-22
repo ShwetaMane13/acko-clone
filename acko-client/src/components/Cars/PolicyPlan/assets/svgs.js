@@ -23,7 +23,7 @@ export const carSvg = (
       fill="black"
     />
   </svg>
-);
+)
 export const calendarSvg = (
   <svg
     width="14"
@@ -37,7 +37,7 @@ export const calendarSvg = (
       fill="black"
     />
   </svg>
-);
+)
 export const mapSvg = (
   <svg
     width="14"
@@ -52,7 +52,7 @@ export const mapSvg = (
     />
     <line y1="23.5" x2="16" y2="23.5" stroke="black" />
   </svg>
-);
+)
 
 export const sliderThumb = (
   <svg
@@ -111,7 +111,7 @@ export const sliderThumb = (
       </filter>
     </defs>
   </svg>
-);
+)
 export const needHelpSvg = (
   <svg
     width="18"
@@ -128,47 +128,47 @@ export const needHelpSvg = (
     <path
       d="M8.27794 10.0757C9.04723 9.73397 8.64462 8.44685 7.56526 8.98216L5.68768 9.93976C4.87619 8.6501 4.37039 7.80701 3.3623 8.34243C3.05999 8.51295 2.75897 8.81525 3.04245 9.03576C4.65624 10.3607 4.64287 11.784 4.60773 12.1393C4.43682 13.5477 5.44024 14.8281 6.84874 14.9988C7.44396 15.052 7.7589 14.7684 8.59379 14.1141C8.75153 13.9905 11.2639 12.8593 11.2639 12.8593C12.1739 12.4671 11.7736 11.4831 11.132 11.7091L10.5206 11.9109"
       stroke="black"
-      stroke-width="0.2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="0.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M8.96428 11.1377C9.73496 10.805 9.21234 9.63244 8.27795 10.0757"
       stroke="black"
-      stroke-width="0.2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="0.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M9.61348 12.2577C10.3876 11.929 9.74896 10.8065 8.96419 11.1375"
       stroke="black"
-      stroke-width="0.2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="0.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M9.61351 12.2577L8.85292 12.5735"
       stroke="black"
-      stroke-width="0.2"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="0.2"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M8.96427 11.1376L8.28953 11.4127"
       stroke="black"
-      stroke-width="0.2"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="0.2"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M8.27793 10.0757L7.75209 10.3386"
       stroke="black"
-      stroke-width="0.2"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="0.2"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <rect
       x="7.53621"
@@ -186,7 +186,7 @@ export const needHelpSvg = (
     <circle cx="11.0951" cy="4.62656" r="0.44486" fill="#FFB320" />
     <circle cx="12.8746" cy="4.62656" r="0.44486" fill="#FFB320" />
   </svg>
-);
+)
 export const emiSvg = (
   <svg
     width="15"
@@ -201,7 +201,7 @@ export const emiSvg = (
       fill="white"
     />
   </svg>
-);
+)
 export const accidentsSvg = (
   <svg
     width="16px"
@@ -231,7 +231,7 @@ export const accidentsSvg = (
       fill="#343758"
     />
   </svg>
-);
+)
 export const carBurnSvg = (
   <svg
     width="16px"
@@ -257,7 +257,7 @@ export const carBurnSvg = (
       fill="#343758"
     />
   </svg>
-);
+)
 export const carTheftSvg = (
   <svg
     width="16px"
@@ -295,7 +295,7 @@ export const carTheftSvg = (
       fill="#343758"
     />
   </svg>
-);
+)
 export const carFloodSvg = (
   <svg
     width="16px"
@@ -329,7 +329,7 @@ export const carFloodSvg = (
       fill="#343758"
     />
   </svg>
-);
+)
 
 export const consumablesSvg = (
   <svg
@@ -352,7 +352,7 @@ export const consumablesSvg = (
       fill="#343758"
     />
   </svg>
-);
+)
 export const personalAccidentSvg = (
   <svg
     width="14"
@@ -366,7 +366,7 @@ export const personalAccidentSvg = (
       fill="#151619"
     />
   </svg>
-);
+)
 export const ncbProtectSvg = (
   <svg
     width="18"
@@ -380,7 +380,7 @@ export const ncbProtectSvg = (
       fill="#343758"
     />
   </svg>
-);
+)
 export const passengerAccidentSvg = (
   <svg
     width="14"
@@ -420,4 +420,4 @@ export const passengerAccidentSvg = (
     <line y1="6.0071" x2="13.9088" y2="6.0071" stroke="#999BAB" />
     <line x1="7.08839" x2="7.08839" y2="0.650705" stroke="#343758" />
   </svg>
-);
+)

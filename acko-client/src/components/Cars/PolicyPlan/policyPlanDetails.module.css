@@ -329,8 +329,6 @@ input[type="range"]::-webkit-slider-thumb {
   margin-left: 16px;
 }
 .plan_left_car_idv_slider {
-  margin-left: 16px;
-  margin-right: 32px;
   margin-top: 8px;
   display: grid;
   justify-content: right;
