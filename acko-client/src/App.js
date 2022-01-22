@@ -1,6 +1,5 @@
 import "./App.css";
 
-
 import Routepage from "./Routes/Routes";
 
 function App() {
@@ -10,8 +9,6 @@ function App() {
       <Routepage />
     </div>
   );
-
-
 }
 
 export default App;

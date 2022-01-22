@@ -18,7 +18,7 @@ export default function CardPayment() {
   toast.configure();
 
   const handeToken = async (token) => {
-    const res = await axios.post(`http://localhost:5000/checkout`, {
+    const res = await axios.post(`http://localhost:5000/payment/checkout`, {
       token,
       product,
     });
