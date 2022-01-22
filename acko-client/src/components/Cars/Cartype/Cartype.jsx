@@ -8,7 +8,7 @@ import PetrolDropDown from './PetrolDropDown'
 import TypeDropDown from './TypeDropDown'
 import GearDropDown from './GearDropDown'
 
-import {Link} from "react-router-dom"
+
 export const Cartype=()=> {
 
     const [carr, setCar] = useState("Swift");
@@ -87,7 +87,7 @@ export const Cartype=()=> {
           setGearpopup={setGearpopup}
           setGear={setGear}
         />
-        <Link to="/cars/cardetail">
+
           <button
             onClick={ () => {
               
@@ -97,14 +97,13 @@ export const Cartype=()=> {
                 gearType: gearr,
               };
               localStorage.setItem("carType",JSON.stringify(data));
+              window.location.href= "http://localhost:3000/car/car-details";
             }}
             className={style.cartypebtn}
           >
             Continue
           </button>
-        </Link>
+       
       </div>
     );
 }
-
-

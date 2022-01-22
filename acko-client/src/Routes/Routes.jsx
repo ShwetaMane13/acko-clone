@@ -4,6 +4,7 @@ import { CarPincodePage } from "../components/Cars/CarsPincode/CarsPincodePage";
 import { CurrentPolicyPage } from "../components/Cars/CurrentPolicy/CurrentPolicyPage";
 import { ExpiryDatePage } from "../components/Cars/ExpiryDate/ExpiryDatePage";
 import { LastPolicyPage } from "../components/Cars/LastPolicy/LastPolicyPage";
+
 import { NumberPlatePage } from "../components/Cars/NumberPlate/NumberPlatePage";
 import { PolicyExpiringPage } from "../components/Cars/Policyexpiring/PolicyExpiringPage";
 import { MonthPurchasePage } from "../components/Cars/MonthOfPurchase/MonthPurchasePage";
@@ -16,6 +17,7 @@ import { PolicyPlanDetails } from "../components/Cars/PolicyPlan/PolicyPlanDetai
 import { AdditionalDetails } from "../components/Cars/AdditionalDetails/AdditionalDetails";
 import { FinalDetails } from "../components/Cars/FinalDetails/FinalDetails";
 import Payment from "../components/Paymentpages/Payment";
+import { CarDetailPage } from "../components/Cars/CarDetails/CarDetailPage";
 const Routepage = () => {
   return (
     <Routes>
@@ -27,6 +29,7 @@ const Routepage = () => {
       <Route path="/car/last-policy" element={<LastPolicyPage />}></Route>
       <Route path="/car/month-purchase" element={<MonthPurchasePage />}></Route>
       <Route path="/car/car-plate" element={<NumberPlatePage />}></Route>
+      <Route path="/car/car-details" element={<CarDetailPage />}></Route>
       <Route path="/car/policy-expire" element={<PolicyExpiringPage />}></Route>
       <Route path="/car/car-use" element={<UseofCarPage />}></Route>
       <Route

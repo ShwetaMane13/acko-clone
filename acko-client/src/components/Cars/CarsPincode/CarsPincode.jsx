@@ -1,7 +1,12 @@
-import React, { useState } from "react";
 
-import "./CarsPincode.css";
-import navigation from "../../ImageIcon/Navigation.svg";
+import React, { useState } from 'react';
+
+
+import './CarsPincode.css';
+import navigation from '../../ImageIcon/Navigation.svg';
+import { Navigate } from 'react-router-dom';
+
+
 
 function CarsPincode() {
   const [pincode, setPincode] = useState("");
@@ -11,7 +16,7 @@ function CarsPincode() {
     reg.test(pincode);
     if (pincode.length === 6 && reg.test(pincode)) {
       localStorage.setItem("pincode", pincode);
-      //ADD navigation here
+      
     } else {
       alert("Add correct pincode");
     }
@@ -31,7 +36,7 @@ function CarsPincode() {
         Please enter the pincode where your vehicle is currently located
       </p>
 
-      <div>
+      {/* <div>
         <button onClick={handleClick} className="btn1">
           Continue
         </button>
@@ -41,9 +46,37 @@ function CarsPincode() {
         <img src={navigation} alt="" />
         <p className="pInnerDiv">
           Your pincode helps us check our service availability in your region
-        </p>
+        </p> */}
+
+      
+          <div>
+            <button
+              onClick={() => {
+                    if(pincode.length===6){
+                      localStorage.setItem("pincode",JSON.stringify(pincode));
+                      window.location.href = "http://localhost:3000/car/purchased-year";
+                    }
+                    else{
+                    alert("Please enter correct pincode");
+                  }
+                console.log(pincode);
+              }}
+              className="btn1"
+            >
+              Continue
+            </button>
+          </div>
+      
+
+        <div className="pindivflex">
+          <img src={navigation} alt="" />
+          <p className='pInnerDiv'>
+            Your pincode helps us check our service availability in your region
+          </p>
+        </div>
+
       </div>
-    </div>
+   
   );
 }
 

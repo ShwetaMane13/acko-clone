@@ -19,7 +19,7 @@ const NumberPlate = () => {
     const status = isValidCarNumber(number);
     console.log(status);
     if (status) {
-      localStorage.setItem("carnumber", number);
+      localStorage.setItem("carnumber", JSON.stringify(number));
     } else {
       alert("Add correct car number");
     }

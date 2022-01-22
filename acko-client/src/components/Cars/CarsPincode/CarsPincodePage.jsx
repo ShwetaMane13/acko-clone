@@ -1,7 +1,8 @@
-import  CarsPincode from "./CarsPincode";
+import CarsPincode from "./CarsPincode";
 import Header from "../../Headers/Hearder";
 import Middle from "../../Middle/Middle";
 import "../carstypepage.css";
+import { Dynamic } from "../Dynamic/Dynamic";
 
 export const CarPincodePage = () => {
   return (
@@ -12,7 +13,9 @@ export const CarPincodePage = () => {
         <div className="divflex1">
           <CarsPincode />
         </div>
-        <div className="divflex2"> </div>
+        <div className="divflex2">
+          <Dynamic />{" "}
+        </div>
       </div>
     </div>
   );

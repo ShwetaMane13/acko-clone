@@ -4,14 +4,13 @@ import calender from "../../ImageIcon/Calender.svg";
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
-import axios from "axios"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
 function Expiry() {
   let [selectDateTP, setSelectDateTP] = useState("");
   let [selectDateOD, setSelectDateOD] = useState("");
-  let tp = ""
-    let od=""
+  let tp = "";
+  let od = "";
   useEffect(() => {
     selectDateTP = selectDateTP.toString();
     selectDateOD = selectDateOD.toString();
@@ -21,7 +20,6 @@ function Expiry() {
     }
     // console.log(tp, od);
   }, [selectDateTP, selectDateOD]);
-
 
   return (
     <div className={style.expirybody}>
@@ -76,27 +74,27 @@ function Expiry() {
           />
         </div>
       </div>
-      <Link to="/cars/policy">
-        <div style={{ marginTop: "25px" }}>
-          <button
-            className={style.expirycont}
-            onClick={async () => {
-              
-              const data = {
-                tpdate: tp,
-                oddate: od,
-              };
-              if(data.oddate.length&&data.tpdate.length<16){
-              localStorage.setItem("expiryDate",JSON.stringify(data));}
-              else{
-                  alert("Please select correct date");
-              }
-            }}
-          >
-            Continue
-          </button>
-        </div>
-      </Link>
+
+      <div style={{ marginTop: "25px" }}>
+        <button
+          className={style.expirycont}
+          onClick={async () => {
+            const data = {
+              tpdate: tp,
+              oddate: od,
+            };
+            if (data.oddate.length && data.tpdate.length < 16) {
+              localStorage.setItem("expiryDate", JSON.stringify(data));
+              window.location.href = "http://localhost:3000/car/last-policy";
+            } else {
+              alert("Please select correct date");
+            }
+          }}
+        >
+          Continue
+        </button>
+      </div>
+
       <div style={{ marginTop: "20px", width: "400px" }}>
         <p className={style.expirypara}>
           Cars bought after Sept 2018 come with a bundled policy covering the
