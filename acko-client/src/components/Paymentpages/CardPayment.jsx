@@ -3,7 +3,33 @@ import CreditCardOutlinedIcon from "@mui/icons-material/CreditCardOutlined";
 import HelpOutlinedIcon from "@mui/icons-material/HelpOutlined";
 import "./cardPayment.css";
 
+import StripeCheckout from "react-stripe-checkout";
+import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 export default function CardPayment() {
+  const [product, setProduct] = React.useState({
+    name: "Vikas",
+    price: 200,
+    discription: "This is sample payment",
+  });
+
+  toast.configure();
+
+  const handeToken = async (token) => {
+    const res = await axios.post(`http://localhost:5000/checkout`, {
+      token,
+      product,
+    });
+    console.log(res);
+    if (res.status === 200) {
+      toast("Success! Payment is completed", { type: "success" });
+    } else {
+      toast("Failed! Payment is not completed", { type: "error" });
+    }
+  };
+
   return (
     <div className="card-payment-container">
       <div className="payment-type-heading">
@@ -18,7 +44,7 @@ export default function CardPayment() {
                 type="text"
                 placeholder="Enter card number here"
                 required
-                autocomplete="cc-number"
+                autoComplete="cc-number"
               />
               <CreditCardOutlinedIcon
                 style={{
@@ -36,7 +62,7 @@ export default function CardPayment() {
                   type="text"
                   placeholder="MM / YY"
                   required
-                  autocomplete="cc-exp"
+                  autoComplete="cc-exp"
                 />
               </div>
               {/* <input type="text" placeholder="MM / YY" /> */}
@@ -48,7 +74,7 @@ export default function CardPayment() {
                   type="password"
                   placeholder="CVV"
                   required
-                  autocomplete="cc-cvv"
+                  autoComplete="cc-cvv"
                 />
                 <HelpOutlinedIcon
                   style={{
@@ -74,7 +100,13 @@ export default function CardPayment() {
             </label>
           </div>
           <div className="payment-type-form-section4">
-            <input type="submit" value="Pay Now" />
+            {/* <input type="submit" value="Pay Now" /> */}
+            <StripeCheckout
+              stripeKey="pk_test_51KKLohSB4oh1LzAsphsNGkZXyIWNuyRZq6uS5jKKNYhLSxx9iG6UJzCy7djPOTE7qEuyCK7xtHkN5NPk3cSfmo5q00lG6IjAeW"
+              token={handeToken}
+              amount={product.price * 100}
+              name={product.name}
+            />
           </div>
         </form>
       </div>

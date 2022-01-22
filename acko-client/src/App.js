@@ -1,6 +1,6 @@
 import "./App.css";
 import { Home } from "./components/Homepage/Home";
-import Payment from "./components/Patymentpages/Payment";
+import Payment from "./components/Paymentpages/Payment";
 
 function App() {
   return (
