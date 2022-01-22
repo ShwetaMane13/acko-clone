@@ -1,14 +1,17 @@
 import "./App.css";
-import { Home } from "./components/Homepage/Home";
-import Payment from "./components/Paymentpages/Payment";
+
+
+import Routepage from "./Routes/Routes";
 
 function App() {
+  console.log("hello");
   return (
     <div>
-      {/* <Home /> */}
-      <Payment />
+      <Routepage />
     </div>
   );
+
+
 }
 
 export default App;

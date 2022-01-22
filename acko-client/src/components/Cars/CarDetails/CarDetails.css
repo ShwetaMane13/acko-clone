@@ -1,0 +1,173 @@
+.carDetailDiv{
+   
+  min-width: 600px;
+
+}
+
+.carDetailTopDiv{
+    display: flex;
+    min-width: 600px;
+    justify-content: space-between;
+}
+
+.editflexdiv{
+    display: flex;
+    /* border: 1px solid black; */
+    width: 200px;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.editflexdiv> img{
+    width: 14px;
+    cursor: pointer;
+
+}
+.wePromisePara{
+    text-align: center;
+}
+
+.editflexdiv > p{
+    font-style: normal;
+    font-size: 15px;
+    font-weight:600 ;
+}
+.imgCar1{
+    width:1rem;
+}
+
+.carDetailRightDiv{
+  margin-top: 6rem;
+}
+
+.carDetailInput{
+    width: 250px;
+    height: 2.5rem;
+    padding: 8px 84px;
+    border: 1.2px solid rgb(0, 0, 0,0.2);
+box-sizing: border-box;
+border-radius: 4px;
+}
+
+.carDetailInput:focus{
+      outline: none !important;
+    border-color: #9364ED;
+    box-shadow: 0 0 10px #9364ED;
+}
+
+.cardepara{
+    width: 250px;
+}
+
+.cardepara >p{
+color: #8F909A;
+font-style: normal;
+font-weight: 500;
+font-size: 9px;
+line-height: 10px;
+}
+
+.continueBtn{
+    background: #4d37cf;
+border-radius: 4px;
+padding: 8px 32px;
+color: white;
+width: 10rem;
+height: 3rem;
+border: none;
+margin-top: 25px;
+cursor: pointer;
+font-size: 1rem;
+}
+
+.lastflexdiv{
+    display: flex;
+    margin-top: 25px;
+width: 340px;
+justify-content: space-between;
+}
+
+.lastflexdiv >p{
+    font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 16px;
+color: #000000;
+}
+
+
+.labeldiv{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.labeldiv label{
+    font-size: 14px;
+    font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 12px;
+color: #8A909F;
+}
+
+.labeldiv input{
+    cursor: pointer;
+}
+.innerCarDetailDiv{
+   
+      
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 28px;
+
+}
+.innerCarDiv2{
+
+        background: F5F5F5;
+        font-size: 18px;
+        width: 100px;
+        background-color: #F5F5F5;
+        margin-top: 20px;
+        border-radius: 4px;
+        font-weight: bolder;
+        margin-left: 10px;
+      
+}
+.innerCarPara{
+   
+        
+      
+        font-size: 12px;
+        line-height: 10px;
+        color:  #5C5D65;
+      
+}
+.innerCarCng{
+   
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 15px;
+        margin-top: 20px;
+    
+}
+.innerLabel1{
+  margin-left: 1rem;
+}
+.innerCarPara2{
+    
+        
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 10px;
+        color: #8f8f97;
+     
+}
+
+@media only screen and (max-width: 600px){
+    .cardetailbody{
+        min-width: 300px;
+    }
+    .cardetailtopbody{
+        min-width: 300px;
+    }
+}
