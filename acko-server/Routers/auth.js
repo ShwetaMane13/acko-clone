@@ -6,7 +6,7 @@ const uuid = require("uuid").v4;
 
 const db = require("../database/connection");
 const User = require("../models/userSchema");
-const Cars = require("../models/carSchema");
+const Cars = require("../Models/carDetailsSchema");
 const CarPic = require("../models/carPicSchema");
 
 // car details
@@ -113,41 +113,6 @@ router.post("/checkout", (req, res) => {
   let error;
   let status;
   const key = uuid();
-  // try {
-  //   const { token, product } = req.body;
-  //   const customer = await stripe.customer.create({
-  //     email: token.email,
-  //     source: token.id,
-  //   });
-
-  //   const charge = await stripe.charges.create(
-  //     {
-  //       amount: product.price,
-  //       currency: "inr",
-  //       customer: customer.id,
-  //       receipt_email: token.email,
-  //       description: `Purchased the ${product.name}`,
-  //       shipping: {
-  //         name: token.card.name,
-  //         address: {
-  //           line1: token.card.address_line1,
-  //           line2: token.card.address_line2,
-  //           city: token.card.address_city,
-  //           country: token.card.address_country,
-  //           postal_code: token.card.address_zip,
-  //         },
-  //       },
-  //     },
-  //     {
-  //       key,
-  //     }
-  //   );
-  //   console.log("Charge:", { charge });
-  //   status = "success";
-  // } catch (error) {
-  //   console.error("Error:", error);
-  //   status = "failure";
-  // }
   const { token, product } = req.body;
   stripe.customers
     .create({
@@ -179,41 +144,6 @@ router.post("/checkout", (req, res) => {
           status = "failure";
         });
     });
-  // stripe.customers
-  //   .create({
-  //     email: token.email,
-  //     source: token.id,
-  //   })
-  //   .then((customer) =>
-  //     stripe.charges.create(
-  //       {
-  //         amount: product.price,
-  //         currency: "inr",
-  //         customer: customer.id,
-  //         receipt_email: token.email,
-  //         description: `Purchased the ${product.name}`,
-  //         shipping: {
-  //           name: token.card.name,
-  //           address: {
-  //             line1: token.card.address_line1,
-  //             line2: token.card.address_line2,
-  //             city: token.card.address_city,
-  //             country: token.card.address_country,
-  //             postal_code: token.card.address_zip,
-  //           },
-  //         },
-  //       },
-  //       {
-  //         key,
-  //       }
-  //     )
-  //   )
-  //   .then(() => {
-  //     status = "success";
-  //   })
-  //   .catch(() => {
-  //     status = "failure";
-  //   });
   return res.json({ status });
 });
 
