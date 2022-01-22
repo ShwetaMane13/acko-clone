@@ -9,12 +9,14 @@ import location from "../../ImageIcon/Location.svg";
 import phone from "../../ImageIcon/phone.svg";
 
 export const Dynamic = () => {
+  let abc = JSON.parse(localStorage.getItem("carType"));
+
   let obj = [
     {
       useofcar: localStorage.getItem("useofcar"),
       number: localStorage.getItem("carnumber"),
       pincode: localStorage.getItem("pincode"),
-      name: localStorage.getItem(""), //carname choosen from dropdown menu
+      name: abc.carname, //carname choosen from dropdown menu
       oddate: localStorage.getItem(""),
       tpdate: localStorage.getItem(""),
       year: localStorage.getItem("year"),

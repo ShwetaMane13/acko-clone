@@ -44,7 +44,7 @@ export const PolicyPlan = () => {
   })
   
 
-  const history = useNavigate()
+  // const history = useNavigate()
 
   const riskValues = {
     high: (carDetails.carValue * 0.294023904).toFixed(2),
@@ -228,6 +228,7 @@ export const PolicyPlan = () => {
               }}
             >
               <input
+                className={styles.plan_left_car_idv_slider_range}
                 min={riskValues.high}
                 max={riskValues.low}
                 onChange={handleSliderChange}
@@ -319,11 +320,13 @@ export const PolicyPlan = () => {
                       localStorage.setItem(
                         'currentActual',
                         (ownDamagePlan * 2.44301924).toFixed(0),
-                        localStorage.setItem(
-                          'ncbDiscount',
-                          ((carDetails.NCB / 100) * ownDamagePlan).toFixed(0),
-                        ),
                       )
+                      localStorage.setItem(
+                        'ncbDiscount',
+                        ((carDetails.NCB / 100) * ownDamagePlan).toFixed(0),
+                      )
+                      window.location.href =
+                        'http://localhost:3000/policyplan-details'
                     }}
                   >
                     Select
@@ -351,7 +354,7 @@ export const PolicyPlan = () => {
                     ₹ {smartSaverZeroDepreciationPlan} <span> + GST</span>
                   </div>
                   <div>
-                    ₹ {(smartSaverZeroDepreciationPlan * 2.0595).toFixed(0)}{' '}
+                    ₹ {(smartSaverZeroDepreciationPlan * 2.44301924).toFixed(0)}{' '}
                     <span> + GST</span>
                   </div>
                   <button
@@ -363,15 +366,19 @@ export const PolicyPlan = () => {
                       localStorage.setItem('currentIDV', insuredValue)
                       localStorage.setItem(
                         'currentActual',
-                        (smartSaverZeroDepreciationPlan * 2.0595).toFixed(0),
-                        localStorage.setItem(
-                          'ncbDiscount',
-                          (
-                            (carDetails.NCB / 100) *
-                            smartSaverZeroDepreciationPlan
-                          ).toFixed(0),
+                        (smartSaverZeroDepreciationPlan * 2.44301924).toFixed(
+                          0,
                         ),
                       )
+                      localStorage.setItem(
+                        'ncbDiscount',
+                        (
+                          (carDetails.NCB / 100) *
+                          smartSaverZeroDepreciationPlan
+                        ).toFixed(0),
+                      )
+                      window.location.href =
+                        'http://localhost:3000/policyplan-details'
                     }}
                   >
                     Select
@@ -398,7 +405,7 @@ export const PolicyPlan = () => {
                     ₹ {zeroDepreciationPlan} <span> + GST</span>
                   </div>
                   <div>
-                    ₹ {(zeroDepreciationPlan * 1.753569784).toFixed(0)}
+                    ₹ {(zeroDepreciationPlan * 2.44301924).toFixed(0)}
                     <span> + GST</span>
                   </div>
                   <button
@@ -410,15 +417,16 @@ export const PolicyPlan = () => {
                       localStorage.setItem('currentIDV', insuredValue)
                       localStorage.setItem(
                         'currentActual',
-                        (zeroDepreciationPlan * 1.753569784).toFixed(0),
-                        localStorage.setItem(
-                          'ncbDiscount',
-                          (
-                            (carDetails.NCB / 100) *
-                            zeroDepreciationPlan
-                          ).toFixed(0),
+                        (zeroDepreciationPlan * 2.44301924).toFixed(0),
+                      )
+                      localStorage.setItem(
+                        'ncbDiscount',
+                        ((carDetails.NCB / 100) * zeroDepreciationPlan).toFixed(
+                          0,
                         ),
                       )
+                      window.location.href =
+                        'http://localhost:3000/policyplan-details'
                     }}
                   >
                     Select

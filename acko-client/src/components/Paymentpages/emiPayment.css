@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.emi-payment-container {
+  width: 40%;
+}
+
+.emi-payment-button-wrapper {
+  width: 100%;
+  margin-top: 55px;
+}
+
+.emi-payment-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  outline: none;
+  border: none;
+}
+
+.emi-payment-button > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
