@@ -1,4 +1,11 @@
+import "../AdditionalDetails/AdditionalDetails.css"
+import "./FinalDetails.css"
+
 export const FinalDetails = () => {
+
+    let user = JSON.parse(localStorage.getItem("userDetails"));
+    console.log(user);
+
     return (
         <div className="main_div_final">
             <div className="left_div">
@@ -31,17 +38,17 @@ export const FinalDetails = () => {
 
                    <div className="cod_content top">
                        <p>Full Name (As per RC copy)</p>
-                       <p className="cod_rt">RAJINDER SINGH SAINI</p>
+                       <p className="cod_rt">{user.name}</p>
                    </div>
 
                    <div className="cod_content">
                        <p>Email</p>
-                       <p className="cod_rt">shwetam9769@gmail.com</p>
+                       <p className="cod_rt">{user.email}</p>
                    </div>
 
                    <div className="cod_content">
                        <p>Mobile</p>
-                       <p className="cod_rt">9769149372</p>
+                       <p className="cod_rt">{user.mobileNumber}</p>
                    </div>
                </div>
 
@@ -94,7 +101,7 @@ export const FinalDetails = () => {
                <hr className="cd_hr"/>
 
                <div className="wa_div">
-                    <img className="wa_img" src="https://img.icons8.com/ios/50/000000/whatsapp--v1.png"/>
+                    <img className="wa_img" src="https://img.icons8.com/ios/50/000000/whatsapp--v1.png" alt=""/>
                    <p className="wa_text">Get policy updates on WhatsApp</p>
                    <input className="wa_cb" type="checkbox" />
                </div>

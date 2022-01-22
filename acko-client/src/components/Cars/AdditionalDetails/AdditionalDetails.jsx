@@ -1,17 +1,82 @@
 import { useState } from "react"
+import "./AdditionalDetails.css"
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export const AdditionalDetails = () => {
 
     const [form, setForm] = useState({});
 
     const handleChange = ({target: {name, value}}) => {
-        console.log(name, value);
+        // console.log(name, value);
         setForm({...form, [name]:value})
     }
 
-    const handleClick = () => {
-        console.log(form)
+    const handleClick = (e) => {
+        e.preventDefault()
+        var email = new RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
+        var carNumber = new RegExp("^[A-Z|a-z]{2}([1-9]{1}|[0-9]{2})[A-Z|a-z]{0,2}[0-9]{4}$");
+
+        if(form.name.length < 5)
+        {
+            alert("Please enter correct Username");
+            return;
+        }
+        if(form.mobileNumber.length !== 10)
+        {
+            alert("Please enter correct Mobile Number");
+            return;
+        }
+        if(!email.test(form.email))
+        {
+            alert("Please enter correct Email");
+            return;
+        }
+        if(!carNumber.test(form.carNumber))
+        {
+            alert("Please enter correct Car Number");
+            return;
+        }
+
+       if(localStorage.getItem("userDetails") === null)
+       {
+           localStorage.setItem("userDetails", JSON.stringify());
+       }
+        localStorage.setItem("userDetails", JSON.stringify(form));
     }
+
+    // let pricingDeets = JSON.parse(localStorage.getItem(""));
+
+
+
+    let pricingDeets = {
+        "netPremium": "10028"
+    }
+
+    let total = +(pricingDeets.netPremium) + Math.floor(+(pricingDeets.netPremium)*0.18)
+
+    
+    pricingDeets = {...pricingDeets, "totalPrice": total.toString()}
+
+    console.log(pricingDeets)
+
+    let flag = 0;
+
+    const handleButton = (e) => {
+      e.preventDefault()
+        console.log(e.target.value);
+        if (flag === 1) {
+          //console.log("here");
+          e.target.parentElement.style.border = "none";
+          flag = 0;
+        } else {
+          flag = 1;
+          e.target.parentElement.style.border = "1px solid #8C76DF";
+          e.target.parentElement.style.width = "120px";
+          e.target.parentElement.style.borderRadius = "6px";
+    }
+}
+    
 
     const previousInsurer = ["Acko General Insurance", 
                              "Bajaj Allianz General Insurance Co. Ltd",
@@ -29,7 +94,7 @@ export const AdditionalDetails = () => {
            <div className="left_div">
                <hr className="tracker_hr"/>
                <div className="tracker_div">
-                   {/* <p>Enter Details</p> */}
+                  
                    <div className="tracker green">1</div>
                    <div className="tracker">2</div>
                    <div className="tracker">3</div>
@@ -57,8 +122,9 @@ export const AdditionalDetails = () => {
                            
                             <p className="email_info">Ensure you never miss out on important policy 
                                 updates by entering you most-used email</p>
+                            
                             {/* mobile number */}
-                            <input onChange={handleChange} type="number" name="mobileNumber" placeholder="Mobile Number" />
+                            <input onChange={handleChange} type="tel" name="mobileNumber" placeholder="Mobile Number" />
                             <p className="email_info">OTP will be sent to the given number</p>
                             
                             {/* car number */}
@@ -68,8 +134,8 @@ export const AdditionalDetails = () => {
                             <select onChange={handleChange} name="Previous Insurer" >
                                 <option value="#">Previous Insurer</option>
                                 {
-                                    previousInsurer.map((e) => {
-                                        return <option className="option" value="">{e}</option>
+                                    previousInsurer.map((e, i) => {
+                                        return <option key={i} className="option" value="">{e}</option>
                                     })
                                 }
                             </select>
@@ -78,8 +144,12 @@ export const AdditionalDetails = () => {
                             <p className="when">When should new policy start?</p>
                             
                             <div onChange={handleChange} className="when_input">
-                                <button className="button">Tomorrow</button>
-                                <button className="button choose_date">Choose Date</button>
+                              <div>
+                                <button onClick={handleButton} className="button">Tomorrow</button>
+                              </div>
+                              <DatePicker onChange = {handleButton} placeholderText="Choose Date" className="date_picker"/>
+                                {/* <button className="button choose_date">Choose Date</button>
+                              </DatePicker> */}
                             </div>
 
                             <div className="bottom_div">
@@ -153,17 +223,17 @@ export const AdditionalDetails = () => {
 
                         <div className="item">
                             <p>Net Premium</p>
-                            <p>0</p>
+                            <p>{+(pricingDeets.netPremium)}</p>
                         </div>
 
                         <div className="item gst">
                             <p>GST</p>
-                            <p>0</p>
+                            <p>{Math.floor(+(pricingDeets.netPremium)*0.18)}</p>
                         </div>
 
                         <div className="item total_div">
                             <p className="total_tag">Total</p>
-                            <p className="total_value">0</p>
+                            <p className="total_value">{total}</p>
                         </div>
                     </div>
                 </div>
