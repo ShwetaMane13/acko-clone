@@ -70,7 +70,7 @@ export const PolicyPlanDetails = () => {
             NCB: data.ncb,
             registrationMonthYear: data.month + ',' + data.year,
             pincode: data.pincode,
-            carValue: 12.55,
+            carValue: Number(localStorage.getItem('currentIDV')),
             mobile: data.mobile,
           })
         })
@@ -91,22 +91,11 @@ export const PolicyPlanDetails = () => {
 
   const handleSliderChange = (e) => {
     setInsuredValue(Number(e.target.value).toFixed(2))
+
     setOwnDamagePlan((insuredValue * 0.549322709 * 1000).toFixed(0))
-    setsmartSaverZeroDepreciationPlan(
-      (insuredValue * 0.7803984 * 1000).toFixed(0),
-    )
-    setzeroDepreciationPlan((insuredValue * 1.176494 * 1000).toFixed(0))
   }
   const [ownDamagePlan, setOwnDamagePlan] = useState(
     Number(localStorage.getItem('currentPremium')),
-  )
-
-  const [
-    smartSaverZeroDepreciationPlan,
-    setsmartSaverZeroDepreciationPlan,
-  ] = useState((insuredValue * 0.7803984 * 1000).toFixed(0))
-  const [zeroDepreciationPlan, setzeroDepreciationPlan] = useState(
-    (insuredValue * 1.176494 * 1000).toFixed(0),
   )
 
   const [added, setAdded] = useState(0)
@@ -116,20 +105,20 @@ export const PolicyPlanDetails = () => {
     setAdded((props) => Number(props) + Number(price))
   }
   totalPrice = +ownDamagePlan + +added
-  const sendData = () => {
-    //http://localhost:8080/user
-    axios
-      .post(`https://acko.herokuapp.com/user`, {
-        selectedPlan: 'Own Damage Plan',
-        mobile: carDetails.mobile,
-        premium: +ownDamagePlan + (ownDamagePlan * 20) / 80,
-        paCover: +added,
-        ncbDiscountAmount: (+ownDamagePlan * 20) / 80,
-      })
-      .then((res) => {
-        localStorage.setItem('ackoUserId', res.data._id)
-      })
-  }
+  // const sendData = () => {
+  //   //http://localhost:8080/user
+  //   axios
+  //     .post(`https://acko.herokuapp.com/user`, {
+  //       selectedPlan: 'Own Damage Plan',
+  //       mobile: carDetails.mobile,
+  //       premium: +ownDamagePlan + (ownDamagePlan * 20) / 80,
+  //       paCover: +added,
+  //       ncbDiscountAmount: (+ownDamagePlan * 20) / 80,
+  //     })
+  //     .then((res) => {
+  //       localStorage.setItem('ackoUserId', res.data._id)
+  //     })
+  //}
   return (
     <div className="App">
       <Header></Header>
@@ -159,7 +148,17 @@ export const PolicyPlanDetails = () => {
                   </span>
                 </div>
               </div>
-
+              <div className={styles.left_head_cont}>
+                {' '}
+                <div style={{ display: 'flex', color: '#8A909F' }}>
+                  {' '}
+                  {calendarSvg}{' '}
+                  <span className={styles.vehicle}>
+                    {' '}
+                    NCB - {carDetails.NCB}%{' '}
+                  </span>
+                </div>
+              </div>
               <div className={styles.left_head_cont}>
                 {' '}
                 <div style={{ display: 'flex', color: '#8A909F' }}>
@@ -371,12 +370,7 @@ export const PolicyPlanDetails = () => {
                 }
                 add={AdditionalCoverSelected}
               ></PolicyPlanSingle>
-              <div>
-                {/* <button>
-                  {' '}
-                  <span> 3 more covers</span> <span> ⌄</span>{' '}
-                </button> */}
-              </div>
+              <div></div>
               <div>
                 <div>
                   ₹{totalPrice} <span>+GST</span>
@@ -389,7 +383,18 @@ export const PolicyPlanDetails = () => {
                 <div>
                   <button
                     onClick={() => {
-                      sendData()
+                      // sendData()
+                      localStorage.setItem('currentPremium', totalPrice)
+                      localStorage.setItem('currentIDV', insuredValue)
+                      localStorage.setItem(
+                        'currentActual',
+                        (ownDamagePlan * 2.44301924).toFixed(0),
+                        localStorage.setItem(
+                          'ncbDiscount',
+                          ((carDetails.NCB / 100) * ownDamagePlan).toFixed(0),
+                        ),
+                      )
+                      localStorage.setItem('addOns', added)
                       history.push('./addtional-details')
                     }}
                   >

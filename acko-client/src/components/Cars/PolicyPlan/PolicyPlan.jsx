@@ -37,37 +37,35 @@ export const PolicyPlan = () => {
   const [carDetails, setCarDetails] = useState({
     liscencePlate: '',
     vehicleName: '',
-    NCB: '',
+    NCB: '50',
     registrationMonthYear: '',
     carValue: 12.55,
     pincode: '',
   })
-  useEffect(() => {
-    try {
-      let id = localStorage.getItem('ackoid')
-      //`http://localhost:8080/cars/${id}`
-      const res = axios
-        .get(`https://acko.herokuapp.com/cars/${id}`)
-        .then((res) => {
-          console.log(res.data)
-          data = res.data
-          console.log(data)
-          setCarDetails({
-            liscencePlate: data.number,
-            vehicleName: data.name,
-            NCB: data.ncb,
-            registrationMonthYear: data.month + ',' + data.year,
-            pincode: data.pincode,
-            carValue: 12.55,
-            mobile: data.mobile,
-          })
-        })
-    } catch (err) {
-      console.log(err.message)
-    }
-  }, [])
-
-  const pincode = 400607
+  // useEffect(() => {
+  //   try {
+  //     let id = localStorage.getItem('ackoid')
+  //     //`http://localhost:8080/cars/${id}`
+  //     // const res = axios
+  //     //   .get(`https://acko.herokuapp.com/cars/${id}`)
+  //     //   .then((res) => {
+  //     //     console.log(res.data)
+  //     //     data = res.data
+  //     //     console.log(data)
+  //     //     setCarDetails({
+  //     //       liscencePlate: data.number,
+  //     //       vehicleName: data.name,
+  //     //       NCB: data.ncb,
+  //     //       registrationMonthYear: data.month + ',' + data.year,
+  //     //       pincode: data.pincode,
+  //     //       carValue: 12.55,
+  //     //       mobile: data.mobile,
+  //     //     })
+  //     //   })
+  //   } catch (err) {
+  //     console.log(err.message)
+  //   }
+  // }, [])
 
   const history = useNavigate()
 
@@ -82,29 +80,31 @@ export const PolicyPlan = () => {
 
   const handleSliderChange = (e) => {
     setInsuredValue(Number(e.target.value).toFixed(2))
-    setOwnDamagePlan((insuredValue * 0.549322709 * 1000).toFixed(0))
-    setsmartSaverZeroDepreciationPlan(
-      (insuredValue * 0.7803984 * 1000).toFixed(0),
+    setOwnDamagePlan(
+      (insuredValue * 0.549322709 * 1000 - (carDetails.NCB + 5) / 100).toFixed(
+        0,
+      ),
     )
-    setzeroDepreciationPlan((insuredValue * 1.176494 * 1000).toFixed(0))
+    setsmartSaverZeroDepreciationPlan(
+      (insuredValue * 0.7803984 * 1000 - (carDetails.NCB + 5) / 100).toFixed(0),
+    )
+    setzeroDepreciationPlan(
+      (insuredValue * 1.176494 * 1000 - (carDetails.NCB + 5) / 100).toFixed(0),
+    )
   }
   const [ownDamagePlan, setOwnDamagePlan] = useState(
-    (insuredValue * 0.549322709 * 1000).toFixed(0),
+    (insuredValue * 0.549322709 * 1000 - (carDetails.NCB + 5) / 100).toFixed(0),
   )
 
   const [
     smartSaverZeroDepreciationPlan,
     setsmartSaverZeroDepreciationPlan,
-  ] = useState((insuredValue * 0.7803984 * 1000).toFixed(0))
-  const [zeroDepreciationPlan, setzeroDepreciationPlan] = useState(
-    (insuredValue * 1.176494 * 1000).toFixed(0),
+  ] = useState(
+    (insuredValue * 0.7803984 * 1000 - (carDetails.NCB + 5) / 100).toFixed(0),
   )
-
-  const handleSelectClick = () => {
-    localStorage.setItem('currentPremium', ownDamagePlan)
-    localStorage.setItem('currentIDV', insuredValue)
-    history.push('/additionalCovers')
-  }
+  const [zeroDepreciationPlan, setzeroDepreciationPlan] = useState(
+    (insuredValue * 1.176494 * 1000 - (carDetails.NCB + 5) / 100).toFixed(0),
+  )
 
   return (
     <div className="App">
@@ -121,6 +121,17 @@ export const PolicyPlan = () => {
                   <span className={styles.vehicle}>
                     {' '}
                     {carDetails.liscencePlate} {carDetails.vehicleName}
+                  </span>
+                </div>
+              </div>
+              <div className={styles.plan_main_cont_sub2}>
+                {' '}
+                <div style={{ display: 'flex', color: '#8A909F' }}>
+                  {' '}
+                  {calendarSvg}{' '}
+                  <span className={styles.vehicle}>
+                    {' '}
+                    NCB - {carDetails.NCB}%{' '}
                   </span>
                 </div>
               </div>
@@ -324,7 +335,22 @@ export const PolicyPlan = () => {
                     ₹ {(ownDamagePlan * 2.44301924).toFixed(0)}{' '}
                     <span> + GST</span>
                   </div>
-                  <button onClick={handleSelectClick}>Select</button>
+                  <button
+                    onClick={() => {
+                      localStorage.setItem('currentPremium', ownDamagePlan)
+                      localStorage.setItem('currentIDV', insuredValue)
+                      localStorage.setItem(
+                        'currentActual',
+                        (ownDamagePlan * 2.44301924).toFixed(0),
+                        localStorage.setItem(
+                          'ncbDiscount',
+                          ((carDetails.NCB / 100) * ownDamagePlan).toFixed(0),
+                        ),
+                      )
+                    }}
+                  >
+                    Select
+                  </button>
                 </div>
               </div>
             </div>
@@ -348,9 +374,31 @@ export const PolicyPlan = () => {
                     ₹ {smartSaverZeroDepreciationPlan} <span> + GST</span>
                   </div>
                   <div>
-                    ₹ {(ownDamagePlan * 2.0595).toFixed(0)} <span> + GST</span>
+                    ₹ {(smartSaverZeroDepreciationPlan * 2.0595).toFixed(0)}{' '}
+                    <span> + GST</span>
                   </div>
-                  <button>Select</button>
+                  <button
+                    onClick={() => {
+                      localStorage.setItem(
+                        'currentPremium',
+                        smartSaverZeroDepreciationPlan,
+                      )
+                      localStorage.setItem('currentIDV', insuredValue)
+                      localStorage.setItem(
+                        'currentActual',
+                        (smartSaverZeroDepreciationPlan * 2.0595).toFixed(0),
+                        localStorage.setItem(
+                          'ncbDiscount',
+                          (
+                            (carDetails.NCB / 100) *
+                            smartSaverZeroDepreciationPlan
+                          ).toFixed(0),
+                        ),
+                      )
+                    }}
+                  >
+                    Select
+                  </button>
                 </div>
               </div>
             </div>
@@ -376,7 +424,28 @@ export const PolicyPlan = () => {
                     ₹ {(zeroDepreciationPlan * 1.753569784).toFixed(0)}
                     <span> + GST</span>
                   </div>
-                  <button>Select</button>
+                  <button
+                    onClick={() => {
+                      localStorage.setItem(
+                        'currentPremium',
+                        zeroDepreciationPlan,
+                      )
+                      localStorage.setItem('currentIDV', insuredValue)
+                      localStorage.setItem(
+                        'currentActual',
+                        (zeroDepreciationPlan * 1.753569784).toFixed(0),
+                        localStorage.setItem(
+                          'ncbDiscount',
+                          (
+                            (carDetails.NCB / 100) *
+                            zeroDepreciationPlan
+                          ).toFixed(0),
+                        ),
+                      )
+                    }}
+                  >
+                    Select
+                  </button>
                 </div>
               </div>
             </div>
