@@ -17,14 +17,10 @@ import {
   personalAccidentSvg,
 } from './assets/svgs'
 import { images } from './assets/imgs'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { PolicyPlanSingle } from './PolicyPlanSingle'
-import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
 
 const Container = styled.div`
-  //background-color: green;
-  //height: 400px;
   width: 65%;
   margin: auto;
   margin-top: 64px;
@@ -38,48 +34,24 @@ const InContleft = styled.div`
 `
 const InContright = styled.div`
   background-color: #ffffff;
-  // height: 400px;
+
   width: 55%;
   box-shadow: rgb(0 0 0 / 25%) 0px 3px 20px;
   border: 1px solid #dcdee9;
 `
 
 export const PolicyPlanDetails = () => {
-  var data
-  const [carDetails, setCarDetails] = useState({
+  const carDetails = {
     liscencePlate: '',
-    vehicleName: '',
-    NCB: '',
-    registrationMonthYear: '',
-    pincode: '',
+    vehicleName: JSON.parse(localStorage.getItem('carType')),
+    NCB: JSON.parse(localStorage.getItem('ncb')),
+    registrationMonthYear: `${JSON.parse(
+      localStorage.getItem('month'),
+    )} ${JSON.parse(localStorage.getItem('year'))}`,
+    pincode: JSON.parse(localStorage.getItem('pincode')),
     carValue: 12.55,
-  })
-  useEffect(() => {
-    try {
-      let id = localStorage.getItem('ackoid')
-      //http://localhost:8080/cars/${id}
-      const res = axios
-        .get(`https://acko.herokuapp.com/cars/${id}`)
-        .then((res) => {
-          console.log(res.data)
-          data = res.data
-          console.log(data)
-          setCarDetails({
-            liscencePlate: data.number,
-            vehicleName: data.name,
-            NCB: data.ncb,
-            registrationMonthYear: data.month + ',' + data.year,
-            pincode: data.pincode,
-            carValue: Number(localStorage.getItem('currentIDV')),
-            mobile: data.mobile,
-          })
-        })
-    } catch (err) {
-      console.log(err.message)
-    }
-  }, [])
+  }
 
-  const history = useNavigate()
   const riskValues = {
     high: (carDetails.carValue * 0.294023904).toFixed(2),
     low: carDetails.carValue.toFixed(2),
@@ -131,7 +103,7 @@ export const PolicyPlanDetails = () => {
                   {carSvg}{' '}
                   <span className={styles.vehicle}>
                     {' '}
-                    {carDetails.liscencePlate} {carDetails.vehicleName}
+                    {carDetails.liscencePlate} {carDetails.vehicleName.carName}
                   </span>
                 </div>
               </div>
@@ -168,9 +140,7 @@ export const PolicyPlanDetails = () => {
             </div>
             <div>
               <div className={styles.editLink}>
-                <a href="" style={{ textDecoration: 'none' }}>
-                  <span style={{ color: '#528ae2' }}> Edit</span>{' '}
-                </a>
+                <span style={{ color: '#528ae2' }}> Edit</span>
               </div>
               <div>
                 <img
@@ -224,7 +194,6 @@ export const PolicyPlanDetails = () => {
               <div> Insured Declared Value (IDV) ₹{insuredValue}L</div>
               <div>Amount you will recieve in case of total damage/theft</div>
 
-              
               <div style={{ display: 'flex' }}>{/*  */}</div>
               <div style={{ display: 'flex' }}>
                 <span
@@ -279,7 +248,7 @@ export const PolicyPlanDetails = () => {
 
               <div
                 style={{
-                  height: '16px',
+                  height: '47px',
                   marginTop: '8px',
                 }}
               >
@@ -370,7 +339,6 @@ export const PolicyPlanDetails = () => {
                 <div>
                   <button
                     onClick={() => {
-                      // sendData()
                       localStorage.setItem('currentPremium', totalPrice)
                       localStorage.setItem('currentIDV', insuredValue)
                       localStorage.setItem(

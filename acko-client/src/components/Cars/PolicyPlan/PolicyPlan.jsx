@@ -4,14 +4,9 @@ import styles from './policyPlan.module.css'
 import recommended from './assets/recommended.svg'
 import { calendarSvg, carSvg, emiSvg, mapSvg, needHelpSvg } from './assets/svgs'
 import { images } from './assets/imgs'
-import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
-// import Cardetail from '../Cars/Cardetail/Cardetail'
+import { useState } from 'react'
 
 const Container = styled.div`
-  //background-color: green;
-  //height: 400px;
   width: 65%;
   margin: auto;
   margin-top: 64px;
@@ -25,26 +20,24 @@ const InContleft = styled.div`
 `
 const InContright = styled.div`
   background-color: #ffffff;
-  // height: 400px;
+
   width: 55%;
   box-shadow: rgb(0 0 0 / 25%) 0px 3px 20px;
-  // margin-left: 10.9%;
+
   border: 1px solid #dcdee9;
 `
 
 export const PolicyPlan = () => {
-  var data
-  const [carDetails, setCarDetails] = useState({
-    liscencePlate: '',
-    vehicleName: '',
-    NCB: '50',
-    registrationMonthYear: '',
+  const carDetails = {
+    liscencePlate: 'kl71',
+    vehicleName: JSON.parse(localStorage.getItem('carType')),
+    NCB: JSON.parse(localStorage.getItem('ncb')),
+    registrationMonthYear: `${JSON.parse(
+      localStorage.getItem('month'),
+    )} ${JSON.parse(localStorage.getItem('year'))}`,
     carValue: 12.55,
-    pincode: '',
-  })
-  
-
-  // const history = useNavigate()
+    pincode: JSON.parse(localStorage.getItem('pincode')),
+  }
 
   const riskValues = {
     high: (carDetails.carValue * 0.294023904).toFixed(2),
@@ -97,7 +90,7 @@ export const PolicyPlan = () => {
                   {carSvg}{' '}
                   <span className={styles.vehicle}>
                     {' '}
-                    {carDetails.liscencePlate} {carDetails.vehicleName}
+                    {carDetails.liscencePlate} {carDetails.vehicleName.carName}
                   </span>
                 </div>
               </div>
@@ -135,9 +128,7 @@ export const PolicyPlan = () => {
             </div>
             <div>
               <div className={styles.editLink}>
-                <a href="" style={{ textDecoration: 'none' }}>
-                  <span style={{ color: '#528ae2' }}> Edit</span>{' '}
-                </a>
+                <span style={{ color: '#528ae2' }}> Edit</span>{' '}
               </div>
               <div>
                 <img
@@ -221,7 +212,7 @@ export const PolicyPlan = () => {
             </div>
             <div
               style={{
-                height: '16px',
+                height: '42px',
                 marginLeft: '16px',
                 marginRight: '32px',
                 marginTop: '8px',
@@ -287,7 +278,7 @@ export const PolicyPlan = () => {
         <InContright>
           <div className={styles.insideContRight}>
             <div className={styles.insideContRight_plan}>
-              <div>3 Plans for your Ecosport</div>
+              <div>3 Plans for your {carDetails.vehicleName.carName}</div>
               <div>
                 {' '}
                 <span className={styles.insideContRight_plan_emi}>
