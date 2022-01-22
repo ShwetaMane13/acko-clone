@@ -395,7 +395,8 @@ export const PolicyPlanDetails = () => {
                         ),
                       )
                       localStorage.setItem('addOns', added)
-                      history.push('./addtional-details')
+                      window.location.href =
+                        'http://localhost:3000/additionaldetails'
                     }}
                   >
                     Buy Now
