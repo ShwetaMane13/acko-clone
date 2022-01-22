@@ -4,6 +4,7 @@ import { CarPincodePage } from "../components/Cars/CarsPincode/CarsPincodePage";
 import { CurrentPolicyPage } from "../components/Cars/CurrentPolicy/CurrentPolicyPage";
 import { ExpiryDatePage } from "../components/Cars/ExpiryDate/ExpiryDatePage";
 import { LastPolicyPage } from "../components/Cars/LastPolicy/LastPolicyPage";
+
 import { NumberPlatePage } from "../components/Cars/NumberPlate/NumberPlatePage";
 import { PolicyExpiringPage } from "../components/Cars/Policyexpiring/PolicyExpiringPage";
 import { MonthPurchasePage } from "../components/Cars/MonthOfPurchase/MonthPurchasePage";
@@ -39,6 +40,7 @@ const Routepage = () => {
       <Route path="/additionaldetails" element={<AdditionalDetails />}></Route>
       <Route path="/finaldetails" element={<FinalDetails />}></Route>
       <Route path="/payment" element={<Payment />}></Route>
+
     </Routes>
   );
 };

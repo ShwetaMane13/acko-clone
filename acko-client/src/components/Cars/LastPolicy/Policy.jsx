@@ -5,6 +5,8 @@ import "./policy.css";
 export const Policy = () => {
   let flag = 0;
   const handleClick = (e) => {
+
+    
     if (flag === 1) {
       
       e.target.parentElement.style.border = "none";
@@ -18,6 +20,7 @@ export const Policy = () => {
 
   const setitem = (e) => {
     localStorage.setItem("ncb", e);
+    window.location.href="http://localhost:3000/car/policy-plan"
     if (e === "0") {
       console.log("add navigate here");
     }
