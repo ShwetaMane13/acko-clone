@@ -1,12 +1,17 @@
 import "./App.css";
 
-import { Home } from "./components/Homepage/Home";
+import Routepage from "./Routes/Routes";
 
 function App() {
-  return <div>
-    <Home />
+  console.log("hello");
+  return (
+    <div>
+      <Routepage />
+    </div>
+  );
 
-  </div>;
+
+
 }
 
 export default App

@@ -1,0 +1,56 @@
+.yearbody {
+  /* border: 1px solid black; */
+  max-width: 800px;
+  margin-top: -30px;
+}
+
+.yearbody p {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 28px;
+  color: #000000;
+}
+
+.yearflexdiv {
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px; */
+  display: grid;
+  grid-template-columns: repeat(4, 22%);
+  grid-gap: 10%;
+  margin-top: 10px;
+}
+
+.yearflexdiv > div {
+  background: #f4f7fe;
+  border-radius: 10px;
+  width: 100px;
+  height: 42px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.yearflexdiv button {
+  border: none;
+  width: 100px;
+  height: 42px;
+  border-radius: 10px;
+  background: #f4f7fe;
+  cursor: pointer;
+  color: rgb(85, 90, 104);
+}
+.active {
+  color: red;
+  background-color: #000000;
+}
+.yearflexdiv > div :hover {
+  color: #522ed3;
+}
+
+@media only screen and (max-width: 800px) {
+  .yearbody {
+    min-width: 300px;
+  }
+}
