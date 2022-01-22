@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.netbanking-payment-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 25px 0;
+}
+
+.netbanking-payment-options {
+  display: flex;
+  gap: 15px;
+}
+
+.netbanking-payment-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 55px;
+  height: 55px;
+}
+
+.netbanking-payment-type > p {
+  color: #3a3a3a;
+  font-size: 14px;
+}
+
+.netbanking-payment-type img {
+  width: 30px;
+  height: 30px;
+}
+
+.netbanking-payment-search {
+  width: 100%;
+}
+
+.netbanking-payment-search-wrapper {
+  border: 1px solid grey;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.netbanking-payment-search-wrapper:focus-within {
+  border: 1px solid blueviolet;
+}
+
+.netbanking-payment-search-wrapper input {
+  width: 85%;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(43, 43, 43);
+}
+
+.netbanking-payment-search-wrapper ::placeholder {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(179, 179, 179);
+}
+
+.netbanking-payment-bank-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  height: 310px;
+  overflow-y: scroll;
+}
+
+.netbanking-payment-bank-list-wrapper {
+  border-top: 1.5px solid rgb(204, 204, 204);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  padding-top: 8px;
+  color: rgb(70, 70, 70);
+}
+
+.netbanking-payment-bank-list-wrapper > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.netbanking-payment-bank-list-wrapper > div img {
+  width: 30px;
+  height: 30px;
+}

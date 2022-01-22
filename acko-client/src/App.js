@@ -1,5 +1,6 @@
 import "./App.css";
 
+
 import Routepage from "./Routes/Routes";
 
 function App() {
@@ -11,7 +12,6 @@ function App() {
   );
 
 
-
 }
 
-export default App
+export default App;

@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.billing-summery-container {
+  height: 210px;
+  width: 22%;
+  background-color: rgb(241, 241, 241);
+  border-radius: 10px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.billing-summery-section1 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.billing-summery-section2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.font-size-12 {
+  font-size: 12px;
+}
+
+.font-size-14 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.rupee-symbol-alighn {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.billing-summery-section2-subsec1 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.billing-summery-section2-subsec2 {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.billing-summery-section3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+hr {
+  border: 0;
+  border-bottom: 0.5px solid rgb(255, 255, 255);
+}

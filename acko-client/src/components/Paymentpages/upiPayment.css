@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.upi-payment-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.upi-payment-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.upi-payment-heading > p {
+  color: rgb(148, 148, 148);
+  font-size: 14px;
+}
+
+.upi-payment-qr-button-wrapper {
+  width: 100%;
+  margin: 50px 0;
+}
+
+.upi-payment-qr-button {
+  width: 100%;
+  background-color: #5a68e7;
+  height: 45px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.upi-payment-subheading {
+  margin-bottom: 30px;
+}
+
+.upi-payment-vpa-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.upi-payment-vpa-wrapper > label {
+  color: rgb(170, 170, 170);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.upi-payment-vpa-wrapper > input {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 22px 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.upi-payment-vpa-wrapper ::placeholder {
+  color: rgb(211, 211, 211);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.upi-payment-vpa-wrapper > input:focus {
+  border: 1px solid #5a68e7;
+}
+
+.upi-payment-vpa-wrapper > p {
+  font-size: 12px;
+  color: rgb(170, 170, 170);
+}
+
+.upi-payment-pay-now-button {
+  width: 100%;
+  background-color: rgb(218, 218, 218);
+  height: 45px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
