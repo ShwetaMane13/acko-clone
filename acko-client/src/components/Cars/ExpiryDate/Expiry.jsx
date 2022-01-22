@@ -4,7 +4,6 @@ import calender from "../../ImageIcon/Calender.svg";
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
-import axios from "axios"
 import {Link} from "react-router-dom"
 
 function Expiry() {
@@ -87,7 +86,10 @@ function Expiry() {
                 oddate: od,
               };
               if(data.oddate.length&&data.tpdate.length<16){
-              localStorage.setItem("expiryDate",JSON.stringify(data));}
+              localStorage.setItem("expiryDate",JSON.stringify(data));
+               window.location.href="http://localhost:3000/car/last-policy"
+
+             }
               else{
                   alert("Please select correct date");
               }

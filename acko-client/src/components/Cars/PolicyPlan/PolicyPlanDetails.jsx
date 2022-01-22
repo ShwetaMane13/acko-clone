@@ -105,20 +105,7 @@ export const PolicyPlanDetails = () => {
     setAdded((props) => Number(props) + Number(price))
   }
   totalPrice = +ownDamagePlan + +added
-  // const sendData = () => {
-  //   //http://localhost:8080/user
-  //   axios
-  //     .post(`https://acko.herokuapp.com/user`, {
-  //       selectedPlan: 'Own Damage Plan',
-  //       mobile: carDetails.mobile,
-  //       premium: +ownDamagePlan + (ownDamagePlan * 20) / 80,
-  //       paCover: +added,
-  //       ncbDiscountAmount: (+ownDamagePlan * 20) / 80,
-  //     })
-  //     .then((res) => {
-  //       localStorage.setItem('ackoUserId', res.data._id)
-  //     })
-  //}
+
   return (
     <div className="App">
       <Header></Header>
@@ -237,7 +224,7 @@ export const PolicyPlanDetails = () => {
               <div> Insured Declared Value (IDV) ₹{insuredValue}L</div>
               <div>Amount you will recieve in case of total damage/theft</div>
 
-              {/* <div className={styles.fontType}> */}
+              
               <div style={{ display: 'flex' }}>{/*  */}</div>
               <div style={{ display: 'flex' }}>
                 <span

@@ -6,7 +6,7 @@ export const YearPurchase = () => {
   const handleClick = (e) => {
     console.log(e.target.value);
     if (flag === 1) {
-      //console.log("here");
+
       e.target.parentElement.style.border = "none";
       flag = 0;
     } else {
@@ -14,6 +14,8 @@ export const YearPurchase = () => {
       e.target.parentElement.style.border = "1px solid #8C76DF";
     }
     localStorage.setItem("year", e.target.value);
+
+    window.location.href = "http://localhost:3000/car/month-purchase";
   };
   return (
     <div className="yearbody">

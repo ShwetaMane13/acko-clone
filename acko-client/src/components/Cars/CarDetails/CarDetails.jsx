@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from "react";
 import "./CarDetails.css";
 import buttonpen from "../../ImageIcon/Button pen.svg";
-// import ecosport from "./Eco sport.svg";
+
 
 import carwithstar from "../../ImageIcon/Car with star.svg";
 import axios from "axios";
@@ -14,7 +14,7 @@ function CarDetail() {
 
   const [dat,setDat]=useState("")
 
-  const id = localStorage.getItem("ackoid");
+  
 
  useEffect(() => {
    getData();
@@ -22,7 +22,7 @@ function CarDetail() {
  
  const getData =  () => {
   
-//    setDat(data);
+  
  };
 
   return (
@@ -33,7 +33,7 @@ function CarDetail() {
           >
             Here's your car.
           </div>
-          {/* car number */}
+         
           <div
             className="innerCarDiv2"
           >
@@ -41,14 +41,14 @@ function CarDetail() {
           </div>
 
           <div className="editflexdiv">
-            {/* car Name */}
+         
             <p>{dat.name}</p>
-            <Link to="/cars/cartype" >
+           
              
               <img className="imgCar1" src={buttonpen} alt="" />
-            </Link>
+        
           </div>
-          {/* car detail */}
+         
           <p className="innerCarPara">
             {dat.gear}-{dat.fuel}
           </p>
@@ -110,8 +110,8 @@ function CarDetail() {
                 mobile: mobile,
               };
               if((data.cngkit.length!==0)&&(data.mobile.length===10)){
-                localStorage.setItem("carDeatl",JSON.stringify(data));
-            
+                localStorage.setItem("carDetails",JSON.stringify(data));
+                window.location.href="http://localhost:3000/car/car-policy"
             }
                 else{
                    
