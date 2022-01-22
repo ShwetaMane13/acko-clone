@@ -17,6 +17,7 @@ import { PolicyPlanDetails } from "../components/Cars/PolicyPlan/PolicyPlanDetai
 import { AdditionalDetails } from "../components/Cars/AdditionalDetails/AdditionalDetails";
 import { FinalDetails } from "../components/Cars/FinalDetails/FinalDetails";
 import Payment from "../components/Paymentpages/Payment";
+import { CarDetailPage } from "../components/Cars/CarDetails/CarDetailPage";
 const Routepage = () => {
   return (
     <Routes>
@@ -28,6 +29,7 @@ const Routepage = () => {
       <Route path="/car/last-policy" element={<LastPolicyPage />}></Route>
       <Route path="/car/month-purchase" element={<MonthPurchasePage />}></Route>
       <Route path="/car/car-plate" element={<NumberPlatePage />}></Route>
+      <Route path="/car/car-details" element={<CarDetailPage />}></Route>
       <Route path="/car/policy-expire" element={<PolicyExpiringPage />}></Route>
       <Route path="/car/car-use" element={<UseofCarPage />}></Route>
       <Route
@@ -40,7 +42,6 @@ const Routepage = () => {
       <Route path="/additionaldetails" element={<AdditionalDetails />}></Route>
       <Route path="/finaldetails" element={<FinalDetails />}></Route>
       <Route path="/payment" element={<Payment />}></Route>
-
     </Routes>
   );
 };

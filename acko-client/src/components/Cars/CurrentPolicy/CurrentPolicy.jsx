@@ -5,7 +5,6 @@ export const CurrentPolicy = () => {
   let flag = 0;
   const handleClick = (e) => {
     if (flag === 1) {
-  
       e.target.parentElement.style.border = "none";
       flag = 0;
     } else {
@@ -15,19 +14,13 @@ export const CurrentPolicy = () => {
   };
 
   const setitem = (e) => {
-    localStorage.setItem("currentpolicy", e);
-    
+    localStorage.setItem("currentpolicy", JSON.stringify(e));
+
     if (e === "expired") {
-  
-      window.location.href="http://localhost:3000/car/when-policy-expired"
-      
+      window.location.href = "http://localhost:3000/car/when-policy-expired";
     } else {
-     
-      window.location.href="http://localhost:3000/car/policy-expire"
-
-
+      window.location.href = "http://localhost:3000/car/policy-expire";
     }
-
   };
 
   return (

@@ -4,14 +4,12 @@ import "../LastPolicy/policy.css";
 export const Policyexpirirng = () => {
   let flag = 0;
   const handleClick = (e) => {
-    localStorage.setItem("PolicyExpiringTime",e.target.value);
-    window.location.href="http://localhost:3000/car/expiry-date"
+    localStorage.setItem("PolicyExpiringTime", JSON.stringify(e.target.value));
+    window.location.href = "http://localhost:3000/car/expiry-date";
     if (flag === 1) {
-    
       e.target.parentElement.style.border = "none";
       flag = 0;
     } else {
- 
       flag = 1;
       e.target.parentElement.style.border = "1px solid #8C76DF";
     }
@@ -21,16 +19,24 @@ export const Policyexpirirng = () => {
       <div className="policyperiod">When is your policy expiring?</div>
       <div style={{ marginTop: "40px" }} className="policygrid">
         <div>
-          <button value="Today or Tommorow" onClick={handleClick}>Today or tomorrow</button>
+          <button value="Today or Tommorow" onClick={handleClick}>
+            Today or tomorrow
+          </button>
         </div>
         <div>
-          <button value="Within next 7 days" onClick={handleClick}>Within the next 7 days</button>
+          <button value="Within next 7 days" onClick={handleClick}>
+            Within the next 7 days
+          </button>
         </div>
         <div>
-          <button value="within next 30 days" onClick={handleClick}>Within the next 30 days</button>
+          <button value="within next 30 days" onClick={handleClick}>
+            Within the next 30 days
+          </button>
         </div>
         <div>
-          <button value="After one month"  onClick={handleClick}>After 30 days</button>
+          <button value="After one month" onClick={handleClick}>
+            After 30 days
+          </button>
         </div>
       </div>
       <div className="policyflexdiv">
