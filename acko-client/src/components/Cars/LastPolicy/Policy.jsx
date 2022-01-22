@@ -6,7 +6,6 @@ export const Policy = () => {
   let flag = 0;
   const handleClick = (e) => {
     if (flag === 1) {
-      
       e.target.parentElement.style.border = "none";
       flag = 0;
     } else {
@@ -17,8 +16,9 @@ export const Policy = () => {
   };
 
   const setitem = (e) => {
-    localStorage.setItem("ncb", e);
+    localStorage.setItem("ncb", JSON.stringify(e));
     if (e === "0") {
+      window.location.href = "http://localhost:3000/policyplan";
       console.log("add navigate here");
     }
   };

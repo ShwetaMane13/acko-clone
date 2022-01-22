@@ -5,7 +5,6 @@ export const MonthPurchase = () => {
   let flag = 0;
   const handleClick = (e) => {
     if (flag === 1) {
-      //console.log("here");
       e.target.parentElement.style.border = "none";
       flag = 0;
     } else {
@@ -13,7 +12,8 @@ export const MonthPurchase = () => {
       flag = 1;
       e.target.parentElement.style.border = "1px solid #8C76DF";
     }
-    localStorage.setItem("month", e.target.value);
+    localStorage.setItem("month", JSON.stringify(e.target.value));
+    window.location.href = "http://localhost:3000/car/car-type";
   };
 
   return (
