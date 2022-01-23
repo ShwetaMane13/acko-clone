@@ -3,11 +3,21 @@ import CurrencyRupeeOutlinedIcon from "@mui/icons-material/CurrencyRupeeOutlined
 import "./bilingSummery.css";
 
 export default function BilingSummery() {
+  let carnumber = JSON.parse(localStorage.getItem("carnumber")) || 0;
+  let details = JSON.parse(localStorage.getItem("carDetails")) || 0;
+  let mobileno = details.mobile || 0;
+  let cartype = JSON.parse(localStorage.getItem("carType")) || 0;
+  let model = cartype.carName || 0;
+  let fuel = cartype.fuelType || 0;
+  let total = JSON.parse(localStorage.getItem("total")) || 0;
+  let pincode = JSON.parse(localStorage.getItem("pincode")) || 0;
+  let year = JSON.parse(localStorage.getItem("year")) || 0;
+  let month = JSON.parse(localStorage.getItem("month")) || 0;
   return (
     <div className="billing-summery-container">
       <div className="billing-summery-section1">
         <p className="font-size-14">Policy update</p>
-        <p className="font-size-12">Honda City 1.5 V</p>
+        <p className="font-size-12">{model}</p>
       </div>
       <hr />
       <div className="billing-summery-section2 font-size-12">
@@ -21,14 +31,14 @@ export default function BilingSummery() {
               fontSize="small"
               style={{ fontSize: "12px" }}
             />
-            <p>20115</p>
+            <p>{total}</p>
           </div>
           <div className="rupee-symbol-alighn">
             <CurrencyRupeeOutlinedIcon
               fontSize="small"
               style={{ fontSize: "12px" }}
             />
-            <p>3621</p>
+            <p>{(total * 18) / 100}</p>
           </div>
         </div>
       </div>
@@ -40,7 +50,7 @@ export default function BilingSummery() {
             fontSize="small"
             style={{ fontSize: "16px" }}
           />
-          <p>23432</p>
+          <p>{total + (total * 18) / 100}</p>
         </div>
       </div>
     </div>
