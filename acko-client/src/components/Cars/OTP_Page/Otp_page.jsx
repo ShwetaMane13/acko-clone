@@ -1,13 +1,46 @@
 import React from "react";
 import Header from "../../Headers/Hearder";
 import "./otppage.css";
+import axios from "axios";
 
 export const Otppage = () => {
   const [otp, setOtp] = React.useState(new Array(6).fill(""));
 
-  const handleClick = () => {
-    console.log(otp);
+  const handleClick = async () => {
+    let r = await fetch("https://ackoclone.herokuapp.com/signup/verifyotp", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        number,
+        otp,
+      }),
+    });
+    let da = await r.json();
+    console.log("da:", da);
   };
+
+  let data = JSON.parse(localStorage.getItem("userDetails"));
+
+  let number = data.mobileNumber;
+
+  async function postrequest() {
+    let res = await fetch("https://ackoclone.herokuapp.com/signup/genotp", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ number }),
+    });
+    console.log("here");
+    let d = await res.json();
+    console.log("d:", d);
+  }
+
+  React.useEffect(() => {
+    postrequest();
+  }, []);
 
   return (
     <div>
