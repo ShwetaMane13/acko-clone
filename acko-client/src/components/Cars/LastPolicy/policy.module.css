@@ -15,19 +15,16 @@ button {
 }
 .policygrid {
   display: grid;
-  grid-template-columns: repeat(2, 20%);
+  grid-template-columns: repeat(2, 70%);
   grid-gap: 10%;
-  margin-left: -250px;
+  margin-left: 0px;
   border-radius: 10px;
 }
 
-.policygrid div {
-  border-radius: 10px;
-}
-
-.policygrid button {
+.policygrid > button {
   border-radius: 10px;
   width: 150px;
+  margin-left: 20px;
 }
 
 .policyflexdiv {
