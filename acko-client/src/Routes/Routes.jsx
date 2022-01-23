@@ -19,6 +19,7 @@ import { FinalDetails } from "../components/Cars/FinalDetails/FinalDetails";
 import Payment from "../components/Paymentpages/Payment";
 import { CarDetailPage } from "../components/Cars/CarDetails/CarDetailPage";
 import { Otppage } from "../components/Cars/OTP_Page/Otp_page";
+import { Paymentsuccessful } from "../components/PaymentSuccessful/Paymentsuccessful";
 const Routepage = () => {
   return (
     <Routes>
@@ -44,6 +45,7 @@ const Routepage = () => {
       <Route path="/otppage" element={<Otppage />}></Route>
       <Route path="/finaldetails" element={<FinalDetails />}></Route>
       <Route path="/payment" element={<Payment />}></Route>
+      <Route path="/successful" element={<Paymentsuccessful />}></Route>
     </Routes>
   );
 };
