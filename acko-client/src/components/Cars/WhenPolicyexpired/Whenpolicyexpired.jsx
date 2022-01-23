@@ -10,21 +10,17 @@ export const WhenPolicyexpired = () => {
     <div className={style.policybody}>
       <div className={style.policyperiod}>When did your policy expire?</div>
       <div style={{ marginTop: "40px" }} className={style.policygrid}>
-        <div>
-          <button value="Less than 10 days ago" onClick={handleClick}>
-            Less than 10 days ago
-          </button>
-        </div>
-        <div>
-          <button value="Between 10 to 90 days" onClick={handleClick}>
-            Between 10 to 90 days
-          </button>
-        </div>
-        <div>
-          <button value="More than 90 days ago" onClick={handleClick}>
-            More than 90 days ago
-          </button>
-        </div>
+        <button value="Less than 10 days ago" onClick={handleClick}>
+          Less than 10 days ago
+        </button>
+
+        <button value="Between 10 to 90 days" onClick={handleClick}>
+          Between 10 to 90 days
+        </button>
+
+        <button value="More than 90 days ago" onClick={handleClick}>
+          More than 90 days ago
+        </button>
       </div>
       <div className={style.policyflexdiv}>
         <svg width="34" height="27" viewBox="0 0 34 27" fill="none">

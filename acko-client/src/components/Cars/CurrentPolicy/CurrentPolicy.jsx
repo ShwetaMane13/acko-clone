@@ -16,12 +16,13 @@ export const CurrentPolicy = () => {
     <div className={style.policybody}>
       <div className={style.policyperiod}>Has your current policy expired?</div>
       <div style={{ marginTop: "40px" }} className={style.policygrid}>
-        <div onClick={() => setitem("notexpired")}>
-          <button>Policy not Expired</button>
-        </div>
-        <div onClick={() => setitem("expired")}>
-          <button>Policy already Expired</button>
-        </div>
+        <button onClick={() => setitem("notexpired")}>
+          Policy not Expired
+        </button>
+
+        <button onClick={() => setitem("expired")}>
+          Policy already Expired
+        </button>
       </div>
       <div className={style.policyflexdiv}>
         <svg width="38" height="36" viewBox="0 0 38 36" fill="none">
