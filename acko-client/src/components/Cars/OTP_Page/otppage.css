@@ -52,10 +52,13 @@
 }
 
 .otp input {
-  margin-left: 5px;
+  margin-left: 120px;
 }
 
 button {
   width: 100px;
   margin: 10px 10px 0px 280px;
+  background-color: rgb(88, 44, 219);
+  border: 1.5px solid rgb(88, 44, 219);
+  color: rgb(255, 255, 255);
 }

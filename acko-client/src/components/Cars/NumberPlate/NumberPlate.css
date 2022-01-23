@@ -1,52 +1,47 @@
-.Text1{
-   
-    
-        font-weight: bold;
-        font-size: 1.5rem;
-        line-height: 1.5rem;
-   
+.Text1 {
+  font-weight: bold;
+  font-size: 1.8rem;
+  line-height: 1.5rem;
 }
-.pText1{
-    
-   
-        font-weight: "normal";
-        font-size:1.3rem;
-        line-height: 0.9rem;
-     
+.pText1 {
+  font-weight: "normal";
+  font-size: 1rem;
+  line-height: 0.9rem;
+  margin-top: 1rem;
 }
-.mainNumberPlate{
-    margin-top: 5rem;
-} 
-.pInput{
-    margin-top: 1.5rem;
-    width: 18rem;
-    height: 2.8rem;
-    padding: 8px 85px 6px 70px;
-    border: 1.2px solid rgb(0, 0, 0,0.2);
-    box-sizing: border-box;
-    border-radius: 4px;
-    }
+.mainNumberPlate {
+  margin-top: 5rem;
+}
+.pInput {
+  margin-top: 1.5rem;
+  width: 18rem;
+  height: 2.8rem;
+  padding: 8px 85px 6px 70px;
+  border: 1.2px solid rgb(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
 
-    
-    .pInput:focus{
-        outline: none ;
-        border-color: #9364ED;
-        box-shadow: 0 0 10px #9364ED;
-    }
-    
-    .btn1{
-    padding: 8px 32px;
-    width: 10rem;
-    height: 3rem;
-    background: #512dd1;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    color: white;
-    font-size: 1rem;
-    margin-top: 10px;
-    }
+.pInput:focus {
+  outline: none;
+  border-color: #9364ed;
+  box-shadow: 0 0 10px #9364ed;
+}
 
-    .btnDiv{
-        margin-top: 1rem;
-    }
+.btn1 {
+  padding: 8px 32px;
+  width: 10rem;
+  height: 3rem;
+  background: #512dd1;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.btnDiv {
+  margin-top: 1rem;
+}
