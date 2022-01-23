@@ -10,11 +10,14 @@ button {
   font-weight: 500;
   font-family: inherit;
 }
-
+.policybody {
+  margin-top: 12%;
+}
 .policygrid {
   display: grid;
-  grid-template-columns: repeat(2, 65%);
+  grid-template-columns: repeat(2, 20%);
   grid-gap: 10%;
+  margin-left: -250px;
   border-radius: 10px;
 }
 
@@ -24,6 +27,7 @@ button {
 
 .policygrid button {
   border-radius: 10px;
+  width: 150px;
 }
 
 .policyflexdiv {

@@ -1,24 +1,15 @@
 import React from "react";
-import "../LastPolicy/policy.css";
+import style from "../LastPolicy/policy.module.css";
 
 export const WhenPolicyexpired = () => {
-  let flag = 0;
   const handleClick = (e) => {
     localStorage.setItem("WhenPolicyExpired", JSON.stringify(e.target.value));
     window.location.href = "http://localhost:3000/car/expiry-date";
-
-    if (flag === 1) {
-      e.target.parentElement.style.border = "none";
-      flag = 0;
-    } else {
-      flag = 1;
-      e.target.parentElement.style.border = "1px solid #8C76DF";
-    }
   };
   return (
-    <div className="policybody">
-      <div className="policyperiod">When did your policy expire?</div>
-      <div style={{ marginTop: "40px" }} className="policygrid">
+    <div className={style.policybody}>
+      <div className={style.policyperiod}>When did your policy expire?</div>
+      <div style={{ marginTop: "40px" }} className={style.policygrid}>
         <div>
           <button value="Less than 10 days ago" onClick={handleClick}>
             Less than 10 days ago
@@ -35,7 +26,7 @@ export const WhenPolicyexpired = () => {
           </button>
         </div>
       </div>
-      <div className="policyflexdiv">
+      <div className={style.policyflexdiv}>
         <svg width="34" height="27" viewBox="0 0 34 27" fill="none">
           <path
             d="M23.25.96l-6.255 4.065c-.806.523-1.228 1.49-1.113 2.456.422 3.059 1.996 9.539 7.637 12.477a2.103 2.103 0 001.957 0c5.642-2.978 7.215-9.459 7.637-12.477.154-.966-.307-1.933-1.113-2.456L25.745.96a2.328 2.328 0 00-2.495 0z"

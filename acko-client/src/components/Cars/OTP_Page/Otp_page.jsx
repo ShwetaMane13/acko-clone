@@ -5,15 +5,8 @@ import "./otppage.css";
 export const Otppage = () => {
   const [otp, setOtp] = React.useState(new Array(6).fill(""));
 
-  const handleChange = (element, index) => {
-    if (isNaN(element.value)) return false;
-
-    setOtp([...otp.map((d, idx) => (idx === index ? element.value : d))]);
-
-    //Focus next input
-    if (element.nextSibling) {
-      element.nextSibling.focus();
-    }
+  const handleClick = () => {
+    console.log(otp);
   };
 
   return (
@@ -33,37 +26,14 @@ export const Otppage = () => {
         </div>
       </div>
       <div className="otp">
-        {otp.map((data, index) => {
-          return (
-            <input
-              className="otp-field"
-              type="text"
-              name="otp"
-              maxLength="1"
-              key={index}
-              value={data}
-              onChange={(e) => handleChange(e.target, index)}
-              onFocus={(e) => e.target.select()}
-            />
-          );
-        })}
+        <input
+          type="text"
+          placeholder="Enter OTP"
+          onChange={(e) => setOtp(e.target.value)}
+        />
       </div>
-      <p className="entered">OTP Entered - {otp.join("")}</p>
-      <p>
-        <button
-          className="btn btn-secondary mr-2"
-          onClick={(e) => setOtp([...otp.map((v) => "")])}
-        >
-          Clear
-        </button>
-        <br />
-        <button
-          className="btn btn-primary"
-          onClick={(e) => alert("Entered OTP is " + otp.join(""))}
-        >
-          Verify OTP
-        </button>
-      </p>
+
+      <button onClick={handleClick}>Submit</button>
     </div>
   );
 };

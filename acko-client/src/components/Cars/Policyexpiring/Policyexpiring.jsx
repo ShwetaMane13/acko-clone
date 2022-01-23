@@ -1,5 +1,5 @@
 import React from "react";
-import "../LastPolicy/policy.css";
+import style from "../LastPolicy/policy.module.css";
 
 export const Policyexpirirng = () => {
   let flag = 0;
@@ -15,9 +15,9 @@ export const Policyexpirirng = () => {
     }
   };
   return (
-    <div className="policybody">
-      <div className="policyperiod">When is your policy expiring?</div>
-      <div style={{ marginTop: "40px" }} className="policygrid">
+    <div className={style.policybody}>
+      <div className={style.policyperiod}>When is your policy expiring?</div>
+      <div style={{ marginTop: "40px" }} className={style.policygrid}>
         <div>
           <button value="Today or Tommorow" onClick={handleClick}>
             Today or tomorrow
@@ -39,7 +39,7 @@ export const Policyexpirirng = () => {
           </button>
         </div>
       </div>
-      <div className="policyflexdiv">
+      <div className={style.policyflexdiv}>
         <svg width="42" height="32" viewBox="0 0 42 32" fill="none">
           <path
             d="M36.143 16.348l-6.46-4.35c-1.417-.956-5.075-2.043-6.756-2.274l-4.713-.363c-3.164.066-6.328 1.319-8.503 3.626l-4.78 5.47c1.748 3.461 4.516 5.867 8.24 7.877v4.549h13.052v-11.7l5.965 3.823 3.955-6.658z"

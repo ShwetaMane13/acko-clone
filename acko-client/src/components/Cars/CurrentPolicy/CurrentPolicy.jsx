@@ -1,18 +1,7 @@
 import React from "react";
-import "../LastPolicy/policy.css";
+import style from "../LastPolicy/policy.module.css";
 
 export const CurrentPolicy = () => {
-  let flag = 0;
-  const handleClick = (e) => {
-    if (flag === 1) {
-      e.target.parentElement.style.border = "none";
-      flag = 0;
-    } else {
-      flag = 1;
-      e.target.parentElement.style.border = "1px solid #8C76DF";
-    }
-  };
-
   const setitem = (e) => {
     localStorage.setItem("currentpolicy", JSON.stringify(e));
 
@@ -24,17 +13,17 @@ export const CurrentPolicy = () => {
   };
 
   return (
-    <div className="policybody">
-      <div className="policyperiod">Has your current policy expired?</div>
-      <div style={{ marginTop: "40px" }} className="policygrid">
+    <div className={style.policybody}>
+      <div className={style.policyperiod}>Has your current policy expired?</div>
+      <div style={{ marginTop: "40px" }} className={style.policygrid}>
         <div onClick={() => setitem("notexpired")}>
-          <button onClick={handleClick}>Policy not Expired</button>
+          <button>Policy not Expired</button>
         </div>
         <div onClick={() => setitem("expired")}>
-          <button onClick={handleClick}>Policy already Expired</button>
+          <button>Policy already Expired</button>
         </div>
       </div>
-      <div className="policyflexdiv">
+      <div className={style.policyflexdiv}>
         <svg width="38" height="36" viewBox="0 0 38 36" fill="none">
           <path
             d="M32.605 20.27L25.97 8.763a1.801 1.801 0 00-1.486-.87H11.163a1.67 1.67 0 00-1.468.87L3.043 20.27a1.72 1.72 0 000 1.722l6.634 11.509c.308.544.87.87 1.504.87h13.304c.616 0 1.196-.326 1.504-.87l6.616-11.51a1.72 1.72 0 000-1.721zm-14.772 6.635a5.767 5.767 0 01-5.764-5.764 5.767 5.767 0 015.764-5.764 5.767 5.767 0 015.764 5.764 5.767 5.767 0 01-5.764 5.764z"

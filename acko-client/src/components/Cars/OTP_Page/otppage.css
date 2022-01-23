@@ -43,13 +43,14 @@
 .otp {
   margin: 50px 0px 0px 150px;
 }
-
+.otp-field {
+  text-align: left !important;
+}
 .entered {
   margin-left: 150px;
 }
 
 .otp input {
-  width: 10px;
   margin-left: 5px;
 }
 

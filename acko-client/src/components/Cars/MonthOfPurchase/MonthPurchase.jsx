@@ -1,26 +1,16 @@
 import React from "react";
-import "../YearOfPurchase/yearpurchase.css";
+import style from "../YearOfPurchase/yearpurchase.module.css";
 
 export const MonthPurchase = () => {
-  let flag = 0;
   const handleClick = (e) => {
-    if (flag === 1) {
-      e.target.parentElement.style.border = "none";
-      flag = 0;
-    } else {
-      console.log(e.target.value);
-      flag = 1;
-      e.target.parentElement.style.border = "1px solid #8C76DF";
-    }
     localStorage.setItem("month", JSON.stringify(e.target.value));
     window.location.href = "http://localhost:3000/car/car-type";
   };
-
   return (
-    <div className="yearbody">
+    <div className={style.yearbody}>
       <p>Which month did you buy your car?</p>
 
-      <div className="yearflexdiv">
+      <div className={style.yearflexdiv}>
         <div>
           <button value="January" onClick={handleClick}>
             Jan
