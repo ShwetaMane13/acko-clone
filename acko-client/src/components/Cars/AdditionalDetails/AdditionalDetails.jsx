@@ -16,7 +16,15 @@ export const AdditionalDetails = () => {
     const handleClick = (e) => {
         e.preventDefault()
         var email = new RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
-        var carNumber = new RegExp("^[A-Z|a-z]{2}([1-9]{1}|[0-9]{2})[A-Z|a-z]{0,2}[0-9]{4}$");
+        var carNumber = new RegExp("^[A-Z|a-z]{2}([1-9]{1}|[0-9]{2})[A-Z|a-z]{0,2}[0-9]{1,4}$");
+        console.log("form:", form);
+
+        const isEmpty = Object.keys(form).length === 0;
+
+        if(isEmpty)
+        {
+            alert("Enter Details");
+        }
 
         if(form.name.length < 5)
         {
@@ -39,11 +47,10 @@ export const AdditionalDetails = () => {
             return;
         }
 
-       if(localStorage.getItem("userDetails") === null)
-       {
-           localStorage.setItem("userDetails", JSON.stringify());
-       }
         localStorage.setItem("userDetails", JSON.stringify(form));
+
+        
+        window.location.href = "http://localhost:3000/otppage";
     }
 
 
@@ -194,9 +201,7 @@ export const AdditionalDetails = () => {
                                     <p className="terms_conditions">By tapping on continue I declare that i have provided 
                                         correct details and have read Acko’s <a href="#"> T&C.</a></p>
 
-                                    <button onClick={() => {
-                                        window.location.href = "http://localhost:3000/otppage"
-                                    }} className="continue_button">Continue</button>
+                                    <button onClick={handleClick} className="continue_button">Continue</button>
                                 </form>
                         </div>
 
