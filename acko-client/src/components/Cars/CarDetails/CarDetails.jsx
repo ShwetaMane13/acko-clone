@@ -5,24 +5,45 @@ import buttonpen from "../../ImageIcon/Button pen.svg";
 
 import carwithstar from "../../ImageIcon/Car with star.svg";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 function CarDetail() {
   const [cng, setCng] = useState("");
 
   const [mobile, setMobile] = useState("");
 
-  const [dat,setDat]=useState("")
+  const [dat,setDat]=useState({})
+
+  const [ reqImg,setreqImg] = useState("");
+
 
   
-
+  const [company,setCompany] = useState("");
  useEffect(() => {
    getData();
  }, []);
- 
- const getData =  () => {
+
+ const getData =  async() => {
+  let userCar = localStorage.getItem("carType");
+   let carnumber = localStorage.getItem("carnumber");
+   carnumber = JSON.parse(carnumber);
+  let car1 = JSON.parse(userCar);
+ let fuelType = car1.fuelType;
+ let gearType = car1.gearType;
+
+ setDat({fuelType,gearType,carnumber});
   
+  car1 = car1.carName;
+  console.log(car1);
+  let car = await axios.get("https://ackoclone.herokuapp.com/car/pic?apiKey=test5");
   
+   for(let i =0;i<car.data.length;i++){
+     if(car.data[i].model===car1){
+       setreqImg(car.data[i].image);
+       setCompany(car.data[i].company);
+     
+     }
+   }
+
  };
 
   return (
@@ -37,24 +58,16 @@ function CarDetail() {
           <div
             className="innerCarDiv2"
           >
-            {dat.number}
+            <p>{dat.fuelType}</p>
+            <p>{dat.gearType}</p>
+            <p>{dat.carnumber}</p>
+            <img className="imgCar1" src={buttonpen} alt="" />
           </div>
 
-          <div className="editflexdiv">
          
-            <p>{dat.name}</p>
-           
-             
-              <img className="imgCar1" src={buttonpen} alt="" />
-        
-          </div>
-         
-          <p className="innerCarPara">
-            {dat.gear}-{dat.fuel}
-          </p>
         </div>
         <div className="carDetailRightDiv">
-          <img src="" alt="edit later" />
+          <img id="reqImg" src={reqImg} alt="" />
         </div>
       </div>
       <hr />
@@ -110,7 +123,12 @@ function CarDetail() {
                 mobile: mobile,
               };
               if((data.cngkit.length!==0)&&(data.mobile.length===10)){
+
+                
                 localStorage.setItem("carDetails",JSON.stringify(data));
+                localStorage.setItem("currentImage",JSON.stringify(reqImg));
+                localStorage.setItem("currentCompany",JSON.stringify(company));
+
                 window.location.href="http://localhost:3000/car/car-policy"
             }
                 else{

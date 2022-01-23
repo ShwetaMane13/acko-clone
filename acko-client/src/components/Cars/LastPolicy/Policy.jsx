@@ -2,7 +2,7 @@ import React from "react";
 import thumbsup from "../../ImageIcon/thumbsup.svg";
 import "./policy.css";
 
-export const Policy = () => {
+export const Policy = ({setpopupp}) => {
   let flag = 0;
   const handleClick = (e) => {
     if (flag === 1) {
@@ -33,10 +33,19 @@ export const Policy = () => {
           <button onClick={handleClick}>Yes</button>
         </div>
         <div onClick={() => setitem("20")}>
-          <button onClick={handleClick}>No</button>
+          <button onClick={() => {
+            setpopupp(true);
+          }}
+          style={{ marginLeft: "20px" }}
+        >
+          
+          No</button>
         </div>
         <div onClick={() => setitem("50")}>
-          <button onClick={handleClick}>I have never made a claim</button>
+          <button onClick={() => {
+            setpopupp(true);
+          }}
+          style={{ marginLeft: "20px" }}>I have never made a claim</button>
         </div>
       </div>
       <div className="policyflexdiv">

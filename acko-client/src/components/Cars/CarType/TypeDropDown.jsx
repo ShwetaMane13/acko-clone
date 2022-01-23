@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-import style from "./typecarpopup.module.css";
-import search from "../../ImageIcon/Search.svg";
+import React from "react";
+import  "./typecarpopup.css";
 
 function Typecarpopup({ setCarpopup, carpopup, setCar }) {
-  const [value, setValue] = useState("");
+
   return carpopup ? (
-    <div className={style.typecarpopup}>
-      <div className={style.inputflexdiv}>
+    <div className="typecarpopup">
+      <div className="inputflexdiv">
       
       </div>
       
@@ -19,10 +18,10 @@ function Typecarpopup({ setCarpopup, carpopup, setCar }) {
       >
         Honda City
       </p>
-      <hr />
+     <hr />
       <p
         onClick={() => {
-          setCar("Safari");
+          setCar("Gravitas SUV");
           setCarpopup(false);
         }}
       >
@@ -59,7 +58,7 @@ function Typecarpopup({ setCarpopup, carpopup, setCar }) {
 
       <p
         onClick={() => {
-          setCar("Jeep Compass");
+          setCar("Sport 1.4");
           setCarpopup(false);
         }}
       >
@@ -68,7 +67,7 @@ function Typecarpopup({ setCarpopup, carpopup, setCar }) {
       <hr />
       <p
         onClick={() => {
-          setCar("XUV-700");
+          setCar("XUV700");
           setCarpopup(false);
         }}
       >
@@ -93,15 +92,8 @@ function Typecarpopup({ setCarpopup, carpopup, setCar }) {
         Baleno
       </p>
       <hr />
-      <p
-        onClick={() => {
-          setCar("Breeza");
-          setCarpopup(false);
-        }}
-      >
-        Breeza
-      </p>
-      <hr />
+     
+   
     </div>
   ) : (
     ""
