@@ -203,11 +203,12 @@
 
 form{
     margin-left: 12%;
-    margin-top: 5%;
+    margin-top: 1%;
 }
 
 .categories_input{
     height: 40px;
+    width: 200%;
     border: none;
     outline: none;
     margin-top: 4%;
@@ -237,7 +238,7 @@ form{
    /* height: 40px; */
    position: absolute;
    top: 38px;
-   left: 15px;
+   left: 20px;
 }
 
 hr{

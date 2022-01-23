@@ -1,27 +1,31 @@
-import "../AdditionalDetails/AdditionalDetails.css"
+// import "../AdditionalDetails/AdditionalDetails.css"
+import Header from "../../Headers/Hearder";
 import "./FinalDetails.css"
 
 export const FinalDetails = () => {
 
     let user = JSON.parse(localStorage.getItem("userDetails"));
-    console.log(user);
+    // console.log(user);
 
     return (
-        <div className="main_div_final">
+       
+       <div>
+           <Header />
+            <div className="main_div_final">
             <div className="left_div">
 
-            <hr className="tracker_hr"/>
-               <div className="tracker_div">
+            <hr className="fd_tracker_hr"/>
+               <div className="fd_tracker_div">
                    {/* <p>Enter Details</p> */}
-                   <div className="tracker">1</div>
-                   <div className="tracker">2</div>
-                   <div className="tracker green">3</div>
+                   <div className="fd_tracker green">1</div>
+                   <div className="fd_tracker green">2</div>
+                   <div className="fd_tracker green">3</div>
                </div>
 
-               <div className="tracker_text">
+               <div className="fd_tracker_text">
                    <p>Enter Details</p>
                    <p>Verify Phone</p>
-                   <p className="black">Review & Pay</p>
+                   <p className="fd_black">Review & Pay</p>
                </div>
 
 
@@ -108,51 +112,51 @@ export const FinalDetails = () => {
                
             </div>
 
-            <div className="car_model_div">
-                    <p className="car_model_text">Comprehensive - Standard</p>
+            <div className="fd_car_model_div">
+                    <p className="fd_car_model_text">Comprehensive - Standard</p>
                 </div>
 
-                <div className="right_div">
+                <div className="fd_right_div">
                     
                     <div>
                         <p className="comp_heading">Comprehensive - Standard</p>
                         <p className="premium_breakup">Hide Premium Breakup</p>
                     </div>
 
-                    <div className="breakdown">
-                        <div className="item">
+                    <div className="fd_breakdown">
+                        <div className="fd_item">
                             <p>Own Damage Premium</p>
-                            <p>0</p>
+                            <p className="fd_price_value">&#8377;0</p>
                         </div>
 
-                        <div className="item">
+                        <div className="fd_item">
                             <p>NCB Discount</p>
-                            <p>0</p>
+                            <p className="fd_price_value fd_ncb_discount_text">&#8377;0</p>
                         </div>
 
-                        <div className="item">
+                        <div className="fd_item">
                             <p>Third Party Premium</p>
-                            <p>0</p>
+                            <p className="fd_price_value">&#8377;0</p>
                         </div>
 
-                        <div className="item">
+                        <div className="fd_item">
                             <p>Consumables Premium</p>
-                            <p>0</p>
+                            <p className="fd_price_value">&#8377;0</p>
                         </div>
 
-                        <div className="item">
+                        <div className="fd_item">
                             <p>Net Premium</p>
-                            <p>0</p>
+                            <p className="fd_price_value">&#8377;0</p>
                         </div>
 
-                        <div className="item gst">
+                        <div className="fd_item fd_gst">
                             <p>GST</p>
-                            <p>0</p>
+                            <p className="fd_price_value">&#8377;0</p>
                         </div>
 
-                        <div className="item total_div">
-                            <p className="total_tag">Total</p>
-                            <p className="total_value">0</p>
+                        <div className="fd_item total_div">
+                            <p className="fd_total_tag">Total</p>
+                            <p className="fd_total_value">&#8377;0</p>
                         </div>
                     </div>
 
@@ -166,9 +170,12 @@ export const FinalDetails = () => {
                 </div>
 
                 <div className="footer_div">
-                    <button className="buynow_button">Buy Now</button>
+                    <button onClick={() => {
+                        window.location.href = "http://localhost:3000/otppage";
+                    }} className="buynow_button">Buy Now</button>
                 </div>
         </div>
+       </div>
 
         
     )
