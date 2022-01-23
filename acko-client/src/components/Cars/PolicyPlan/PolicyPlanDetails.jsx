@@ -16,7 +16,7 @@ import {
   passengerAccidentSvg,
   personalAccidentSvg,
 } from './assets/svgs'
-import { images } from './assets/imgs'
+
 import { useState } from 'react'
 import { PolicyPlanSingle } from './PolicyPlanSingle'
 
@@ -49,12 +49,12 @@ export const PolicyPlanDetails = () => {
       localStorage.getItem('month'),
     )} ${JSON.parse(localStorage.getItem('year'))}`,
     pincode: JSON.parse(localStorage.getItem('pincode')),
-    carValue: 4.95,
+    carValue: Number(JSON.parse(localStorage.getItem('currentIDV'))),
     carImage: JSON.parse(localStorage.getItem('currentImage')),
   }
 
   const riskValues = {
-    high: (carDetails.carValue * 0.294023904).toFixed(2),
+    high: Number(carDetails.carValue * 0.294023904).toFixed(2),
     low: carDetails.carValue.toFixed(2),
   }
 

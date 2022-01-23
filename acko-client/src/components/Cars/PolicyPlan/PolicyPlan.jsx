@@ -3,7 +3,7 @@ import Header from '../../Headers/Hearder'
 import styles from './policyPlan.module.css'
 import recommended from './assets/recommended.svg'
 import { calendarSvg, carSvg, emiSvg, mapSvg, needHelpSvg } from './assets/svgs'
-import { images } from './assets/imgs'
+
 import { useState } from 'react'
 
 const Container = styled.div`
@@ -35,7 +35,7 @@ export const PolicyPlan = () => {
     registrationMonthYear: `${JSON.parse(
       localStorage.getItem('month'),
     )} ${JSON.parse(localStorage.getItem('year'))}`,
-    carValue: 4.95,
+    carValue: Number(JSON.parse(localStorage.getItem('currentIDV'))),
     pincode: JSON.parse(localStorage.getItem('pincode')),
     carImage: JSON.parse(localStorage.getItem('currentImage')),
   }
