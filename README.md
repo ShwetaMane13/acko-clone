@@ -2,7 +2,6 @@
 
 ---
 
----
 
 # Welcome :wave:
 
@@ -38,13 +37,16 @@
 
 ---
 
-- **Home Page**
-  -Entering your car number will take you to the car details pages.
+### Screenshots :camera:
+
+- **Home Page**  <br /> 
+
+Entering your car number will take you to the car details pages. <br /> 
   ![Home Page](https://i.imgur.com/arg58o7.png?raw=true)
   ![Home Page](https://i.imgur.com/W7NxtJT.png?raw=true)
 
-- **Car Details and Existing Policy Details Pages**
-  -The pages do not proceed without you entering the data. All the details you add get stacked onto the right side of the page as you move ahead.
+- **Car Details and Existing Policy Details Pages** <br /> 
+The pages do not proceed without you entering the data. All the details you add get stacked onto the right side of the page as you move ahead. <br /> 
   ![Car Details](https://i.imgur.com/zBDVk96.png?raw=true)
   ![Car Details](https://i.imgur.com/KSOKz3t.png?raw=true)
   ![Car Details](https://i.imgur.com/BBvfpVS.png?raw=true)
@@ -55,16 +57,16 @@
   ![Car Details](https://i.imgur.com/jcM0Nkz.png?raw=true)
   ![Car Details](https://i.imgur.com/jB9NkKE.png?raw=true)
 
-- **Creating Customized Policy Plans**
+- **Creating Customized Policy Plans** <br /> 
 
 ![Policy Plans](https://i.imgur.com/GC2pO7W.png?raw=true)
 ![Policy Plans](https://i.imgur.com/gC5oLxa.png?raw=true)
 
-- **User Details Pages and Realtime OTP Generation**
+- **User Details Pages and Realtime OTP Generation** <br /> 
   ![User Details](https://i.imgur.com/rTbP0Or.png?raw=true)
   ![User Details](https://i.imgur.com/hPncj1X.png?raw=true)
   ![User Details](https://i.imgur.com/pHl83yl.png?raw=true)
 
-- **Payment Page**
-  -Once the payment is done, the user will be directed to the 'payment successful' page
+- **Payment Page** <br /> 
+  -Once the payment is done, the user will be directed to the payment successful page. <br /> 
   ![Payment Page](https://i.imgur.com/lOxIwcY.png?raw=true)
