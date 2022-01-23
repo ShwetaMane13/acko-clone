@@ -13,8 +13,10 @@
 }
 
 .yearflexdiv {
+  margin-left: 180px;
+  margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(4, 10%);
+  grid-template-columns: repeat(4, 66%);
   grid-gap: 10%;
 }
 
