@@ -1,0 +1,59 @@
+.left_div {
+  width: 50%;
+  margin: 5% 13%;
+}
+
+.tracker_div {
+  display: flex;
+  width: 600px;
+  justify-content: space-evenly;
+}
+
+.tracker {
+  width: 20px;
+  height: 16px;
+  background-color: #d6d9e0;
+  font-size: 9px;
+  text-align: center;
+  color: white;
+  padding-top: 0.9%;
+  border-radius: 20px;
+  z-index: 1;
+  position: relative;
+  left: -22%;
+}
+
+.green {
+  background-color: #3eb753;
+}
+
+.tracker_text {
+  display: flex;
+  width: 580px;
+  justify-content: space-evenly;
+  position: absolute;
+  left: 5%;
+  margin-top: 5px;
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 11px;
+  color: #8990a1;
+}
+
+.otp {
+  margin: 50px 0px 0px 150px;
+}
+
+.entered {
+  margin-left: 150px;
+}
+
+.otp input {
+  width: 10px;
+  margin-left: 5px;
+}
+
+button {
+  width: 100px;
+  margin: 10px 10px 0px 280px;
+}

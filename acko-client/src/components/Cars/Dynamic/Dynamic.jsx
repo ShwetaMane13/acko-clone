@@ -45,7 +45,7 @@ export const Dynamic = () => {
           {e.carnumber && (
             <div>
               <img className="img11" src={car} alt="" />
-              <p>{e.carnumber}</p>
+              <p>{JSON.parse(e.carnumber)}</p>
 
               <Link className="link" to="/car/car-plate">
                 <img className="img22" src={edit_btn} alt="" />

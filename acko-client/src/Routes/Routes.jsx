@@ -18,6 +18,7 @@ import { AdditionalDetails } from "../components/Cars/AdditionalDetails/Addition
 import { FinalDetails } from "../components/Cars/FinalDetails/FinalDetails";
 import Payment from "../components/Paymentpages/Payment";
 import { CarDetailPage } from "../components/Cars/CarDetails/CarDetailPage";
+import { Otppage } from "../components/Cars/OTP_Page/Otp_page";
 const Routepage = () => {
   return (
     <Routes>
@@ -40,6 +41,7 @@ const Routepage = () => {
       <Route path="/policyplan" element={<PolicyPlan />}></Route>
       <Route path="/policyplan-details" element={<PolicyPlanDetails />}></Route>
       <Route path="/additionaldetails" element={<AdditionalDetails />}></Route>
+      <Route path="/otppage" element={<Otppage />}></Route>
       <Route path="/finaldetails" element={<FinalDetails />}></Route>
       <Route path="/payment" element={<Payment />}></Route>
     </Routes>
