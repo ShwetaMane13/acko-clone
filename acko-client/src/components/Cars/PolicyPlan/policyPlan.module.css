@@ -233,6 +233,7 @@ input[type="range"]::-webkit-slider-thumb {
   line-height: 12px;
   cursor: pointer;
   margin-top: 8px;
+  margin-left: 0px;
 }
 
 .insidemainclass {
@@ -355,6 +356,7 @@ input[type="range"]::-webkit-slider-thumb {
   line-height: 12px;
   cursor: pointer;
   margin-top: 8px;
+  margin-left: 0px;
 }
 
 .insideLastClass {
@@ -367,7 +369,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 .insideLastClass > :nth-child(1) > :nth-child(1) {
   display: grid;
-  grid-template-columns: 330px 77px;
+  grid-template-columns: 330px 85px;
   grid-gap: 20px;
 }
 
@@ -381,6 +383,7 @@ input[type="range"]::-webkit-slider-thumb {
   font-weight: bold;
   font-size: 14px;
   line-height: 15px;
+  /* text-align: right; */
 }
 
 .insideLastClass

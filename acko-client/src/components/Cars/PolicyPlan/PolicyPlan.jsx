@@ -29,7 +29,7 @@ const InContright = styled.div`
 
 export const PolicyPlan = () => {
   const carDetails = {
-    liscencePlate: 'kl71',
+    liscencePlate: JSON.parse(localStorage.getItem('carnumber')),
     vehicleName: JSON.parse(localStorage.getItem('carType')),
     NCB: JSON.parse(localStorage.getItem('ncb')),
     registrationMonthYear: `${JSON.parse(
