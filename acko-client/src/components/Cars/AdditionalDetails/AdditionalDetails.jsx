@@ -49,10 +49,20 @@ export const AdditionalDetails = () => {
 
     let currentPremium = JSON.parse(localStorage.getItem("currentPremium"));
     let ncbDiscount = JSON.parse(localStorage.getItem("ncbDiscount"));
+    let addOns = JSON.parse(localStorage.getItem("addOns"));
 
 
+    let odPremium = Math.floor(+(currentPremium)*0.4);
+    let tpPremium = Math.floor(+(currentPremium)*0.6);
+    
+    localStorage.setItem("ownDamagePremium", JSON.stringify(odPremium));
+    localStorage.setItem("thirdPartyPremium", JSON.stringify(tpPremium));
 
-    let total = +(currentPremium) + Math.floor(+(currentPremium)*0.18)
+    let total = +(currentPremium) + Math.floor(+(currentPremium)*0.18);
+    let gst = Math.floor(+(currentPremium)*0.18);
+
+    localStorage.setItem("gst", JSON.stringify(gst ))
+
 
     localStorage.setItem("total", JSON.stringify(total))
     // console.log(pricingDeets)
@@ -202,7 +212,7 @@ export const AdditionalDetails = () => {
                             <div className="breakdown">
                                 <div className="item">
                                     <p>Own Damage Premium</p>
-                                    <p className="price_value">&#8377;{Math.floor(+(currentPremium)*0.4)}</p>
+                                    <p className="price_value">&#8377;{odPremium}</p>
                                 </div>
 
                                 <div className="item">
@@ -212,12 +222,22 @@ export const AdditionalDetails = () => {
 
                                 <div className="item">
                                     <p>Third Party Premium</p>
-                                    <p className="price_value">&#8377;{Math.floor(+(currentPremium)*0.6)}</p>
+                                    <p className="price_value">&#8377;{tpPremium}</p>
                                 </div>
 
                                 <div className="item">
                                     <p>Consumables Premium</p>
                                     <p className="price_value">&#8377;141</p>
+                                </div>
+
+                                <div className="item">
+                                    <p>Add ons</p>
+                                    <p className="price_value">&#8377;{addOns}</p>
+                                </div>
+
+                                <div className="item">
+                                    <p>PA Cover</p>
+                                    <p className="price_value">&#8377;0</p>
                                 </div>
 
                                 <div className="item">
@@ -227,7 +247,7 @@ export const AdditionalDetails = () => {
 
                                 <div className="item gst">
                                     <p>GST</p>
-                                    <p className="price_value">&#8377;{Math.floor(+(currentPremium)*0.18)}</p>
+                                    <p className="price_value">&#8377;{gst}</p>
                                 </div>
 
                                 <div className="item total_div">

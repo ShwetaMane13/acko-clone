@@ -7,7 +7,7 @@
     width: 1200px;
     height: 900px;
     position: absolute;
-    top: -1%;
+    top: 3%;
     left: 12%;
  
     /* background-color: cadetblue; */
@@ -15,7 +15,7 @@
 
 .fd_right_div {
     width: 25%;
-    height: 400px;
+    height: 490px;
     position: absolute;
     left: 57%;
     top: 25%;
@@ -29,6 +29,8 @@
     display: flex;
     width: 600px;
     justify-content: space-evenly;
+    position: absolute;
+    top: 10%;
   }
 
 .fd_tracker {
@@ -66,7 +68,7 @@
     justify-content: space-evenly;
     position: absolute;
     left: 3%;
-    top: 21%;
+    top: 13%;
     font-weight: 500;
     font-size: 9px;
     line-height: 11px;
@@ -84,7 +86,7 @@
     white-space: nowrap;
     font-size: 1.5rem;
     line-height: 29px;
-    margin-top: 11%;
+    margin-top: 18%;
     margin-left: -2%;
 }
 
@@ -193,8 +195,7 @@
     box-sizing: border-box;
     border-radius: 0.5rem;
     padding: 1.5rem 1.25rem;
-    top: 110%;
-
+    top: 105%;
 }
 
 .offers_text{

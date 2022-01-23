@@ -217,8 +217,8 @@ form{
 .insure_now_button{
     position: absolute;
     border: none;
-    left: 64%;
-    top: 20%;
+    left: 10%;
+    top: 10%;
     width: 33%;
     height: 62%;
     border-radius: 10px;

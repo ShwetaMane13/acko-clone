@@ -10,7 +10,7 @@
 }
 
 .ad_main_heading {
-  margin-top: 8%;
+  margin-top: 24%;
 }
 
 .left_div {
@@ -40,7 +40,7 @@ input {
 }
 
 .info_message {
-  width: 60%;
+  width: 48%;
   font-size: 10px;
   line-height: 141.1%;
   background-color: rgb(228, 246, 254);
@@ -206,7 +206,7 @@ a {
 
 .right_div {
   width: 25%;
-  height: 400px;
+  height: 490px;
   position: absolute;
   left: 57%;
   top: 17.5%;
@@ -275,6 +275,9 @@ a {
   display: flex;
   width: 600px;
   justify-content: space-evenly;
+  position: absolute;
+  top: 10%;
+  left: 14%;
 }
 
 .tracker {
@@ -312,7 +315,7 @@ a {
   justify-content: space-evenly;
   position: absolute;
   left: 4%;
-  top: 13%;
+  top: 12%;
   font-weight: 500;
   font-size: 9px;
   line-height: 11px;
