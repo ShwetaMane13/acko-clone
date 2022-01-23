@@ -69,7 +69,9 @@ export const Otppage = () => {
         />
       </div>
 
-      <button onClick={handleClick}>Submit</button>
+      <button className="btn" onClick={handleClick}>
+        Submit
+      </button>
     </div>
   );
 };

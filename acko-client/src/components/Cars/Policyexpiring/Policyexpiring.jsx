@@ -22,15 +22,27 @@ export const Policyexpirirng = () => {
           Today or tomorrow
         </button>
 
-        <button value="Within next 7 days" onClick={handleClick}>
+        <button
+          className="policybtn"
+          value="Within next 7 days"
+          onClick={handleClick}
+        >
           Within the next 7 days
         </button>
 
-        <button value="within next 30 days" onClick={handleClick}>
+        <button
+          className="policybtn"
+          value="within next 30 days"
+          onClick={handleClick}
+        >
           Within the next 30 days
         </button>
 
-        <button value="After one month" onClick={handleClick}>
+        <button
+          className="policybtn"
+          value="After one month"
+          onClick={handleClick}
+        >
           After 30 days
         </button>
       </div>

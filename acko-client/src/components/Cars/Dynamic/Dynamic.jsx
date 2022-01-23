@@ -45,7 +45,7 @@ export const Dynamic = () => {
           {e.carnumber && (
             <div>
               <img className="img11" src={car} alt="" />
-              <p>{JSON.parse(e.carnumber)}</p>
+              <p>{JSON.parse(e.carnumber.toUpperCase())}</p>
 
               <Link className="link" to="/car/car-plate">
                 <img className="img22" src={edit_btn} alt="" />
@@ -84,7 +84,7 @@ export const Dynamic = () => {
             <div>
               <img className="img11" src={date_img} alt="" />
               <p>TP Expiry- {e.tpdate.tpdate}</p>
-              <Link to="/car/expiry">
+              <Link to="/car/expiry-date">
                 <img className="img22" src={edit_btn} alt="" />
               </Link>
             </div>
