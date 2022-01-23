@@ -16,11 +16,14 @@ export const CurrentPolicy = () => {
     <div className={style.policybody}>
       <div className={style.policyperiod}>Has your current policy expired?</div>
       <div style={{ marginTop: "40px" }} className={style.policygrid}>
-        <button onClick={() => setitem("notexpired")}>
+        <button
+          className={style.policybtn}
+          onClick={() => setitem("notexpired")}
+        >
           Policy not Expired
         </button>
 
-        <button onClick={() => setitem("expired")}>
+        <button className={style.policybtn} onClick={() => setitem("expired")}>
           Policy already Expired
         </button>
       </div>

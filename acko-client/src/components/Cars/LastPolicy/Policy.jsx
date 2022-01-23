@@ -19,6 +19,7 @@ export const Policy = ({ setpopupp }) => {
         <button onClick={() => setitem("0")}>Yes</button>
 
         <button
+          className={style.policybtn}
           onClick={() => {
             setitem("20");
             setpopupp(true);
@@ -29,6 +30,7 @@ export const Policy = ({ setpopupp }) => {
         </button>
 
         <button
+          className={style.policybtn}
           onClick={() => {
             setitem("50");
             setpopupp(true);
