@@ -194,7 +194,9 @@ export const AdditionalDetails = () => {
                                     <p className="terms_conditions">By tapping on continue I declare that i have provided 
                                         correct details and have read Acko’s <a href="#"> T&C.</a></p>
 
-                                    <button className="continue_button">Continue</button>
+                                    <button onClick={() => {
+                                        window.location.href = "http://localhost:3000/otppage"
+                                    }} className="continue_button">Continue</button>
                                 </form>
                         </div>
 

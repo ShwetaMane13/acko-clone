@@ -204,7 +204,7 @@ export const FinalDetails = () => {
 
                 <div className="footer_div">
                     <button onClick={() => {
-                        window.location.href = "http://localhost:3000/otppage";
+                        window.location.href = "http://localhost:3000/payment";
                     }} className="buynow_button">Buy Now</button>
                 </div>
       </div>
