@@ -23,6 +23,11 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function Payment() {
   const [paymentType, setPaymentType] = React.useState("cardPayment");
+  const [product, setProduct] = React.useState({
+    name: "Vikas",
+    price: 200,
+    discription: "This is sample payment",
+  });
   // temp payment page
   let carnumber = JSON.parse(localStorage.getItem("carnumber")) || 0;
   let details = JSON.parse(localStorage.getItem("carDetails")) || 0;
@@ -34,11 +39,17 @@ export default function Payment() {
   let pincode = JSON.parse(localStorage.getItem("pincode")) || 0;
   let year = JSON.parse(localStorage.getItem("year")) || 0;
   let month = JSON.parse(localStorage.getItem("month")) || 0;
-  const [product, setProduct] = React.useState({
-    name: "Vikas",
-    price: 200,
-    discription: "This is sample payment",
-  });
+
+  // let sendingObjtobackend = {
+  //   carnumber,
+  //   mobileno,
+  //   model,
+  //   fuel,
+  //   total,
+  //   pincode,
+  //   year,
+  //   month
+  // }
 
   toast.configure();
 
@@ -46,10 +57,19 @@ export default function Payment() {
     const res = await axios.post(`http://localhost:5000/payment/checkout`, {
       token,
       product,
+      carnumber,
+      mobileno,
+      model,
+      fuel,
+      total,
+      pincode,
+      year,
+      month,
     });
     console.log(res);
     if (res.status === 200) {
       toast("Success! Payment is completed", { type: "success" });
+      window.location.href = "http://localhost:3000/successful";
     } else {
       toast("Failed! Payment is not completed", { type: "error" });
     }
@@ -70,7 +90,6 @@ export default function Payment() {
               stripeKey="pk_test_51KKLohSB4oh1LzAsphsNGkZXyIWNuyRZq6uS5jKKNYhLSxx9iG6UJzCy7djPOTE7qEuyCK7xtHkN5NPk3cSfmo5q00lG6IjAeW"
               token={handeToken}
               amount={(total + (total * 18) / 100) * 100}
-              name={product.name}
             />
           </div>
         ) : paymentType === "upiPayment" ? (

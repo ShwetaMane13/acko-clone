@@ -2,6 +2,7 @@
 // const secretKey = process.env.secretKey;
 const stripe = require("stripe")(process.env.secretKey);
 const uuid = require("uuid").v4;
+const Payment = require("../Models/postPaymentSchema");
 
 // payment checkout
 module.exports.paymentCheckoutController = (req, res) => {
@@ -10,6 +11,15 @@ module.exports.paymentCheckoutController = (req, res) => {
   let status;
   const key = uuid();
   const { token, product } = req.body;
+  const payment = new Payment(req.body);
+  payment
+    .save()
+    .then(() => {
+      console.log("payment success");
+    })
+    .catch(() => {
+      console.log("payment error");
+    });
   stripe.customers
     .create({
       email: token.email,
