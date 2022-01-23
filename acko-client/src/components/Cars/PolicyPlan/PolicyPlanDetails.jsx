@@ -49,7 +49,8 @@ export const PolicyPlanDetails = () => {
       localStorage.getItem('month'),
     )} ${JSON.parse(localStorage.getItem('year'))}`,
     pincode: JSON.parse(localStorage.getItem('pincode')),
-    carValue: 12.55,
+    carValue: 4.95,
+    carImage: JSON.parse(localStorage.getItem('currentImage')),
   }
 
   const riskValues = {
@@ -145,7 +146,7 @@ export const PolicyPlanDetails = () => {
               <div>
                 <img
                   className={styles.plan_left_car_image}
-                  src={images.ecosport}
+                  src={carDetails.carImage}
                   alt=""
                 />
               </div>

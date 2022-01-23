@@ -35,8 +35,9 @@ export const PolicyPlan = () => {
     registrationMonthYear: `${JSON.parse(
       localStorage.getItem('month'),
     )} ${JSON.parse(localStorage.getItem('year'))}`,
-    carValue: 12.55,
+    carValue: 4.95,
     pincode: JSON.parse(localStorage.getItem('pincode')),
+    carImage: JSON.parse(localStorage.getItem('currentImage')),
   }
 
   const riskValues = {
@@ -133,7 +134,7 @@ export const PolicyPlan = () => {
               <div>
                 <img
                   className={styles.plan_left_car_image}
-                  src={images.ecosport}
+                  src={carDetails.carImage}
                   alt=""
                 />
               </div>
