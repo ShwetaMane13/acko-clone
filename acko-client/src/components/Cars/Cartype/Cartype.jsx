@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import style from "./cartype.module.css"
+import style from "./cartype.css"
 import car from "../../ImageIcon/Personel car.svg"
 import petrol from "../../ImageIcon/petrol.svg"
 import gear from "../../ImageIcon/gear.svg"
@@ -25,9 +25,9 @@ export const Cartype=()=> {
 
 
     return (
-      <div className={style.cartypebody}>
-        <div className={style.cartypehead}>Which Car do you drive?</div>
-        <div className={style.cartypeflex}>
+      <div className="cartypebody">
+        <div className="cartypehead">Which Car do you drive?</div>
+        <div className="cartypeflex">
           <img src={car} alt="" />
           <p>{carr}</p>
           <img
@@ -36,7 +36,7 @@ export const Cartype=()=> {
               setPetrolpopup(false);
               setGearpopup(false);
             }}
-            className={style.imagearrow}
+            className="imagearrow"
             src={downarrow}
             alt=""
           />
@@ -47,7 +47,7 @@ export const Cartype=()=> {
           carpopup={carpopup}
           setCarpopup={setCarpopup}
         />
-        <div className={style.cartypeflex}>
+        <div className="cartypeflex">
           <img src={petrol} alt="" />
           <p>{fuel}</p>
           <img
@@ -56,7 +56,7 @@ export const Cartype=()=> {
               setCarpopup(false);
               setGearpopup(false);
             }}
-            className={style.imagearrow}
+            className="imagearrow"
             src={downarrow}
             alt=""
           />
@@ -67,7 +67,7 @@ export const Cartype=()=> {
           setFuel={setFuel}
           setPetrolpopup={setPetrolpopup}
         />
-        <div className={style.cartypeflex}>
+        <div className="cartypeflex">
           <img src={gear} alt="" />
           <p>{gearr}</p>
           <img
@@ -76,7 +76,7 @@ export const Cartype=()=> {
               setPetrolpopup(false);
               setCarpopup(false);
             }}
-            className={style.imagearrow}
+            className="imagearrow"
             src={downarrow}
             alt=""
           />
@@ -99,7 +99,7 @@ export const Cartype=()=> {
               localStorage.setItem("carType",JSON.stringify(data));
               window.location.href= "http://localhost:3000/car/car-details";
             }}
-            className={style.cartypebtn}
+            className="cartypebtn"
           >
             Continue
           </button>

@@ -1,82 +1,59 @@
+import React, { useState } from "react";
 
-import React, { useState } from 'react';
-
-
-import './CarsPincode.css';
-import navigation from '../../ImageIcon/Navigation.svg';
-import { Navigate } from 'react-router-dom';
-
-
+import style from "./CarsPincode.module.css";
+import navigation from "../../ImageIcon/Navigation.svg";
 
 function CarsPincode() {
   const [pincode, setPincode] = useState("");
 
-  const handleClick = () => {
-    const reg = new RegExp("^[0-9]+$");
-    reg.test(pincode);
-    if (pincode.length === 6 && reg.test(pincode)) {
-      localStorage.setItem("pincode", pincode);
-      
-    } else {
-      alert("Add correct pincode");
-    }
-  };
+  // const handleClick = () => {
+  //   const reg = new RegExp("^[0-9]+$");
+  //   reg.test(pincode);
+  //   if (pincode.length === 6 && reg.test(pincode)) {
+  //     localStorage.setItem("pincode", pincode);
+  //   } else {
+  //     alert("Add correct pincode");
+  //   }
+  // };
 
   return (
-    <div className="pincodeDiv">
-      <div className="innerPincodeDiv">Where do you stay?</div>
+    <div className={style.pincodeDiv}>
+      <div className={style.innerPincodeDi}>Where do you stay?</div>
       <input
         onChange={(e) => {
           setPincode(e.target.value);
         }}
-        className="pInput"
+        className={style.pInput}
         placeholder="160062"
       />
-      <p className="pDiv">
+      <p className={style.pDiv}>
         Please enter the pincode where your vehicle is currently located
       </p>
 
-      {/* <div>
-        <button onClick={handleClick} className="btn1">
+      <div>
+        <button
+          onClick={() => {
+            if (pincode.length === 6) {
+              localStorage.setItem("pincode", JSON.stringify(pincode));
+              window.location.href = "http://localhost:3000/car/purchased-year";
+            } else {
+              alert("Please enter correct pincode");
+            }
+            console.log(pincode);
+          }}
+          className={style.btn1}
+        >
           Continue
         </button>
       </div>
 
-      <div className="pindivflex">
+      <div className={style.pindivflex}>
         <img src={navigation} alt="" />
-        <p className="pInnerDiv">
+        <p className={style.pInnerDiv}>
           Your pincode helps us check our service availability in your region
-        </p> */}
-
-      
-          <div>
-            <button
-              onClick={() => {
-                    if(pincode.length===6){
-                      localStorage.setItem("pincode",JSON.stringify(pincode));
-                      window.location.href = "http://localhost:3000/car/purchased-year";
-                    }
-                    else{
-                    alert("Please enter correct pincode");
-                  }
-                console.log(pincode);
-              }}
-              className="btn1"
-            >
-              Continue
-            </button>
-          </div>
-      
-
-        <div className="pindivflex">
-          <img src={navigation} alt="" />
-          <p className='pInnerDiv'>
-            Your pincode helps us check our service availability in your region
-          </p>
-        </div>
-
+        </p>
       </div>
-   
+    </div>
   );
 }
 

@@ -3,7 +3,7 @@ import Header from '../../Headers/Hearder'
 import styles from './policyPlan.module.css'
 import recommended from './assets/recommended.svg'
 import { calendarSvg, carSvg, emiSvg, mapSvg, needHelpSvg } from './assets/svgs'
-import { images } from './assets/imgs'
+
 import { useState } from 'react'
 
 const Container = styled.div`
@@ -29,14 +29,15 @@ const InContright = styled.div`
 
 export const PolicyPlan = () => {
   const carDetails = {
-    liscencePlate: 'kl71',
+    liscencePlate: JSON.parse(localStorage.getItem('carnumber')),
     vehicleName: JSON.parse(localStorage.getItem('carType')),
     NCB: JSON.parse(localStorage.getItem('ncb')),
     registrationMonthYear: `${JSON.parse(
       localStorage.getItem('month'),
     )} ${JSON.parse(localStorage.getItem('year'))}`,
-    carValue: 12.55,
+    carValue: Number(JSON.parse(localStorage.getItem('currentIDV'))),
     pincode: JSON.parse(localStorage.getItem('pincode')),
+    carImage: JSON.parse(localStorage.getItem('currentImage')),
   }
 
   const riskValues = {
@@ -133,7 +134,7 @@ export const PolicyPlan = () => {
               <div>
                 <img
                   className={styles.plan_left_car_image}
-                  src={images.ecosport}
+                  src={carDetails.carImage}
                   alt=""
                 />
               </div>

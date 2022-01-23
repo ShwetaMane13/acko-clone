@@ -10,20 +10,21 @@ button {
   font-weight: 500;
   font-family: inherit;
 }
-
+.policybody {
+  margin-top: 12%;
+}
 .policygrid {
   display: grid;
-  grid-template-columns: repeat(2, 65%);
+  grid-template-columns: repeat(2, 70%);
   grid-gap: 10%;
+  margin-left: 0px;
   border-radius: 10px;
 }
 
-.policygrid div {
+.policygrid > button {
   border-radius: 10px;
-}
-
-.policygrid button {
-  border-radius: 10px;
+  width: 150px;
+  margin-left: 20px;
 }
 
 .policyflexdiv {

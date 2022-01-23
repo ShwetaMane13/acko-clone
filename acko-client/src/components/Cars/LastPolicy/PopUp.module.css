@@ -1,0 +1,66 @@
+.ncbpopupbody {
+    border: 1px solid rgb(216, 216, 216);
+    width: 25rem;
+    height: 12rem;
+    background-color: #fafafa;
+    border-radius: 10px;
+  
+    position: absolute;
+    top: 0;
+    bottom: 30vh;
+    left: 0;
+    right: 0;
+  
+    margin: auto;
+    
+  }
+  
+  .congradiv {
+  
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .congradiv p {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    align-items: center;
+    margin-left: 25%;
+  }
+  
+  .congradiv h3 {
+    cursor: pointer;
+  }
+  .congradiv p{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .ncbdiv {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+  }
+  
+  .popupbtn {
+    margin-left: 9rem;
+    width: 116px;
+    height: 40px;
+    background: #522ed3;
+    border-radius: 4px;
+    padding: 8px 32px;
+    border: none;
+    color: white;
+    margin-top: 35px;
+    cursor: pointer;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .ncbpopupbody {
+      width: 300px;
+      height: 200px;
+    }
+  }

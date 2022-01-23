@@ -20,6 +20,7 @@ const NumberPlate = () => {
     console.log(status);
     if (status) {
       localStorage.setItem("carnumber", JSON.stringify(number));
+      window.location.href = "http://localhost:3000/car/purchased-year";
     } else {
       alert("Add correct car number");
     }
