@@ -5,9 +5,15 @@
 }
 
 .payment-page-wrapper {
-  border: 1px solid red;
   width: 70%;
-  margin: auto;
+  margin: 25px auto;
   display: flex;
   justify-content: space-between;
+}
+/* temp payment css */
+.stripe-payment-wrapper {
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
 }
