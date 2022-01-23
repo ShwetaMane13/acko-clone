@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../../Headers/Hearder";
 import "./otppage.css";
-import axios from "axios";
 
 export const Otppage = () => {
   const [otp, setOtp] = React.useState(new Array(6).fill(""));
@@ -19,12 +18,16 @@ export const Otppage = () => {
     });
     let da = await r.json();
     console.log("da:", da);
+    if (da.message === "User registration succesfull!") {
+      window.location.href = "http://localhost:3000/finaldetails";
+    } else {
+      alert("enter correct OTP");
+    }
   };
 
   let data = JSON.parse(localStorage.getItem("userDetails"));
 
   let number = data.mobileNumber;
-
   async function postrequest() {
     let res = await fetch("https://ackoclone.herokuapp.com/signup/genotp", {
       method: "POST",
