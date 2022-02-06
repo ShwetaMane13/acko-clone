@@ -5,7 +5,8 @@ export const Policyexpirirng = () => {
   let flag = 0;
   const handleClick = (e) => {
     localStorage.setItem("PolicyExpiringTime", JSON.stringify(e.target.value));
-    window.location.href = "http://localhost:3000/car/expiry-date";
+    window.location.href =
+      "https://ackoclone-yashraj-m.vercel.app/car/expiry-date";
     if (flag === 1) {
       e.target.parentElement.style.border = "none";
       flag = 0;

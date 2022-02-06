@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import Header from '../../Headers/Hearder'
-import styles from './policyPlanDetails.module.css'
+import styled from "styled-components";
+import Header from "../../Headers/Hearder";
+import styles from "./policyPlanDetails.module.css";
 import {
   accidentsSvg,
   calendarSvg,
@@ -15,69 +15,69 @@ import {
   needHelpSvg,
   passengerAccidentSvg,
   personalAccidentSvg,
-} from './assets/svgs'
+} from "./assets/svgs";
 
-import { useState } from 'react'
-import { PolicyPlanSingle } from './PolicyPlanSingle'
+import { useState } from "react";
+import { PolicyPlanSingle } from "./PolicyPlanSingle";
 
 const Container = styled.div`
   width: 65%;
   margin: auto;
   margin-top: 64px;
   display: flex;
-`
+`;
 const InContleft = styled.div`
   background-color: #ffffff;
   height: 230px;
   width: 368px;
   border: 1px solid #dcdee9;
-`
+`;
 const InContright = styled.div`
   background-color: #ffffff;
 
   width: 55%;
   box-shadow: rgb(0 0 0 / 25%) 0px 3px 20px;
   border: 1px solid #dcdee9;
-`
+`;
 
 export const PolicyPlanDetails = () => {
   const carDetails = {
-    liscencePlate: JSON.parse(localStorage.getItem('carnumber')),
-    vehicleName: JSON.parse(localStorage.getItem('carType')),
-    NCB: JSON.parse(localStorage.getItem('ncb')),
+    liscencePlate: JSON.parse(localStorage.getItem("carnumber")),
+    vehicleName: JSON.parse(localStorage.getItem("carType")),
+    NCB: JSON.parse(localStorage.getItem("ncb")),
     registrationMonthYear: `${JSON.parse(
-      localStorage.getItem('month'),
-    )} ${JSON.parse(localStorage.getItem('year'))}`,
-    pincode: JSON.parse(localStorage.getItem('pincode')),
-    carValue: Number(JSON.parse(localStorage.getItem('currentIDV'))),
-    carImage: JSON.parse(localStorage.getItem('currentImage')),
-  }
+      localStorage.getItem("month")
+    )} ${JSON.parse(localStorage.getItem("year"))}`,
+    pincode: JSON.parse(localStorage.getItem("pincode")),
+    carValue: Number(JSON.parse(localStorage.getItem("currentIDV"))),
+    carImage: JSON.parse(localStorage.getItem("currentImage")),
+  };
 
   const riskValues = {
     high: Number(carDetails.carValue * 0.294023904).toFixed(2),
     low: carDetails.carValue.toFixed(2),
-  }
+  };
 
   const [insuredValue, setInsuredValue] = useState(
-    Number(localStorage.getItem('currentIDV')),
-  )
+    Number(localStorage.getItem("currentIDV"))
+  );
 
   const handleSliderChange = (e) => {
-    setInsuredValue(Number(e.target.value).toFixed(2))
+    setInsuredValue(Number(e.target.value).toFixed(2));
 
-    setOwnDamagePlan((insuredValue * 0.549322709 * 1000).toFixed(0))
-  }
+    setOwnDamagePlan((insuredValue * 0.549322709 * 1000).toFixed(0));
+  };
   const [ownDamagePlan, setOwnDamagePlan] = useState(
-    Number(localStorage.getItem('currentPremium')),
-  )
+    Number(localStorage.getItem("currentPremium"))
+  );
 
-  const [added, setAdded] = useState(0)
-  let totalPrice = ownDamagePlan
+  const [added, setAdded] = useState(0);
+  let totalPrice = ownDamagePlan;
 
   const AdditionalCoverSelected = (price) => {
-    setAdded((props) => Number(props) + Number(price))
-  }
-  totalPrice = +ownDamagePlan + +added
+    setAdded((props) => Number(props) + Number(price));
+  };
+  totalPrice = +ownDamagePlan + +added;
 
   return (
     <div className="App">
@@ -86,62 +86,62 @@ export const PolicyPlanDetails = () => {
         <InContleft>
           <div
             style={{
-              border: '1px solid #dcdee9',
-              display: 'flex',
-              justifyContent: 'space-between',
+              border: "1px solid #dcdee9",
+              display: "flex",
+              justifyContent: "space-between",
             }}
           >
             <div
               style={{
-                paddingTop: '13px',
-                paddingBottom: '13px',
+                paddingTop: "13px",
+                paddingBottom: "13px",
               }}
             >
               <div className={styles.left_head_cont}>
-                {' '}
-                <div style={{ display: 'flex' }}>
-                  {' '}
-                  {carSvg}{' '}
+                {" "}
+                <div style={{ display: "flex" }}>
+                  {" "}
+                  {carSvg}{" "}
                   <span className={styles.vehicle}>
-                    {' '}
+                    {" "}
                     {carDetails.liscencePlate} {carDetails.vehicleName.carName}
                   </span>
                 </div>
               </div>
               <div className={styles.left_head_cont}>
-                {' '}
-                <div style={{ display: 'flex', color: '#8A909F' }}>
-                  {' '}
-                  {calendarSvg}{' '}
+                {" "}
+                <div style={{ display: "flex", color: "#8A909F" }}>
+                  {" "}
+                  {calendarSvg}{" "}
                   <span className={styles.vehicle}>
-                    {' '}
-                    NCB - {carDetails.NCB}%{' '}
+                    {" "}
+                    NCB - {carDetails.NCB}%{" "}
                   </span>
                 </div>
               </div>
               <div className={styles.left_head_cont}>
-                {' '}
-                <div style={{ display: 'flex', color: '#8A909F' }}>
-                  {' '}
-                  {calendarSvg}{' '}
+                {" "}
+                <div style={{ display: "flex", color: "#8A909F" }}>
+                  {" "}
+                  {calendarSvg}{" "}
                   <span className={styles.vehicle}>
-                    {' '}
+                    {" "}
                     Registration in {carDetails.registrationMonthYear}
                   </span>
                 </div>
               </div>
               <div className={styles.left_head_cont}>
-                {' '}
-                <div style={{ display: 'flex', color: '#8A909F' }}>
-                  {' '}
-                  {mapSvg}{' '}
+                {" "}
+                <div style={{ display: "flex", color: "#8A909F" }}>
+                  {" "}
+                  {mapSvg}{" "}
                   <span className={styles.vehicle}> {carDetails.pincode} </span>
                 </div>
               </div>
             </div>
             <div>
               <div className={styles.editLink}>
-                <span style={{ color: '#528ae2' }}> Edit</span>
+                <span style={{ color: "#528ae2" }}> Edit</span>
               </div>
               <div>
                 <img
@@ -161,7 +161,7 @@ export const PolicyPlanDetails = () => {
                 Request a callback, sit back relax! Our experts will help you
                 with all your queries
               </div>
-              <div>Talk to an expert {'>'} </div>
+              <div>Talk to an expert {">"} </div>
             </div>
           </div>
         </InContleft>
@@ -170,51 +170,51 @@ export const PolicyPlanDetails = () => {
             <div>
               <div className={styles.insideContRight_head}>Own Damage Plan</div>
               <div>
-                {' '}
+                {" "}
                 <div>
-                  {' '}
-                  {accidentsSvg} <span> Accidents</span>{' '}
+                  {" "}
+                  {accidentsSvg} <span> Accidents</span>{" "}
                 </div>
                 <div>
-                  {' '}
-                  {carBurnSvg} <span> Fire</span>{' '}
+                  {" "}
+                  {carBurnSvg} <span> Fire</span>{" "}
                 </div>
                 <div>
-                  {' '}
+                  {" "}
                   {carTheftSvg} <span> Theft</span>
                 </div>
                 <div>
-                  {' '}
+                  {" "}
                   {carFloodSvg} <span> Calamities </span>
                 </div>
                 <div>
-                  {' '}
+                  {" "}
                   {consumablesSvg} <span> Consumables </span>
                 </div>
               </div>
               <div> Insured Declared Value (IDV) ₹{insuredValue}L</div>
               <div>Amount you will recieve in case of total damage/theft</div>
 
-              <div style={{ display: 'flex' }}>{/*  */}</div>
-              <div style={{ display: 'flex' }}>
+              <div style={{ display: "flex" }}>{/*  */}</div>
+              <div style={{ display: "flex" }}>
                 <span
                   className={styles.plan_left_car_idv}
                   style={{
-                    width: '85%',
+                    width: "85%",
                   }}
                 >
                   <div
                     style={{
-                      fontSize: '12px',
-                      lineHeight: '12px',
+                      fontSize: "12px",
+                      lineHeight: "12px",
                     }}
                   >
                     {riskValues.high}L
-                  </div>{' '}
+                  </div>{" "}
                   <div
                     style={{
-                      fontSize: '10px',
-                      lineHeight: '10px',
+                      fontSize: "10px",
+                      lineHeight: "10px",
                     }}
                   >
                     HIGH RISK
@@ -223,23 +223,23 @@ export const PolicyPlanDetails = () => {
                 <span
                   className={styles.plan_left_car_idv}
                   style={{
-                    width: '150px',
-                    fontSize: '14px',
-                    marginLeft: '45%',
+                    width: "150px",
+                    fontSize: "14px",
+                    marginLeft: "45%",
                   }}
                 >
                   <div
                     style={{
-                      fontSize: '12px',
-                      lineHeight: '12px',
+                      fontSize: "12px",
+                      lineHeight: "12px",
                     }}
                   >
                     {riskValues.low}L
-                  </div>{' '}
+                  </div>{" "}
                   <div
                     style={{
-                      fontSize: '10px',
-                      lineHeight: '10px',
+                      fontSize: "10px",
+                      lineHeight: "10px",
                     }}
                   >
                     LOW RISK
@@ -249,8 +249,8 @@ export const PolicyPlanDetails = () => {
 
               <div
                 style={{
-                  height: '47px',
-                  marginTop: '8px',
+                  height: "47px",
+                  marginTop: "8px",
                 }}
               >
                 <input
@@ -266,31 +266,31 @@ export const PolicyPlanDetails = () => {
               <div className={styles.plan_left_car_idv_slider}>
                 <div
                   style={{
-                    width: '100px',
-                    marginTop: '-5px',
+                    width: "100px",
+                    marginTop: "-5px",
                   }}
                 >
                   <div
                     style={{
-                      border: '1px solid #3EB753',
-                      borderTopColor: 'white',
-                      height: '6px',
+                      border: "1px solid #3EB753",
+                      borderTopColor: "white",
+                      height: "6px",
                     }}
                   ></div>
                   <div
                     style={{
-                      width: '0',
-                      height: '0',
-                      margin: 'auto',
-                      borderLeft: '10px solid transparent',
-                      borderRight: '10px solid transparent',
-                      borderTop: '10px solid #3EB753',
+                      width: "0",
+                      height: "0",
+                      margin: "auto",
+                      borderLeft: "10px solid transparent",
+                      borderRight: "10px solid transparent",
+                      borderTop: "10px solid #3EB753",
                     }}
                   ></div>
                   <div
                     style={{
-                      fontSize: '8px',
-                      textAlign: 'center',
+                      fontSize: "8px",
+                      textAlign: "center",
                     }}
                   >
                     4 out of 5 users select an IDV within this range
@@ -304,7 +304,7 @@ export const PolicyPlanDetails = () => {
                 svg={personalAccidentSvg}
                 heading="Personal Accident Cover @"
                 price="399"
-                body={'Rs. 15 lakh coverage against accidental injury or death'}
+                body={"Rs. 15 lakh coverage against accidental injury or death"}
                 add={AdditionalCoverSelected}
               ></PolicyPlanSingle>
             </div>
@@ -313,7 +313,7 @@ export const PolicyPlanDetails = () => {
               heading="NCB Protect @"
               price="175"
               body={
-                'Get yourself extra cushioning by keeping your no claim bonus intact even in the event of a claim. Applicable only for 1 claim.'
+                "Get yourself extra cushioning by keeping your no claim bonus intact even in the event of a claim. Applicable only for 1 claim."
               }
               add={AdditionalCoverSelected}
             ></PolicyPlanSingle>
@@ -323,7 +323,7 @@ export const PolicyPlanDetails = () => {
                 heading="Personal Accident Cover for Passengers @"
                 price="250"
                 body={
-                  'Protect your loved ones in cause of unfortunate accidents. Coverage upto INR 1 Lakh per passenger.'
+                  "Protect your loved ones in cause of unfortunate accidents. Coverage upto INR 1 Lakh per passenger."
                 }
                 add={AdditionalCoverSelected}
               ></PolicyPlanSingle>
@@ -334,25 +334,25 @@ export const PolicyPlanDetails = () => {
                 </div>
                 <div>
                   <div>
-                    ₹ {(totalPrice * 2.44301924).toFixed(0)} <span>+GST</span>{' '}
+                    ₹ {(totalPrice * 2.44301924).toFixed(0)} <span>+GST</span>{" "}
                   </div>
                 </div>
                 <div>
                   <button
                     onClick={() => {
-                      localStorage.setItem('currentPremium', totalPrice)
-                      localStorage.setItem('currentIDV', insuredValue)
+                      localStorage.setItem("currentPremium", totalPrice);
+                      localStorage.setItem("currentIDV", insuredValue);
                       localStorage.setItem(
-                        'currentActual',
+                        "currentActual",
                         (ownDamagePlan * 2.44301924).toFixed(0),
                         localStorage.setItem(
-                          'ncbDiscount',
-                          ((carDetails.NCB / 100) * ownDamagePlan).toFixed(0),
-                        ),
-                      )
-                      localStorage.setItem('addOns', added)
+                          "ncbDiscount",
+                          ((carDetails.NCB / 100) * ownDamagePlan).toFixed(0)
+                        )
+                      );
+                      localStorage.setItem("addOns", added);
                       window.location.href =
-                        'http://localhost:3000/additionaldetails'
+                        "https://ackoclone-yashraj-m.vercel.app/additionaldetails";
                     }}
                   >
                     Buy Now
@@ -360,14 +360,14 @@ export const PolicyPlanDetails = () => {
                 </div>
               </div>
               <div>
-                {' '}
-                <span>{emiSvg}</span> starting from ₹208{' '}
-                <span>{'View Plans >'} </span>
+                {" "}
+                <span>{emiSvg}</span> starting from ₹208{" "}
+                <span>{"View Plans >"} </span>
               </div>
             </div>
           </div>
         </InContright>
       </Container>
     </div>
-  )
-}
+  );
+};

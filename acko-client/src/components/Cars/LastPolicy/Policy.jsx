@@ -6,7 +6,8 @@ export const Policy = ({ setpopupp }) => {
   const setitem = (e) => {
     localStorage.setItem("ncb", JSON.stringify(e));
     if (e === "0") {
-      window.location.href = "http://localhost:3000/policyplan";
+      window.location.href =
+        "https://ackoclone-yashraj-m.vercel.app/policyplan";
     }
   };
 

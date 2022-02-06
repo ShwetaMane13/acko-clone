@@ -113,7 +113,8 @@ function CarDetail() {
               localStorage.setItem("currentCompany", JSON.stringify(company));
               localStorage.setItem("currentIDV", JSON.stringify(IDV));
 
-              window.location.href = "http://localhost:3000/car/car-policy";
+              window.location.href =
+                "https://ackoclone-yashraj-m.vercel.app/car/car-policy";
             } else {
               alert(
                 "Please select correct details ,Mobile number should be 10 digits"

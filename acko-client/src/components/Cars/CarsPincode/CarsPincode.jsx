@@ -35,7 +35,8 @@ function CarsPincode() {
           onClick={() => {
             if (pincode.length === 6) {
               localStorage.setItem("pincode", JSON.stringify(pincode));
-              window.location.href = "http://localhost:3000/car/purchased-year";
+              window.location.href =
+                "https://ackoclone-yashraj-m.vercel.app/car/purchased-year";
             } else {
               alert("Please enter correct pincode");
             }

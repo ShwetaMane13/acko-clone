@@ -85,7 +85,8 @@ function Expiry() {
             };
             if (data.oddate.length && data.tpdate.length < 16) {
               localStorage.setItem("expiryDate", JSON.stringify(data));
-              window.location.href = "http://localhost:3000/car/last-policy";
+              window.location.href =
+                "https://ackoclone-yashraj-m.vercel.app/car/last-policy";
             } else {
               alert("Please select correct date");
             }

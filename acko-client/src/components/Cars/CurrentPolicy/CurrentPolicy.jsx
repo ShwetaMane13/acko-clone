@@ -6,9 +6,11 @@ export const CurrentPolicy = () => {
     localStorage.setItem("currentpolicy", JSON.stringify(e));
 
     if (e === "expired") {
-      window.location.href = "http://localhost:3000/car/when-policy-expired";
+      window.location.href =
+        "https://ackoclone-yashraj-m.vercel.app/car/when-policy-expired";
     } else {
-      window.location.href = "http://localhost:3000/car/policy-expire";
+      window.location.href =
+        "https://ackoclone-yashraj-m.vercel.app/car/policy-expire";
     }
   };
 

@@ -69,7 +69,8 @@ export default function Payment() {
     console.log(res);
     if (res.status === 200) {
       toast("Success! Payment is completed", { type: "success" });
-      window.location.href = "http://localhost:3000/successful";
+      window.location.href =
+        "https://ackoclone-yashraj-m.vercel.app/successful";
     } else {
       toast("Failed! Payment is not completed", { type: "error" });
     }

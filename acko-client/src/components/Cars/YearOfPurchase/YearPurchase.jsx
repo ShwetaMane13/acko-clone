@@ -7,7 +7,8 @@ export const YearPurchase = () => {
 
     localStorage.setItem("year", JSON.stringify(e.target.value));
 
-    window.location.href = "http://localhost:3000/car/month-purchase";
+    window.location.href =
+      "https://ackoclone-yashraj-m.vercel.app/car/month-purchase";
   };
   return (
     <div className={style.yearbody}>

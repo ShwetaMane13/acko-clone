@@ -7,7 +7,8 @@ import commercialcar from "../../ImageIcon/commercialcar.svg";
 export const UseofCar = () => {
   const handleClick = (e) => {
     localStorage.setItem("useofcar", JSON.stringify(e));
-    window.location.href = "http://localhost:3000/car/car-pincode";
+    window.location.href =
+      "https://ackoclone-yashraj-m.vercel.app/car/car-pincode";
   };
 
   //   React.useEffect(() => {

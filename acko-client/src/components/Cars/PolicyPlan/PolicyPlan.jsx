@@ -1,23 +1,29 @@
-import styled from 'styled-components'
-import Header from '../../Headers/Hearder'
-import styles from './policyPlan.module.css'
-import recommended from './assets/recommended.svg'
-import { calendarSvg, carSvg, emiSvg, mapSvg, needHelpSvg } from './assets/svgs'
+import styled from "styled-components";
+import Header from "../../Headers/Hearder";
+import styles from "./policyPlan.module.css";
+import recommended from "./assets/recommended.svg";
+import {
+  calendarSvg,
+  carSvg,
+  emiSvg,
+  mapSvg,
+  needHelpSvg,
+} from "./assets/svgs";
 
-import { useState } from 'react'
+import { useState } from "react";
 
 const Container = styled.div`
   width: 65%;
   margin: auto;
   margin-top: 64px;
   display: flex;
-`
+`;
 const InContleft = styled.div`
   background-color: #ffffff;
   height: 400px;
   width: 368px;
   border: 1px solid #dcdee9;
-`
+`;
 const InContright = styled.div`
   background-color: #ffffff;
 
@@ -25,57 +31,55 @@ const InContright = styled.div`
   box-shadow: rgb(0 0 0 / 25%) 0px 3px 20px;
 
   border: 1px solid #dcdee9;
-`
+`;
 
 export const PolicyPlan = () => {
   const carDetails = {
-    liscencePlate: JSON.parse(localStorage.getItem('carnumber')),
-    vehicleName: JSON.parse(localStorage.getItem('carType')),
-    NCB: JSON.parse(localStorage.getItem('ncb')),
+    liscencePlate: JSON.parse(localStorage.getItem("carnumber")),
+    vehicleName: JSON.parse(localStorage.getItem("carType")),
+    NCB: JSON.parse(localStorage.getItem("ncb")),
     registrationMonthYear: `${JSON.parse(
-      localStorage.getItem('month'),
-    )} ${JSON.parse(localStorage.getItem('year'))}`,
-    carValue: Number(JSON.parse(localStorage.getItem('currentIDV'))),
-    pincode: JSON.parse(localStorage.getItem('pincode')),
-    carImage: JSON.parse(localStorage.getItem('currentImage')),
-  }
+      localStorage.getItem("month")
+    )} ${JSON.parse(localStorage.getItem("year"))}`,
+    carValue: Number(JSON.parse(localStorage.getItem("currentIDV"))),
+    pincode: JSON.parse(localStorage.getItem("pincode")),
+    carImage: JSON.parse(localStorage.getItem("currentImage")),
+  };
 
   const riskValues = {
     high: (carDetails.carValue * 0.294023904).toFixed(2),
     low: carDetails.carValue.toFixed(2),
-  }
+  };
 
   const [insuredValue, setInsuredValue] = useState(
-    (riskValues.low / 2).toFixed(2),
-  )
+    (riskValues.low / 2).toFixed(2)
+  );
 
   const handleSliderChange = (e) => {
-    setInsuredValue(Number(e.target.value).toFixed(2))
+    setInsuredValue(Number(e.target.value).toFixed(2));
     setOwnDamagePlan(
       (insuredValue * 0.549322709 * 1000 - (carDetails.NCB + 5) / 100).toFixed(
-        0,
-      ),
-    )
+        0
+      )
+    );
     setsmartSaverZeroDepreciationPlan(
-      (insuredValue * 0.7803984 * 1000 - (carDetails.NCB + 5) / 100).toFixed(0),
-    )
+      (insuredValue * 0.7803984 * 1000 - (carDetails.NCB + 5) / 100).toFixed(0)
+    );
     setzeroDepreciationPlan(
-      (insuredValue * 1.176494 * 1000 - (carDetails.NCB + 5) / 100).toFixed(0),
-    )
-  }
+      (insuredValue * 1.176494 * 1000 - (carDetails.NCB + 5) / 100).toFixed(0)
+    );
+  };
   const [ownDamagePlan, setOwnDamagePlan] = useState(
-    (insuredValue * 0.549322709 * 1000 - (carDetails.NCB + 5) / 100).toFixed(0),
-  )
+    (insuredValue * 0.549322709 * 1000 - (carDetails.NCB + 5) / 100).toFixed(0)
+  );
 
-  const [
-    smartSaverZeroDepreciationPlan,
-    setsmartSaverZeroDepreciationPlan,
-  ] = useState(
-    (insuredValue * 0.7803984 * 1000 - (carDetails.NCB + 5) / 100).toFixed(0),
-  )
+  const [smartSaverZeroDepreciationPlan, setsmartSaverZeroDepreciationPlan] =
+    useState(
+      (insuredValue * 0.7803984 * 1000 - (carDetails.NCB + 5) / 100).toFixed(0)
+    );
   const [zeroDepreciationPlan, setzeroDepreciationPlan] = useState(
-    (insuredValue * 1.176494 * 1000 - (carDetails.NCB + 5) / 100).toFixed(0),
-  )
+    (insuredValue * 1.176494 * 1000 - (carDetails.NCB + 5) / 100).toFixed(0)
+  );
 
   return (
     <div className="App">
@@ -85,51 +89,51 @@ export const PolicyPlan = () => {
           <div className={styles.plan_main_cont}>
             <div className={styles.plan_main_cont_sub1}>
               <div className={styles.plan_main_cont_sub2}>
-                {' '}
-                <div style={{ display: 'flex' }}>
-                  {' '}
-                  {carSvg}{' '}
+                {" "}
+                <div style={{ display: "flex" }}>
+                  {" "}
+                  {carSvg}{" "}
                   <span className={styles.vehicle}>
-                    {' '}
+                    {" "}
                     {carDetails.liscencePlate} {carDetails.vehicleName.carName}
                   </span>
                 </div>
               </div>
               <div className={styles.plan_main_cont_sub2}>
-                {' '}
-                <div style={{ display: 'flex', color: '#8A909F' }}>
-                  {' '}
-                  {calendarSvg}{' '}
+                {" "}
+                <div style={{ display: "flex", color: "#8A909F" }}>
+                  {" "}
+                  {calendarSvg}{" "}
                   <span className={styles.vehicle}>
-                    {' '}
-                    NCB - {carDetails.NCB}%{' '}
+                    {" "}
+                    NCB - {carDetails.NCB}%{" "}
                   </span>
                 </div>
               </div>
               <div className={styles.plan_main_cont_sub2}> </div>
               <div className={styles.plan_main_cont_sub2}>
-                {' '}
-                <div style={{ display: 'flex', color: '#8A909F' }}>
-                  {' '}
-                  {calendarSvg}{' '}
+                {" "}
+                <div style={{ display: "flex", color: "#8A909F" }}>
+                  {" "}
+                  {calendarSvg}{" "}
                   <span className={styles.vehicle}>
-                    {' '}
+                    {" "}
                     Registration in {carDetails.registrationMonthYear}
                   </span>
                 </div>
               </div>
               <div className={styles.plan_main_cont_sub2}>
-                {' '}
-                <div style={{ display: 'flex', color: '#8A909F' }}>
-                  {' '}
-                  {mapSvg}{' '}
+                {" "}
+                <div style={{ display: "flex", color: "#8A909F" }}>
+                  {" "}
+                  {mapSvg}{" "}
                   <span className={styles.vehicle}> {carDetails.pincode} </span>
                 </div>
               </div>
             </div>
             <div>
               <div className={styles.editLink}>
-                <span style={{ color: '#528ae2' }}> Edit</span>{' '}
+                <span style={{ color: "#528ae2" }}> Edit</span>{" "}
               </div>
               <div>
                 <img
@@ -141,44 +145,44 @@ export const PolicyPlan = () => {
             </div>
           </div>
           <div className={styles.fontType}>
-            <div style={{ display: 'flex' }}>
+            <div style={{ display: "flex" }}>
               <span className={styles.plan_left_car_idv}>
                 Insured Declared Value (IDV)
               </span>
               <span
                 className={styles.plan_left_car_idv}
                 style={{
-                  fontSize: '14px',
-                  lineHeight: '18px',
-                  marginLeft: '100px',
+                  fontSize: "14px",
+                  lineHeight: "18px",
+                  marginLeft: "100px",
 
-                  marginRight: '32px',
-                  color: '#3F8FD8',
+                  marginRight: "32px",
+                  color: "#3F8FD8",
                 }}
               >
-                {' '}
+                {" "}
                 ₹{insuredValue} L
               </span>
             </div>
-            <div style={{ display: 'flex' }}>
+            <div style={{ display: "flex" }}>
               <span
                 className={styles.plan_left_car_idv}
                 style={{
-                  width: '105px',
+                  width: "105px",
                 }}
               >
                 <div
                   style={{
-                    fontSize: '12px',
-                    lineHeight: '12px',
+                    fontSize: "12px",
+                    lineHeight: "12px",
                   }}
                 >
                   {riskValues.high}L
-                </div>{' '}
+                </div>{" "}
                 <div
                   style={{
-                    fontSize: '10px',
-                    lineHeight: '10px',
+                    fontSize: "10px",
+                    lineHeight: "10px",
                   }}
                 >
                   HIGH RISK
@@ -187,24 +191,24 @@ export const PolicyPlan = () => {
               <span
                 className={styles.plan_left_car_idv}
                 style={{
-                  width: '150px',
-                  fontSize: '14px',
-                  marginLeft: '210px',
-                  color: '#3F8FD8',
+                  width: "150px",
+                  fontSize: "14px",
+                  marginLeft: "210px",
+                  color: "#3F8FD8",
                 }}
               >
                 <div
                   style={{
-                    fontSize: '12px',
-                    lineHeight: '12px',
+                    fontSize: "12px",
+                    lineHeight: "12px",
                   }}
                 >
                   {riskValues.low}L
-                </div>{' '}
+                </div>{" "}
                 <div
                   style={{
-                    fontSize: '10px',
-                    lineHeight: '10px',
+                    fontSize: "10px",
+                    lineHeight: "10px",
                   }}
                 >
                   LOW RISK
@@ -213,10 +217,10 @@ export const PolicyPlan = () => {
             </div>
             <div
               style={{
-                height: '42px',
-                marginLeft: '16px',
-                marginRight: '32px',
-                marginTop: '8px',
+                height: "42px",
+                marginLeft: "16px",
+                marginRight: "32px",
+                marginTop: "8px",
               }}
             >
               <input
@@ -231,31 +235,31 @@ export const PolicyPlan = () => {
             <div className={styles.plan_left_car_idv_slider}>
               <div
                 style={{
-                  width: '100px',
-                  marginTop: '-5px',
+                  width: "100px",
+                  marginTop: "-5px",
                 }}
               >
                 <div
                   style={{
-                    border: '1px solid #3EB753',
-                    borderTopColor: 'white',
-                    height: '6px',
+                    border: "1px solid #3EB753",
+                    borderTopColor: "white",
+                    height: "6px",
                   }}
                 ></div>
                 <div
                   style={{
-                    width: '0',
-                    height: '0',
-                    margin: 'auto',
-                    borderLeft: '10px solid transparent',
-                    borderRight: '10px solid transparent',
-                    borderTop: '10px solid #3EB753',
+                    width: "0",
+                    height: "0",
+                    margin: "auto",
+                    borderLeft: "10px solid transparent",
+                    borderRight: "10px solid transparent",
+                    borderTop: "10px solid #3EB753",
                   }}
                 ></div>
                 <div
                   style={{
-                    fontSize: '8px',
-                    textAlign: 'center',
+                    fontSize: "8px",
+                    textAlign: "center",
                   }}
                 >
                   4 out of 5 users select an IDV within this range
@@ -272,7 +276,7 @@ export const PolicyPlan = () => {
                 Request a callback, sit back relax! Our experts will help you
                 with all your queries
               </div>
-              <div>Talk to an expert {'>'} </div>
+              <div>Talk to an expert {">"} </div>
             </div>
           </div>
         </InContleft>
@@ -281,15 +285,15 @@ export const PolicyPlan = () => {
             <div className={styles.insideContRight_plan}>
               <div>3 Plans for your {carDetails.vehicleName.carName}</div>
               <div>
-                {' '}
+                {" "}
                 <span className={styles.insideContRight_plan_emi}>
                   {emiSvg}
-                </span>{' '}
+                </span>{" "}
                 starting from ₹208
               </div>
               <div>
-                {' '}
-                <img src={recommended} alt="" />{' '}
+                {" "}
+                <img src={recommended} alt="" />{" "}
               </div>
               <div className={styles.insideContRight_plan}>
                 <div>
@@ -302,23 +306,23 @@ export const PolicyPlan = () => {
                     ₹ {ownDamagePlan} <span> + GST</span>
                   </div>
                   <div>
-                    ₹ {(ownDamagePlan * 2.44301924).toFixed(0)}{' '}
+                    ₹ {(ownDamagePlan * 2.44301924).toFixed(0)}{" "}
                     <span> + GST</span>
                   </div>
                   <button
                     onClick={() => {
-                      localStorage.setItem('currentPremium', ownDamagePlan)
-                      localStorage.setItem('currentIDV', insuredValue)
+                      localStorage.setItem("currentPremium", ownDamagePlan);
+                      localStorage.setItem("currentIDV", insuredValue);
                       localStorage.setItem(
-                        'currentActual',
-                        (ownDamagePlan * 2.44301924).toFixed(0),
-                      )
+                        "currentActual",
+                        (ownDamagePlan * 2.44301924).toFixed(0)
+                      );
                       localStorage.setItem(
-                        'ncbDiscount',
-                        ((carDetails.NCB / 100) * ownDamagePlan).toFixed(0),
-                      )
+                        "ncbDiscount",
+                        ((carDetails.NCB / 100) * ownDamagePlan).toFixed(0)
+                      );
                       window.location.href =
-                        'http://localhost:3000/policyplan-details'
+                        "https://ackoclone-yashraj-m.vercel.app/policyplan-details";
                     }}
                   >
                     Select
@@ -346,31 +350,29 @@ export const PolicyPlan = () => {
                     ₹ {smartSaverZeroDepreciationPlan} <span> + GST</span>
                   </div>
                   <div>
-                    ₹ {(smartSaverZeroDepreciationPlan * 2.44301924).toFixed(0)}{' '}
+                    ₹ {(smartSaverZeroDepreciationPlan * 2.44301924).toFixed(0)}{" "}
                     <span> + GST</span>
                   </div>
                   <button
                     onClick={() => {
                       localStorage.setItem(
-                        'currentPremium',
-                        smartSaverZeroDepreciationPlan,
-                      )
-                      localStorage.setItem('currentIDV', insuredValue)
+                        "currentPremium",
+                        smartSaverZeroDepreciationPlan
+                      );
+                      localStorage.setItem("currentIDV", insuredValue);
                       localStorage.setItem(
-                        'currentActual',
-                        (smartSaverZeroDepreciationPlan * 2.44301924).toFixed(
-                          0,
-                        ),
-                      )
+                        "currentActual",
+                        (smartSaverZeroDepreciationPlan * 2.44301924).toFixed(0)
+                      );
                       localStorage.setItem(
-                        'ncbDiscount',
+                        "ncbDiscount",
                         (
                           (carDetails.NCB / 100) *
                           smartSaverZeroDepreciationPlan
-                        ).toFixed(0),
-                      )
+                        ).toFixed(0)
+                      );
                       window.location.href =
-                        'http://localhost:3000/policyplan-details'
+                        "https://ackoclone-yashraj-m.vercel.app/policyplan-details";
                     }}
                   >
                     Select
@@ -403,22 +405,22 @@ export const PolicyPlan = () => {
                   <button
                     onClick={() => {
                       localStorage.setItem(
-                        'currentPremium',
-                        zeroDepreciationPlan,
-                      )
-                      localStorage.setItem('currentIDV', insuredValue)
+                        "currentPremium",
+                        zeroDepreciationPlan
+                      );
+                      localStorage.setItem("currentIDV", insuredValue);
                       localStorage.setItem(
-                        'currentActual',
-                        (zeroDepreciationPlan * 2.44301924).toFixed(0),
-                      )
+                        "currentActual",
+                        (zeroDepreciationPlan * 2.44301924).toFixed(0)
+                      );
                       localStorage.setItem(
-                        'ncbDiscount',
+                        "ncbDiscount",
                         ((carDetails.NCB / 100) * zeroDepreciationPlan).toFixed(
-                          0,
-                        ),
-                      )
+                          0
+                        )
+                      );
                       window.location.href =
-                        'http://localhost:3000/policyplan-details'
+                        "https://ackoclone-yashraj-m.vercel.app/policyplan-details";
                     }}
                   >
                     Select
@@ -432,5 +434,5 @@ export const PolicyPlan = () => {
         </InContright>
       </Container>
     </div>
-  )
-}
+  );
+};

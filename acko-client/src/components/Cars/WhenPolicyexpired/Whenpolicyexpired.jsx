@@ -4,7 +4,8 @@ import style from "../LastPolicy/policy.module.css";
 export const WhenPolicyexpired = () => {
   const handleClick = (e) => {
     localStorage.setItem("WhenPolicyExpired", JSON.stringify(e.target.value));
-    window.location.href = "http://localhost:3000/car/expiry-date";
+    window.location.href =
+      "https://ackoclone-yashraj-m.vercel.app/car/expiry-date";
   };
   return (
     <div className={style.policybody}>

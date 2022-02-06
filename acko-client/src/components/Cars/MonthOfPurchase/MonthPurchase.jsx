@@ -4,7 +4,8 @@ import style from "../YearOfPurchase/yearpurchase.module.css";
 export const MonthPurchase = () => {
   const handleClick = (e) => {
     localStorage.setItem("month", JSON.stringify(e.target.value));
-    window.location.href = "http://localhost:3000/car/car-type";
+    window.location.href =
+      "https://ackoclone-yashraj-m.vercel.app/car/car-type";
   };
   return (
     <div className={style.yearbody}>

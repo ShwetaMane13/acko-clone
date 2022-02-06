@@ -19,7 +19,8 @@ export const Otppage = () => {
     let da = await r.json();
     console.log("da:", da);
     if (da.message === "User registration succesfull!") {
-      window.location.href = "http://localhost:3000/finaldetails";
+      window.location.href =
+        "https://ackoclone-yashraj-m.vercel.app/finaldetails";
     } else {
       alert("enter correct OTP");
     }

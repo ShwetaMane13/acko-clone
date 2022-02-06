@@ -6,7 +6,7 @@ const NumberPlate = () => {
 
   const isValidCarNumber = (data) => {
     const pattern = new RegExp(
-      "^[A-Z|a-z]{2}([1-9]{1}|[0-9]{2})[A-Z|a-z]{0,2}[0-9]{1,4}$"
+      "^[A-Z|a-z]{2}([1-9]{1}|[0-9]{2})[A-Z|a-z]{1,2}[0-9]{1,4}$"
     );
     if (pattern.test(data)) {
       return true;
@@ -20,7 +20,8 @@ const NumberPlate = () => {
     console.log(status);
     if (status) {
       localStorage.setItem("carnumber", JSON.stringify(number));
-      window.location.href = "http://localhost:3000/car/purchased-year";
+      window.location.href =
+        "https://ackoclone-yashraj-m.vercel.app/car/purchased-year";
     } else {
       alert("Add correct car number");
     }
