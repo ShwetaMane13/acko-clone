@@ -194,9 +194,9 @@
   display: flex;
 }
 
-form {
-  margin-left: 22%;
-  margin-top: -13%;
+.cfform {
+  margin-left: 10%;
+  margin-top: 5%;
 }
 
 .categories_input {

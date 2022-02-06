@@ -18,14 +18,14 @@
   margin: 13% 13%;
 }
 
-form {
+#form {
   display: flex;
   flex-direction: column;
   width: 48%;
   /* margin-top: 2.5%; */
   position: absolute;
-  top: 110%;
-  left: -12%;
+  top: 104%;
+  left: 0%;
 }
 
 input {
@@ -121,7 +121,7 @@ select {
   margin: 3% 5%;
 }
 
-.checkbox{
+.checkbox {
   margin-top: -4%;
 }
 
@@ -361,12 +361,11 @@ a {
   cursor: pointer;
 }
 
-.ncb_discount_text{
+.ncb_discount_text {
   color: #169b4b;
 }
 
-
-.price_value{
+.price_value {
   font-size: 16px;
   font-weight: 600;
 }

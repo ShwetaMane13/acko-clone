@@ -82,7 +82,7 @@ export const CarForm = () => {
           alt=""
         />
 
-        <form>
+        <form className="cfform">
           <input
             className="categories_input"
             onChange={(e) => {

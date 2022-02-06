@@ -123,7 +123,7 @@ export const AdditionalDetails = () => {
               post policy issuance.
             </p>
           </div>
-          <form onSubmit={handleClick}>
+          <form id="form" onSubmit={handleClick}>
             {/* name */}
             <input
               onChange={handleChange}
